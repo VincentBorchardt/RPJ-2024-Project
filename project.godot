@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 FoodList="*res://scripts/food_list.gd"
+SignalBus="*res://scripts/signal_bus.gd"
+Inventory="*res://scripts/inventory.gd"
 
 [dotnet]
 

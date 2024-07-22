@@ -23,7 +23,7 @@ var field2 : Food = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	SignalBus.prepare_food.connect(_on_signal_bus_prepare_food)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -85,15 +85,16 @@ func _on_grill_place_button_pressed():
 		check_prepare_food(grill_items)
 
 func check_prepare_food(ingredients):
-	for food in FoodList.grill.food_preparable:
-		if array_contains_array (ingredients, food.components):
-			if current_grill == null:
-				print("making hamburger")
-				# remove items from ingredients, and the corresponding labels
-				grill_results.text = food.name + " Preparing"
-				grill_results.visible = true
-				current_grill = food
-				grill_timer.start(food.time_to_complete)
+	FoodList.grill.check_prepare_food(ingredients)
+
+func _on_signal_bus_prepare_food(food, building):
+	if current_grill == null:
+		print("making hamburger")
+		# remove items from ingredients, and the corresponding labels
+		grill_results.text = food.name + " Preparing"
+		grill_results.visible = true
+		current_grill = food
+		grill_timer.start(food.time_to_complete)
 
 func _on_grill_timer_timeout():
 	grill_results.text = current_grill.name + " Complete"
@@ -103,9 +104,3 @@ func _on_grill_results_button_pressed():
 	if current_item == null:
 		set_current_item(current_grill)
 		current_grill = null
-
-func array_contains_array (big, small):
-	for element in small:
-		if !big.has(element):
-			return false
-	return true

@@ -6,8 +6,6 @@ var food_available : Array = []
 var food_preparable : Array = []
 var base_texture : Texture2D
 
-signal prepare(food, building)
-
 func _init(label, buyable, makeable, picture):
 	name = label
 	food_available = buyable
@@ -17,7 +15,7 @@ func _init(label, buyable, makeable, picture):
 func check_prepare_food(ingredients):
 	for food in food_preparable:
 		if array_contains_array (ingredients, food.components):
-			prepare.emit(food, self)
+			SignalBus.prepare_food.emit(food, self)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
