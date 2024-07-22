@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6yf45xf8mvdk"]
+
+[ext_resource type="Script" path="res://scripts/test_scene.gd" id="1_lgdwp"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgdwp")
+
+[node name="FoodContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 308.0
+
+[node name="BeefButton" type="Button" parent="FoodContainer"]
+layout_mode = 2
+text = "Beef Unprepared"
+
+[node name="BunButton" type="Button" parent="FoodContainer"]
+layout_mode = 2
+text = "Bun Prepared"
+
+[node name="BuildingContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 1.0
+offset_right = 1149.0
+offset_bottom = 312.0
+
+[node name="GrillTitle" type="Label" parent="BuildingContainer"]
+layout_mode = 2
+text = "Grill"
+
+[node name="GrillPlaceButton" type="Button" parent="BuildingContainer"]
+layout_mode = 2
+text = "Place Item"
+
+[node name="Item1" type="Label" parent="BuildingContainer"]
+visible = false
+layout_mode = 2
+text = "Item1"
+
+[node name="Item2" type="Label" parent="BuildingContainer"]
+visible = false
+layout_mode = 2
+text = "Item2"
+
+[node name="GrillResultsButton" type="Button" parent="BuildingContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+
+[node name="GrillTimer" type="Timer" parent="BuildingContainer"]
+one_shot = true
+
+[node name="InventoryContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 498.0
+offset_right = 1071.0
+offset_bottom = 640.0
+
+[node name="Inventory1" type="Button" parent="InventoryContainer"]
+layout_mode = 2
+text = "Inventory1"
+
+[node name="Inventory2" type="Button" parent="InventoryContainer"]
+layout_mode = 2
+text = "Inventory2"
+
+[node name="CurrentItem" type="Label" parent="InventoryContainer"]
+visible = false
+layout_mode = 2
+text = "Current Item"
+
+[node name="FieldContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 7.0
+offset_right = 698.0
+offset_bottom = 214.0
+
+[node name="Field1" type="Button" parent="FieldContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+text = "Field 1"
+
+[node name="Field1Timer" type="Timer" parent="FieldContainer/Field1"]
+one_shot = true
+
+[node name="Field2" type="Button" parent="FieldContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+text = "Field 2"
+
+[connection signal="pressed" from="FoodContainer/BeefButton" to="." method="_on_beef_button_pressed"]
+[connection signal="pressed" from="FoodContainer/BunButton" to="." method="_on_bun_button_pressed"]
+[connection signal="pressed" from="BuildingContainer/GrillPlaceButton" to="." method="_on_grill_place_button_pressed"]
+[connection signal="pressed" from="BuildingContainer/GrillResultsButton" to="." method="_on_grill_results_button_pressed"]
+[connection signal="timeout" from="BuildingContainer/GrillTimer" to="." method="_on_grill_timer_timeout"]
+[connection signal="pressed" from="InventoryContainer/Inventory1" to="." method="_on_inventory_1_pressed"]
+[connection signal="pressed" from="FieldContainer/Field1" to="." method="_on_field_1_pressed"]
+[connection signal="timeout" from="FieldContainer/Field1/Field1Timer" to="." method="_on_field_1_timer_timeout"]
