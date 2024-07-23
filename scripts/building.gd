@@ -5,6 +5,7 @@ var name : String = "Default Building"
 var food_available : Array = []
 var food_preparable : Array = []
 var base_texture : Texture2D
+var current_ingredients : Dictionary = {}
 
 func _init(label, buyable, makeable, picture):
 	name = label

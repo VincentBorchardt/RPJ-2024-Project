@@ -66,11 +66,11 @@ offset_bottom = 640.0
 
 [node name="Inventory0" type="Button" parent="InventoryContainer"]
 layout_mode = 2
-text = "Inventory0"
+text = "Empty"
 
 [node name="Inventory1" type="Button" parent="InventoryContainer"]
 layout_mode = 2
-text = "Inventory1"
+text = "Empty"
 
 [node name="CurrentItem" type="Label" parent="InventoryContainer"]
 visible = false

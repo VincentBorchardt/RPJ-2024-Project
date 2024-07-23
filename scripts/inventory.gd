@@ -31,7 +31,7 @@ func is_inventory_slot_filled(slot):
 	return inventory.has(slot)
 
 func get_inventory_slot(slot):
-	return inventory[slot]
+	return inventory.get(slot)
 
 func fill_inventory_slot(slot, food):
 	inventory[slot] = food
