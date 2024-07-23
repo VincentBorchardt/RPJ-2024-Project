@@ -64,13 +64,13 @@ offset_top = 498.0
 offset_right = 1071.0
 offset_bottom = 640.0
 
+[node name="Inventory0" type="Button" parent="InventoryContainer"]
+layout_mode = 2
+text = "Inventory0"
+
 [node name="Inventory1" type="Button" parent="InventoryContainer"]
 layout_mode = 2
 text = "Inventory1"
-
-[node name="Inventory2" type="Button" parent="InventoryContainer"]
-layout_mode = 2
-text = "Inventory2"
 
 [node name="CurrentItem" type="Label" parent="InventoryContainer"]
 visible = false
@@ -104,6 +104,6 @@ text = "Field 2"
 [connection signal="pressed" from="BuildingContainer/GrillPlaceButton" to="." method="_on_grill_place_button_pressed"]
 [connection signal="pressed" from="BuildingContainer/GrillResultsButton" to="." method="_on_grill_results_button_pressed"]
 [connection signal="timeout" from="BuildingContainer/GrillTimer" to="." method="_on_grill_timer_timeout"]
-[connection signal="pressed" from="InventoryContainer/Inventory1" to="." method="_on_inventory_1_pressed"]
+[connection signal="pressed" from="InventoryContainer/Inventory0" to="." method="_on_inventory_0_pressed"]
 [connection signal="pressed" from="FieldContainer/Field1" to="." method="_on_field_1_pressed"]
 [connection signal="timeout" from="FieldContainer/Field1/Field1Timer" to="." method="_on_field_1_timer_timeout"]

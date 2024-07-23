@@ -1,16 +1,16 @@
 extends Control
 
 var current_item : Food = null
+var inventory0 : Food = null
 var inventory1 : Food = null
-var inventory2 : Food = null
 var grill_items : Array[Food] = []
 var current_grill: Food = null
 var field1 : Food = null
 var field2 : Food = null
 
 @onready var current_item_label = $InventoryContainer/CurrentItem
+@onready var inventory0_button = $InventoryContainer/Inventory0
 @onready var inventory1_button = $InventoryContainer/Inventory1
-@onready var inventory2_button = $InventoryContainer/Inventory2
 @onready var grill_item1 = $BuildingContainer/Item1
 @onready var grill_item2 = $BuildingContainer/Item2
 @onready var grill_place = $BuildingContainer/GrillPlaceButton
@@ -23,7 +23,7 @@ var field2 : Food = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalBus.prepare_food.connect(_on_signal_bus_prepare_food)
+	BuildingList.prepare_food.connect(_on_signal_bus_prepare_food)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,10 +51,10 @@ func _on_bun_button_pressed():
 	if current_item == null:
 		set_current_item(FoodList.bun)
 
-func _on_inventory_1_pressed():
-	if current_item != null and inventory1 == null:
-		inventory1 = current_item
-		inventory1_button.text = current_item.name
+func _on_inventory_0_pressed():
+	if current_item != null and inventory0 == null:
+		inventory0 = current_item
+		inventory0_button.text = current_item.name
 		remove_current_item()
 
 func _on_beef_button_pressed():
@@ -85,7 +85,7 @@ func _on_grill_place_button_pressed():
 		check_prepare_food(grill_items)
 
 func check_prepare_food(ingredients):
-	FoodList.grill.check_prepare_food(ingredients)
+	BuildingList.grill.check_prepare_food(ingredients)
 
 func _on_signal_bus_prepare_food(food, building):
 	if current_grill == null:

@@ -15,7 +15,7 @@ func _init(label, buyable, makeable, picture):
 func check_prepare_food(ingredients):
 	for food in food_preparable:
 		if array_contains_array (ingredients, food.components):
-			SignalBus.prepare_food.emit(food, self)
+			BuildingList.prepare_food.emit(food, self)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
