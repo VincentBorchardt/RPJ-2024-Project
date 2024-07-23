@@ -1,6 +1,6 @@
 extends Control
 
-var current_item : Food = null
+#var current_item : Food = null
 var inventory0 : Food = null
 var inventory1 : Food = null
 var grill_items : Array[Food] = []
@@ -32,16 +32,16 @@ func _ready():
 func _process(delta):
 	pass
 
-func set_current_item(food):
-	print("setting current item")
-	current_item = food
-	current_item_label.text = food.name
-	current_item_label.visible = true
+#func set_current_item(food):
+	#print("setting current item")
+	#current_item = food
+	#current_item_label.text = food.name
+	#current_item_label.visible = true
 
-func remove_current_item():
-	print("removing current item")
-	current_item = null
-	current_item_label.visible = false
+#func remove_current_item():
+	#print("removing current item")
+	#current_item = null
+	#current_item_label.visible = false
 
 func plant_field1(food):
 	field1 = food
@@ -52,13 +52,14 @@ func plant_field1(food):
 func _on_bun_button_pressed():
 	print("bun button pressed")
 	if not Inventory.currently_holding_item():
-		set_current_item(FoodList.bun)
+		Inventory.set_current_item(FoodList.bun)
 
 func _on_inventory_0_pressed():
-	if current_item != null and inventory0 == null:
-		inventory0 = current_item
-		inventory0_button.text = current_item.name
-		remove_current_item()
+	if Inventory.currently_holding_item() and inventory0 == null:
+		var current = Inventory.get_current_item()
+		inventory0 = current
+		inventory0_button.text = current.name
+		Inventory.set_current_item(null)
 
 func _on_beef_button_pressed():
 	if field1 == null:
@@ -69,22 +70,23 @@ func _on_field_1_timer_timeout():
 	field1_button.disabled = false
 
 func _on_field_1_pressed():
-	if current_item == null:
-		set_current_item(field1)
+	if (not Inventory.currently_holding_item()):
+		Inventory.set_current_item(field1)
 		field1_button.disabled = true
 		field1_button.visible = false
 
 
 func _on_grill_place_button_pressed():
-	if current_item != null:
-		grill_items.append(current_item)
+	if Inventory.currently_holding_item():
+		var current = Inventory.get_current_item()
+		grill_items.append(current)
 		if not grill_item1.visible:
-			grill_item1.text = current_item.name
+			grill_item1.text = current.name
 			grill_item1.visible = true
 		elif not grill_item2.visible:
-			grill_item2.text = current_item.name
+			grill_item2.text = current.name
 			grill_item2.visible = true
-		remove_current_item()
+		Inventory.set_current_item(null)
 		check_prepare_food(grill_items)
 
 func check_prepare_food(ingredients):
@@ -104,15 +106,15 @@ func _on_grill_timer_timeout():
 	grill_results.disabled = false
 
 func _on_grill_results_button_pressed():
-	if current_item == null:
-		set_current_item(current_grill)
+	if (not Inventory.currently_holding_item()):
+		Inventory.set_current_item(current_grill)
 		current_grill = null
 
 func _on_inventory_current_item_changed(food):
-	print("setting current item")
-	current_item = food
 	if (food != null):
+		print("setting current item")
 		current_item_label.text = food.name
 		current_item_label.visible = true
 	else:
-		current_item.lable.visible = false
+		print("removing current item")
+		current_item_label.visible = false

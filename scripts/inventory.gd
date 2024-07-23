@@ -21,6 +21,9 @@ func _process(delta):
 func currently_holding_item():
 	return (current_hold_item != null)
 
+func get_current_item():
+	return current_hold_item
+
 func set_current_item(food):
 	current_hold_item = food
 	# change this to emit a different signal if null?
