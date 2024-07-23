@@ -1,5 +1,8 @@
 extends Node
 
+signal current_item_changed(food)
+
+# TODO change this to a dictionary
 var inventory : Array = []
 var inventory_max_size : int = 5
 var inventory_current_size : int = 0
@@ -17,3 +20,8 @@ func _process(delta):
 
 func currently_holding_item():
 	return (current_hold_item != null)
+
+func set_current_item(food):
+	current_hold_item = food
+	# change this to emit a different signal if null?
+	current_item_changed.emit(food)

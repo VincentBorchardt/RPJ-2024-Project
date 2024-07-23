@@ -8,6 +8,8 @@ var current_grill: Food = null
 var field1 : Food = null
 var field2 : Food = null
 
+# in the final UI these will all be in different scripts,
+# probably corresponding to their containers
 @onready var current_item_label = $InventoryContainer/CurrentItem
 @onready var inventory0_button = $InventoryContainer/Inventory0
 @onready var inventory1_button = $InventoryContainer/Inventory1
@@ -23,7 +25,8 @@ var field2 : Food = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	BuildingList.prepare_food.connect(_on_signal_bus_prepare_food)
+	BuildingList.prepare_food.connect(_on_building_list_prepare_food)
+	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,7 +51,7 @@ func plant_field1(food):
 
 func _on_bun_button_pressed():
 	print("bun button pressed")
-	if current_item == null:
+	if not Inventory.currently_holding_item():
 		set_current_item(FoodList.bun)
 
 func _on_inventory_0_pressed():
@@ -87,7 +90,7 @@ func _on_grill_place_button_pressed():
 func check_prepare_food(ingredients):
 	BuildingList.grill.check_prepare_food(ingredients)
 
-func _on_signal_bus_prepare_food(food, building):
+func _on_building_list_prepare_food(food, building):
 	if current_grill == null:
 		print("making hamburger")
 		# remove items from ingredients, and the corresponding labels
@@ -104,3 +107,12 @@ func _on_grill_results_button_pressed():
 	if current_item == null:
 		set_current_item(current_grill)
 		current_grill = null
+
+func _on_inventory_current_item_changed(food):
+	print("setting current item")
+	current_item = food
+	if (food != null):
+		current_item_label.text = food.name
+		current_item_label.visible = true
+	else:
+		current_item.lable.visible = false
