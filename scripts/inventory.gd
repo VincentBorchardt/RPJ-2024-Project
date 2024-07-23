@@ -30,6 +30,9 @@ func set_current_item(food):
 func is_inventory_slot_filled(slot):
 	return inventory.has(slot)
 
+func get_inventory_slot(slot):
+	return inventory[slot]
+
 func fill_inventory_slot(slot, food):
 	inventory[slot] = food
 	inventory_slot_changed.emit(slot, food)

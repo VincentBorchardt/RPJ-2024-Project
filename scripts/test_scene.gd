@@ -1,6 +1,5 @@
 extends Control
 
-#var inventory0 : Food = null
 var inventory1 : Food = null
 var grill_items : Array[Food] = []
 var current_grill: Food = null
@@ -22,7 +21,6 @@ var field2 : Food = null
 @onready var field1_timer = $FieldContainer/Field1/Field1Timer
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BuildingList.prepare_food.connect(_on_building_list_prepare_food)
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
@@ -41,11 +39,15 @@ func _on_bun_button_pressed():
 
 func _on_inventory_0_pressed():
 	# TODO refactor this to let you swap items seamlessly between current/inventory
+	# maybe save until real implementation?
 	if Inventory.is_currently_holding_item() and (not Inventory.is_inventory_slot_filled(0)):
 		var current = Inventory.get_current_item()
 		Inventory.fill_inventory_slot(0, current)
-		#inventory0_button.text = current.name
 		Inventory.set_current_item(null)
+	elif (not Inventory.is_currently_holding_item()) and (Inventory.is_inventory_slot_filled(0)):
+		var filled = Inventory.get_inventory_slot(0)
+		Inventory.set_current_item(filled)
+		Inventory.empty_inventory_slot(0)
 
 func _on_beef_button_pressed():
 	if field1 == null:
@@ -105,8 +107,13 @@ func _on_inventory_current_item_changed(food):
 		current_item_label.visible = false
 
 func _on_inventory_inventory_slot_changed(slot, food):
+	var name
+	if food != null:
+		name = food.name
+	else:
+		name = "Empty"
 	match slot:
 		0: 
-			inventory0_button.text = food.name
+			inventory0_button.text = name
 		_:
 			print("slot not connected")
