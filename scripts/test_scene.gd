@@ -33,19 +33,14 @@ func plant_field1(food):
 	field1_timer.start(food.time_to_complete)
 
 func _on_bun_button_pressed():
+	# TODO move these checks and similar ones into Inventory,
+	# problem is that some like fields do other things
 	print("bun button pressed")
 	if not Inventory.is_currently_holding_item():
 		Inventory.set_current_item(FoodList.bun)
 
 func _on_inventory_0_pressed():
-	# TODO this body should be a function that's passed a slot number from each button listener
-	var item_to_be_current = null
-	if Inventory.is_inventory_slot_filled(0):
-		item_to_be_current = Inventory.get_inventory_slot(0)
-		Inventory.empty_inventory_slot(0)
-	if Inventory.is_currently_holding_item():
-		Inventory.fill_inventory_slot(0, Inventory.get_current_item())
-	Inventory.set_current_item(item_to_be_current)
+	Inventory.take_item_from_slot(0)
 
 func _on_beef_button_pressed():
 	if field1 == null:
