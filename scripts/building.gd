@@ -5,7 +5,7 @@ var name : String = "Default Building"
 var food_available : Array = []
 var food_preparable : Array = []
 var base_texture : Texture2D
-var current_ingredients : Dictionary = {}
+var current_ingredients : Array = []
 
 func _init(label, buyable, makeable, picture):
 	name = label
@@ -13,9 +13,13 @@ func _init(label, buyable, makeable, picture):
 	food_preparable = makeable
 	base_texture = picture
 
-func check_prepare_food(ingredients):
+func add_food(food):
+	current_ingredients.append(food)
+	check_prepare_food()
+
+func check_prepare_food():
 	for food in food_preparable:
-		if array_contains_array (ingredients, food.components):
+		if array_contains_array (current_ingredients, food.components):
 			BuildingList.prepare_food.emit(food, self)
 
 # Called when the node enters the scene tree for the first time.

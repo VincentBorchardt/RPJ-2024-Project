@@ -59,7 +59,7 @@ func _on_field_1_pressed():
 func _on_grill_place_button_pressed():
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.get_current_item()
-		grill_items.append(current)
+		BuildingList.grill.add_food(current)
 		if not grill_item1.visible:
 			grill_item1.text = current.name
 			grill_item1.visible = true
@@ -67,10 +67,6 @@ func _on_grill_place_button_pressed():
 			grill_item2.text = current.name
 			grill_item2.visible = true
 		Inventory.set_current_item(null)
-		check_prepare_food(grill_items)
-
-func check_prepare_food(ingredients):
-	BuildingList.grill.check_prepare_food(ingredients)
 
 func _on_building_list_prepare_food(food, building):
 	if current_grill == null:
