@@ -15,12 +15,20 @@ func _init(label, buyable, makeable, picture):
 
 func add_food(food):
 	current_ingredients.append(food)
+	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
 	check_prepare_food()
 
 func check_prepare_food():
 	for food in food_preparable:
 		if array_contains_array (current_ingredients, food.components):
-			BuildingList.prepare_food.emit(food, self)
+			prepare_food(food)
+			#BuildingList.prepare_food.emit(food, self)
+
+func prepare_food(food):
+	for entry in food.components:
+		current_ingredients.erase(entry)
+	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
+	BuildingList.prepare_food.emit(food, self)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -39,15 +39,10 @@ text = "Grill"
 layout_mode = 2
 text = "Place Item"
 
-[node name="Item1" type="Label" parent="BuildingContainer"]
+[node name="GrillItems" type="Label" parent="BuildingContainer"]
 visible = false
 layout_mode = 2
 text = "Item1"
-
-[node name="Item2" type="Label" parent="BuildingContainer"]
-visible = false
-layout_mode = 2
-text = "Item2"
 
 [node name="GrillResultsButton" type="Button" parent="BuildingContainer"]
 visible = false

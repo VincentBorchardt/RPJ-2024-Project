@@ -1,7 +1,6 @@
 extends Control
 
 var inventory1 : Food = null
-var grill_items : Array[Food] = []
 var current_grill: Food = null
 var field1 : Food = null
 var field2 : Food = null
@@ -11,8 +10,7 @@ var field2 : Food = null
 @onready var current_item_label = $InventoryContainer/CurrentItem
 @onready var inventory0_button = $InventoryContainer/Inventory0
 @onready var inventory1_button = $InventoryContainer/Inventory1
-@onready var grill_item1 = $BuildingContainer/Item1
-@onready var grill_item2 = $BuildingContainer/Item2
+@onready var grill_items = $BuildingContainer/GrillItems
 @onready var grill_place = $BuildingContainer/GrillPlaceButton
 @onready var grill_results = $BuildingContainer/GrillResultsButton
 @onready var grill_timer = $BuildingContainer/GrillTimer
@@ -23,6 +21,7 @@ var field2 : Food = null
 
 func _ready():
 	BuildingList.prepare_food.connect(_on_building_list_prepare_food)
+	BuildingList.ingredient_list_changed.connect(on_building_list_ingredient_list_changed)
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
 
@@ -60,12 +59,6 @@ func _on_grill_place_button_pressed():
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.get_current_item()
 		BuildingList.grill.add_food(current)
-		if not grill_item1.visible:
-			grill_item1.text = current.name
-			grill_item1.visible = true
-		elif not grill_item2.visible:
-			grill_item2.text = current.name
-			grill_item2.visible = true
 		Inventory.set_current_item(null)
 
 func _on_building_list_prepare_food(food, building):
@@ -106,3 +99,14 @@ func _on_inventory_inventory_slot_changed(slot, food):
 			inventory0_button.text = name
 		_:
 			print("slot not connected")
+
+func on_building_list_ingredient_list_changed(ingredients, building):
+	if (not ingredients.is_empty()):
+		var item_string = ""
+		for food in ingredients:
+			item_string += food.name + "\n"
+		grill_items.text = item_string
+		grill_items.visible = true
+	else:
+		grill_items.text = ""
+		grill_items.visible = false
