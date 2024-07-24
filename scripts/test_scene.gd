@@ -24,6 +24,7 @@ func _ready():
 	BuildingList.ingredient_list_changed.connect(on_building_list_ingredient_list_changed)
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+	BuildingList.food_prepared.connect(_on_building_list_food_prepared)
 
 func plant_field1(food):
 	field1 = food
@@ -110,3 +111,7 @@ func on_building_list_ingredient_list_changed(ingredients, building):
 	else:
 		grill_items.text = ""
 		grill_items.visible = false
+
+func _on_building_list_food_prepared(food, building):
+	grill_results.text = food.name + " Complete"
+	grill_results.disabled = false

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjbfl4xbi6wry"]
+
+[ext_resource type="Script" path="res://scripts/placeable.gd" id="1_7cr8d"]
+
+[node name="Placeable" type="Node"]
+script = ExtResource("1_7cr8d")

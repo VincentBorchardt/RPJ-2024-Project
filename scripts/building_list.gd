@@ -2,6 +2,7 @@ extends Node
 
 signal prepare_food(food, building)
 signal ingredient_list_changed(ingredients, building)
+signal food_prepared(food, building)
 
 var grill : Building
 
