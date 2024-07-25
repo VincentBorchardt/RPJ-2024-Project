@@ -30,7 +30,9 @@ func prepare_food(food):
 	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
 	current_creation = food
 	BuildingList.prepare_food.emit(food, self)
-	#create_timer(food.time_to_complete)
+	# TODO I really don't like this, but I don't see another way to call a timer here
+	# Not clear where I should put this timer, but the signal can be connected anywhere (Tile?)
+	BuildingList.start_building_timer.emit(food.time_to_complete, self)
 
 func array_contains_array (big, small):
 	for element in small:
@@ -40,17 +42,16 @@ func array_contains_array (big, small):
 
 func create_timer(wait_time):
 	print(wait_time)
-	var timer := Timer.new()
-	#timer.wait_time = wait_time
-	timer.one_shot = true
-	timer.connect("timeout", _on_timer_timeout)
-	timer.start(wait_time)
-	print("timer started")
-	print(timer.time_left)
-	timer.wait_time = wait_time
-	print(timer.time_left)
-	BuildingList.add_child(timer)
+	print("start")
+	await get_tree().create_timer(wait_time)
+	print("end")
 
-func _on_timer_timeout():
+func timer_complete():
 	print("timer ended")
 	BuildingList.food_prepared.emit(current_creation, self)
+
+func finish():
+	if (not Inventory.is_currently_holding_item()):
+		Inventory.set_current_item(current_creation)
+		BuildingList.finish_creation.emit(current_creation, self)
+		current_creation = null

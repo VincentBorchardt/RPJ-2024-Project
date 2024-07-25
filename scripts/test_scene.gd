@@ -1,7 +1,5 @@
 extends Control
 
-var inventory1 : Food = null
-var current_grill: Food = null
 var field1 : Food = null
 var field2 : Food = null
 
@@ -24,7 +22,9 @@ func _ready():
 	BuildingList.ingredient_list_changed.connect(on_building_list_ingredient_list_changed)
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+	BuildingList.start_building_timer.connect(_on_building_list_start_building_timer)
 	BuildingList.food_prepared.connect(_on_building_list_food_prepared)
+	BuildingList.finish_creation.connect(_on_building_list_finish_creation)
 
 func plant_field1(food):
 	field1 = food
@@ -63,22 +63,26 @@ func _on_grill_place_button_pressed():
 		Inventory.set_current_item(null)
 
 func _on_building_list_prepare_food(food, building):
-	if current_grill == null:
 		print("making hamburger")
-		# remove items from ingredients, and the corresponding labels
 		grill_results.text = food.name + " Preparing"
 		grill_results.visible = true
-		current_grill = food
-		grill_timer.start(food.time_to_complete)
+
+func _on_building_list_start_building_timer(wait_time, building):
+	grill_timer.start(wait_time)
 
 func _on_grill_timer_timeout():
-	grill_results.text = current_grill.name + " Complete"
+	BuildingList.grill.timer_complete()
+
+func _on_building_list_food_prepared(food, building):
+	grill_results.text = food.name + " Complete"
 	grill_results.disabled = false
 
 func _on_grill_results_button_pressed():
-	if (not Inventory.is_currently_holding_item()):
-		Inventory.set_current_item(current_grill)
-		current_grill = null
+	BuildingList.grill.finish()
+
+func _on_building_list_finish_creation(food, building):
+	grill_results.disabled = true
+	grill_results.visible = false
 
 func _on_inventory_current_item_changed(food):
 	if (food != null):
@@ -111,7 +115,3 @@ func on_building_list_ingredient_list_changed(ingredients, building):
 	else:
 		grill_items.text = ""
 		grill_items.visible = false
-
-func _on_building_list_food_prepared(food, building):
-	grill_results.text = food.name + " Complete"
-	grill_results.disabled = false

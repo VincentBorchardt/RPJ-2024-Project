@@ -2,7 +2,10 @@ extends Node
 
 signal prepare_food(food, building)
 signal ingredient_list_changed(ingredients, building)
+signal start_building_timer(wait_time, building)
 signal food_prepared(food, building)
+signal finish_creation(food, building)
+
 
 var grill : Building
 
