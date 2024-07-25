@@ -1,8 +1,5 @@
 extends Control
 
-var field1 : Food = null
-var field2 : Food = null
-
 # in the final UI these will all be in different scripts,
 # probably corresponding to their containers
 @onready var current_item_label = $InventoryContainer/CurrentItem
@@ -25,37 +22,37 @@ func _ready():
 	BuildingList.start_building_timer.connect(_on_building_list_start_building_timer)
 	BuildingList.food_prepared.connect(_on_building_list_food_prepared)
 	BuildingList.finish_creation.connect(_on_building_list_finish_creation)
+	FieldList.start_planting.connect(_on_field_list_start_planting)
+	FieldList.start_timer.connect(_on_field_list_start_timer)
+	FieldList.field_ready.connect(_on_field_list_field_ready)
+	FieldList.finish_harvest.connect(_on_field_list_finish_creation)
 
-func plant_field1(food):
-	field1 = food
+# FIELD STUFF
+func _on_beef_button_pressed():
+	FieldList.field1.plant_field(FoodList.beef)
+
+func _on_field_list_start_planting(food, field):
 	field1_button.text = food.name + " Growing"
 	field1_button.visible = true
-	field1_timer.start(food.time_to_complete)
 
-func _on_bun_button_pressed():
-	# TODO move these checks and similar ones into Inventory,
-	# problem is that some like fields do other things
-	print("bun button pressed")
-	if not Inventory.is_currently_holding_item():
-		Inventory.set_current_item(FoodList.bun)
-
-func _on_inventory_0_pressed():
-	Inventory.take_item_from_slot(0)
-
-func _on_beef_button_pressed():
-	if field1 == null:
-		plant_field1(FoodList.beef)
+func _on_field_list_start_timer(wait_time):
+	field1_timer.start(wait_time)
 
 func _on_field_1_timer_timeout():
-	field1_button.text = field1.name + " Complete"
+	FieldList.field1.timer_complete()
+
+func _on_field_list_field_ready(food, field):
+	field1_button.text = food.name + " Complete"
 	field1_button.disabled = false
 
 func _on_field_1_pressed():
-	if (not Inventory.is_currently_holding_item()):
-		Inventory.set_current_item(field1)
-		field1_button.disabled = true
-		field1_button.visible = false
+	FieldList.field1.harvest_field()
 
+func _on_field_list_finish_creation(food, field):
+	field1_button.disabled = true
+	field1_button.visible = false
+
+# GRILL STUFF
 func _on_grill_place_button_pressed():
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.get_current_item()
@@ -83,6 +80,17 @@ func _on_grill_results_button_pressed():
 func _on_building_list_finish_creation(food, building):
 	grill_results.disabled = true
 	grill_results.visible = false
+
+# INVENTORY STUFF
+func _on_bun_button_pressed():
+	# TODO move these checks and similar ones into Inventory,
+	# problem is that some like fields do other things
+	print("bun button pressed")
+	if not Inventory.is_currently_holding_item():
+		Inventory.set_current_item(FoodList.bun)
+
+func _on_inventory_0_pressed():
+	Inventory.take_item_from_slot(0)
 
 func _on_inventory_current_item_changed(food):
 	if (food != null):

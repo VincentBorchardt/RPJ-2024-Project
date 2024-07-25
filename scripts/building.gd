@@ -6,8 +6,6 @@ var food_preparable : Array = []
 var current_creation : Food = null
 var current_ingredients : Array = []
 
-#@onready var building_timer = $BuildingTimer
-
 func _init(label, buyable, makeable, picture):
 	placeable_name = label
 	food_available = buyable
@@ -39,12 +37,6 @@ func array_contains_array (big, small):
 		if !big.has(element):
 			return false
 	return true
-
-func create_timer(wait_time):
-	print(wait_time)
-	print("start")
-	await get_tree().create_timer(wait_time)
-	print("end")
 
 func timer_complete():
 	print("timer ended")
