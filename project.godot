@@ -18,9 +18,13 @@ config/icon="res://icon.svg"
 
 FoodList="*res://scripts/food_list.gd"
 BuildingList="*res://scripts/building_list.gd"
-SignalBus="*res://scripts/signal_bus.gd"
 Inventory="*res://scripts/inventory.gd"
 FieldList="*res://scripts/field_list.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [dotnet]
 
