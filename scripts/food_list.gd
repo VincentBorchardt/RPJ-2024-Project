@@ -4,9 +4,6 @@ var beef : Food
 var bun : Food
 var hamburger : Food
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	beef = Food.new(
 		"Beef", 1, 5, preload("res://assets/sprites/test/tile_0104.png"),
@@ -17,9 +14,4 @@ func _ready():
 	hamburger = Food.new(
 		"Hamburger", 0, 5, preload("res://assets/sprites/test/tile_0108.png"),
 		[beef, bun], 10, preload("res://assets/sprites/test/tile_0109.png"))
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

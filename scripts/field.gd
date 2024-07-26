@@ -2,6 +2,10 @@ class_name Field extends Placeable
 
 var current_creation = null
 
+func _init(field_name, starting_texture):
+	placeable_name = field_name
+	base_texture = starting_texture
+
 func plant_field(food):
 	if current_creation == null:
 		current_creation = food

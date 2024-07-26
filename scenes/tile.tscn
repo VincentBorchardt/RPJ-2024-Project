@@ -22,3 +22,5 @@ texture = ExtResource("3_hkxma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3q717")
+
+[node name="PlaceableTimer" type="Timer" parent="."]

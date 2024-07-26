@@ -8,14 +8,6 @@ var inventory : Dictionary = {}
 
 var current_hold_item : Food = null
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func is_currently_holding_item():
 	return (current_hold_item != null)
 
@@ -49,3 +41,7 @@ func fill_inventory_slot(slot, food):
 func empty_inventory_slot(slot):
 	inventory.erase(slot)
 	inventory_slot_changed.emit(slot, null)
+
+func trash_current_item():
+	if is_currently_holding_item():
+		set_current_item(null)

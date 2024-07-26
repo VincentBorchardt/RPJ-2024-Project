@@ -29,3 +29,10 @@ offset_bottom = 720.0
 [node name="TrashButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Trash"
+
+[node name="BuildModeButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Toggle Build Mode"
+
+[connection signal="pressed" from="VBoxContainer2/TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
