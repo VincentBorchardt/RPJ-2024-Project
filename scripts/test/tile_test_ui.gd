@@ -4,6 +4,8 @@ extends Control
 @onready var build_buttons = $VBoxContainer2/BuildButtonBox
 @onready var current_placeable_label = $VBoxContainer2/BuildButtonBox/CurrentPlaceable
 
+# TODO subclass Button to add a Food field?
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)

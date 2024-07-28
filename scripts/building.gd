@@ -12,6 +12,14 @@ func _init(label, buyable, makeable, picture):
 	food_preparable = makeable
 	base_texture = picture
 
+# TODO This smells like these should be two different classes,
+# even if the container building code is relatively light (mostly a signal to UI stuff)
+func is_prep_building():
+	return (not food_preparable.is_empty())
+
+func is_container_building():
+	return (not food_available.is_empty())
+
 func add_food(food):
 	current_ingredients.append(food)
 	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
@@ -50,3 +58,6 @@ func finish():
 
 func activate_placeable(tile):
 	print("building placeable activated")
+	if Inventory.is_currently_holding_item() and is_prep_building():
+		var current = Inventory.take_current_item()
+		add_food(current)

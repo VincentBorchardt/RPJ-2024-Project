@@ -3,7 +3,6 @@ extends Node
 signal current_item_changed(food)
 signal inventory_slot_changed(slot, food)
 
-# TODO change this to a dictionary
 var inventory : Dictionary = {}
 
 var current_hold_item : Food = null
@@ -14,6 +13,13 @@ func is_currently_holding_item():
 func get_current_item():
 	return current_hold_item
 
+func take_current_item():
+	assert(current_hold_item != null)
+	var current = current_hold_item
+	set_current_item(null)
+	return current
+
+# TODO turn this into a proper setter with the emit
 func set_current_item(food):
 	current_hold_item = food
 	# change this to emit a different signal if null?
