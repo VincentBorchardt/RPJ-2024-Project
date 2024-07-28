@@ -15,4 +15,9 @@ func _process(delta):
 	pass
 
 func activate_placeable(tile):
-	print("function from base placeable, should never be activated alone")
+	assert(false, "base placeable activate_placeable called")
+	pass
+
+func timer_complete():
+	assert(false, "base placeable timer_complete called")
+	pass
