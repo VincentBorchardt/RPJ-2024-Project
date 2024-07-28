@@ -54,6 +54,8 @@ func _on_field_list_finish_creation(food, field):
 
 # GRILL STUFF
 func _on_grill_place_button_pressed():
+	# TODO not sure if I should be pulling this directly from Inventory in UI
+	# Move stuff into Building?
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.get_current_item()
 		BuildingList.grill.add_food(current)

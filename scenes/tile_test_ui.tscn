@@ -34,5 +34,23 @@ text = "Trash"
 layout_mode = 2
 text = "Toggle Build Mode"
 
+[node name="BuildButtonBox" type="VBoxContainer" parent="VBoxContainer2"]
+visible = false
+layout_mode = 2
+
+[node name="BuildGrillButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+layout_mode = 2
+text = "Build Grill"
+
+[node name="BuildFieldButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+layout_mode = 2
+text = "Build Field"
+
+[node name="CurrentPlaceable" type="Label" parent="VBoxContainer2/BuildButtonBox"]
+visible = false
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer2/TrashButton" to="." method="_on_trash_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]

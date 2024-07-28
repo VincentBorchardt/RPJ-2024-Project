@@ -11,6 +11,8 @@ var grill : Building
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO This should probably be a generic grill so multiple can be placed,
+	# not sure how to do that
 	grill = Building.new("Grill", [],
 		[FoodList.hamburger], preload("res://assets/sprites/test/tile_0112.png"))
 

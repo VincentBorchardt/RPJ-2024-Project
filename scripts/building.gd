@@ -47,3 +47,6 @@ func finish():
 		Inventory.set_current_item(current_creation)
 		BuildingList.finish_creation.emit(current_creation, self)
 		current_creation = null
+
+func activate_placeable(tile):
+	print("building placeable activated")
