@@ -37,7 +37,6 @@ func array_contains_array (big, small):
 	return true
 
 func timer_complete():
-	print("timer ended")
 	BuildingList.food_prepared.emit(current_creation, self)
 
 func finish():
@@ -47,9 +46,8 @@ func finish():
 		current_creation = null
 
 func activate_placeable(tile):
-	print("building placeable activated")
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.take_current_item()
 		add_food(current)
 	else:
-		pass
+		BuildingList.show_ingredient_list.emit(current_ingredients, self)

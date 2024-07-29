@@ -15,6 +15,7 @@ func _ready():
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildingList.start_building_timer.connect(_on_placeable_list_start_timer)
+	BuildingList.show_ingredient_list.connect(_on_building_list_show_ingredient_list)
 	FieldList.start_timer.connect(_on_placeable_list_start_timer)
 
 func _on_build_mode_turn_build_mode_off():
@@ -43,3 +44,9 @@ func _on_placeable_list_start_timer(wait_time, building):
 
 func _on_placeable_timer_timeout():
 	tile_feature.timer_complete()
+
+func _on_building_list_show_ingredient_list(ingredients, building):
+	if building == tile_feature:
+		# TODO turn the highlight off whenever we close the placeable info
+		highlight.visible = true
+		BuildingList.show_placeable_info.emit(ingredients, building, self)

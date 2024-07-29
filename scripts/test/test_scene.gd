@@ -16,7 +16,7 @@ extends Control
 
 func _ready():
 	BuildingList.prepare_food.connect(_on_building_list_prepare_food)
-	BuildingList.ingredient_list_changed.connect(on_building_list_ingredient_list_changed)
+	BuildingList.ingredient_list_changed.connect(_on_building_list_ingredient_list_changed)
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
 	BuildingList.start_building_timer.connect(_on_building_list_start_building_timer)
@@ -54,12 +54,20 @@ func _on_field_list_finish_creation(food, field):
 
 # GRILL STUFF
 func _on_grill_place_button_pressed():
-	# TODO not sure if I should be pulling this directly from Inventory in UI
-	# Move stuff into Building?
 	if Inventory.is_currently_holding_item():
-		var current = Inventory.get_current_item()
+		var current = Inventory.take_current_item()
 		BuildingList.grill.add_food(current)
-		Inventory.set_current_item(null)
+
+func _on_building_list_ingredient_list_changed(ingredients, building):
+	if (not ingredients.is_empty()):
+		var item_string = ""
+		for food in ingredients:
+			item_string += food.name + "\n"
+		grill_items.text = item_string
+		grill_items.visible = true
+	else:
+		grill_items.text = ""
+		grill_items.visible = false
 
 func _on_building_list_prepare_food(food, building):
 		print("making hamburger")
@@ -114,14 +122,3 @@ func _on_inventory_inventory_slot_changed(slot, food):
 			inventory0_button.text = name
 		_:
 			print("slot not connected")
-
-func on_building_list_ingredient_list_changed(ingredients, building):
-	if (not ingredients.is_empty()):
-		var item_string = ""
-		for food in ingredients:
-			item_string += food.name + "\n"
-		grill_items.text = item_string
-		grill_items.visible = true
-	else:
-		grill_items.text = ""
-		grill_items.visible = false
