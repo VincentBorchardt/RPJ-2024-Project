@@ -5,6 +5,9 @@ var food_preparable : Array = []
 var current_creation : Food = null
 var current_ingredients : Array = []
 
+var currently_prepping = false
+var food_ready = false
+
 func _init(label, makeable, picture):
 	placeable_name = label
 	food_preparable = makeable
@@ -23,11 +26,11 @@ func check_prepare_food():
 			prepare_food(food)
 
 func prepare_food(food):
-	print(self.placeable_name + "prep")
 	for entry in food.components:
 		current_ingredients.erase(entry)
 	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
 	current_creation = food
+	currently_prepping = true
 	BuildingList.prepare_food.emit(food, self)
 	# TODO I really don't like this, but I don't see another way to call a timer here
 	# Not clear where I should put this timer, but the signal can be connected anywhere (Tile?)
@@ -40,6 +43,7 @@ func array_contains_array (big, small):
 	return true
 
 func timer_complete():
+	food_ready = true
 	BuildingList.food_prepared.emit(current_creation, self)
 
 func finish():
@@ -47,6 +51,8 @@ func finish():
 		Inventory.set_current_item(current_creation)
 		BuildingList.finish_creation.emit(current_creation, self)
 		current_creation = null
+		currently_prepping = false
+		food_ready = false
 
 func activate_placeable(tile):
 	if Inventory.is_currently_holding_item():

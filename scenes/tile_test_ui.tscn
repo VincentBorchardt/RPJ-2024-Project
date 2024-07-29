@@ -96,7 +96,8 @@ layout_mode = 2
 [node name="PrepLabel" type="Label" parent="PlaceableBox/PrepBox"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PlaceableBox/PrepBox"]
+[node name="PrepButton" type="Button" parent="PlaceableBox/PrepBox"]
+visible = false
 layout_mode = 2
 text = "Test"
 

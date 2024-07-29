@@ -15,7 +15,7 @@ extends Control
 @onready var placeable_box = $PlaceableBox
 @onready var prep_box = $PlaceableBox/PrepBox
 @onready var prep_label = $PlaceableBox/PrepBox/PrepLabel
-@onready var prep_button = $PlaceableBox/PrepBox/Button
+@onready var prep_button = $PlaceableBox/PrepBox/PrepButton
 @onready var storage_box = $PlaceableBox/StorageBox
 
 
@@ -109,6 +109,7 @@ func _on_build_mode_selection_updated(placeable):
 
 # PLACEABLE BOX STUFF
 func _on_show_placeable_info(ingredients, building, tile):
+	# TODO This function is a mess, clean it up in the final UI
 	prep_box.visible = false
 	storage_box.visible = false
 	if building is PrepBuilding:
@@ -116,6 +117,15 @@ func _on_show_placeable_info(ingredients, building, tile):
 		for food in ingredients:
 			item_string += food.name + "\n"
 		prep_label.text = item_string
+		if building.currently_prepping:
+			prep_button.text = building.current_creation.name + " Preparing"
+			if building.food_ready:
+				prep_button.disabled = false
+			else:
+				prep_button.disabled = true
+			prep_button.visible = true
+		else:
+			prep_button.visible = false
 		prep_box.visible = true
 	elif building is StorageBuilding:
 		# TODO put a label for the type of building that won't get eaten up by removing children
