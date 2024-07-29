@@ -40,9 +40,11 @@ func _on_update_tile_feature():
 	placeable_icon.texture = tile_feature.base_texture
 
 func _on_placeable_list_start_timer(wait_time, building):
-	placeable_timer.start(wait_time)
+	if(tile_feature == building):
+		placeable_timer.start(wait_time)
 
 func _on_placeable_timer_timeout():
+	print(tile_feature.placeable_name)
 	tile_feature.timer_complete()
 
 func _on_building_list_show_ingredient_list(ingredients, building):

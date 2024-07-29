@@ -16,10 +16,6 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 480.0
 
-[node name="BeefButton" type="Button" parent="FoodBox"]
-layout_mode = 2
-text = "Beef Base"
-
 [node name="InventoryBox" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_top = 480.0

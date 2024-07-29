@@ -2,7 +2,7 @@ class_name FoodButton extends Button
 
 signal pressed_with_food(food)
 
-var attached_food : Food
+@export var attached_food : Food = null
 
 func _init(food):
 	attached_food = food

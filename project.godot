@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 FoodList="*res://scripts/food_list.gd"
 BuildingList="*res://scripts/building_list.gd"
 Inventory="*res://scripts/inventory.gd"
-FieldList="*res://scripts/field_list.gd"
+FieldList="*res://scripts/test/field_list.gd"
 BuildMode="*res://scripts/build_mode.gd"
 
 [display]

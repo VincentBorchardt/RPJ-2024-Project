@@ -13,18 +13,19 @@ signal show_placeable_info(ingredients, building, tile)
 
 var grill : PrepBuilding
 var warehouse : StorageBuilding
+var field : PrepBuilding
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# TODO This should probably be a generic grill so multiple can be placed,
-	# not sure how to do that, and where to put the signals when I do
-	# probably combines with not having separate field/building lists
+	# not sure if I need to do that or how to do that, check later
 	grill = PrepBuilding.new("Grill", [FoodList.hamburger],
-		preload("res://assets/sprites/test/tile_0112.png"))
+		preload("res://assets/sprites/test/tile_0112.png")
+	)
 	warehouse = StorageBuilding.new("Warehouse", [FoodList.bun],
-		preload("res://assets/sprites/test/tile_0111.png"), true)
+		preload("res://assets/sprites/test/tile_0111.png"), true
+	)
+	field = PrepBuilding.new("Field", [FoodList.beef],
+		preload("res://assets/sprites/test/tile_0109.png")
+	)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

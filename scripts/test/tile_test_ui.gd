@@ -1,6 +1,8 @@
 extends Control
 
 # TODO figure out if I want to separate UI signals here for what's still just a test
+@onready var food_box = $FoodBox
+
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
 @onready var inventory_slot_1 = $InventoryBox/InventorySlot1
 @onready var inventory_slot_2 = $InventoryBox/InventorySlot2
@@ -16,22 +18,28 @@ extends Control
 @onready var prep_button = $PlaceableBox/PrepBox/Button
 @onready var storage_box = $PlaceableBox/StorageBox
 
-# TODO subclass Button to add a Food field?
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO This doesn't work at all if you try to add a FoodButton in the scene tree
+	# Need to investigate this, it won't scale at all for lots of foods
+	var cow_button = FoodButton.new(FoodList.cow)
+	cow_button.pressed_with_food.connect(_on_food_button_pressed)
+	food_box.add_child(cow_button)
+	
+	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
+	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+	
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
-	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
-	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
 	# TODO this initial design doesn't account for non-producers
 	if not Inventory.is_currently_holding_item():
 		Inventory.set_current_item(food)
+
 
 # INVENTORY BOX STUFF
 func _on_inventory_slot_0_pressed():
@@ -87,7 +95,7 @@ func _on_build_grill_button_pressed():
 	BuildMode.select_placeable(BuildingList.grill)
 
 func _on_build_field_button_pressed():
-	BuildMode.select_placeable(FieldList.field1)
+	BuildMode.select_placeable(BuildingList.field)
 
 func _on_build_warehouse_button_pressed():
 	BuildMode.select_placeable(BuildingList.warehouse)
@@ -122,4 +130,3 @@ func _on_show_placeable_info(ingredients, building, tile):
 		storage_box.visible = true
 	# TODO other types of placeables, maybe even turning into a case with functions split out
 	placeable_box.visible = true
-

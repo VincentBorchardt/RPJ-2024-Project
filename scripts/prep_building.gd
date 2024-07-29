@@ -11,6 +11,8 @@ func _init(label, makeable, picture):
 	base_texture = picture
 
 func add_food(food):
+	# TODO this should check if the added food actually can make any of the food
+	# the building makes and reject if it can't?
 	current_ingredients.append(food)
 	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
 	check_prepare_food()
@@ -21,6 +23,7 @@ func check_prepare_food():
 			prepare_food(food)
 
 func prepare_food(food):
+	print(self.placeable_name + "prep")
 	for entry in food.components:
 		current_ingredients.erase(entry)
 	BuildingList.ingredient_list_changed.emit(current_ingredients, self)
