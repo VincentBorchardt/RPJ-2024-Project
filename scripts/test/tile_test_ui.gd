@@ -1,8 +1,14 @@
 extends Control
 
 # TODO figure out if I want to separate UI signals here for what's still just a test
-@onready var build_buttons = $VBoxContainer2/BuildButtonBox
-@onready var current_placeable_label = $VBoxContainer2/BuildButtonBox/CurrentPlaceable
+@onready var inventory_slot_0 = $InventoryBox/InventorySlot0
+@onready var inventory_slot_1 = $InventoryBox/InventorySlot1
+@onready var inventory_slot_2 = $InventoryBox/InventorySlot2
+@onready var current_item_label = $InventoryBox/CurrentItemLabel
+@onready var trash_button = $InventoryBox/TrashButton
+
+@onready var build_buttons = $BuildBox/BuildButtonBox
+@onready var current_placeable_label = $BuildBox/BuildButtonBox/CurrentPlaceable
 
 @onready var placeable_box = $PlaceableBox
 @onready var prep_box = $PlaceableBox/PrepBox
@@ -18,10 +24,56 @@ func _ready():
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
+	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
+	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+
+# FOOD BOX STUFF
+func _on_food_button_pressed(food):
+	# TODO this initial design doesn't account for non-producers
+	if not Inventory.is_currently_holding_item():
+		Inventory.set_current_item(food)
+
+# INVENTORY BOX STUFF
+func _on_inventory_slot_0_pressed():
+	Inventory.take_item_from_slot(0)
+
+func _on_inventory_slot_1_pressed():
+	Inventory.take_item_from_slot(1)
+
+func _on_inventory_slot_2_pressed():
+	Inventory.take_item_from_slot(2)
+
+func _on_inventory_current_item_changed(food):
+	if (food != null):
+		print("setting current item")
+		current_item_label.text = "Current Item: " + food.name
+		current_item_label.visible = true
+		trash_button.visible = true
+	else:
+		print("removing current item")
+		current_item_label.visible = false
+		trash_button.visible = false
+
+func _on_inventory_inventory_slot_changed(slot, food):
+	var name = "Empty"
+	if food != null:
+		name = food.name
+	#else:
+		#name = "Empty"
+	match slot:
+		0: 
+			inventory_slot_0.text = name
+		1:
+			inventory_slot_1.text = name
+		2:
+			inventory_slot_2.text = name
+		_:
+			print("slot not connected")
 
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()
 
+# BUILD BOX STUFF
 func _on_build_mode_button_pressed():
 	BuildMode.toggle_build_mode()
 
@@ -47,6 +99,7 @@ func _on_build_mode_selection_updated(placeable):
 		current_placeable_label.visible = true
 		current_placeable_label.text = "Placing " + placeable.placeable_name
 
+# PLACEABLE BOX STUFF
 func _on_show_placeable_info(ingredients, building, tile):
 	prep_box.visible = false
 	storage_box.visible = false
@@ -69,9 +122,4 @@ func _on_show_placeable_info(ingredients, building, tile):
 		storage_box.visible = true
 	# TODO other types of placeables, maybe even turning into a case with functions split out
 	placeable_box.visible = true
-
-func _on_food_button_pressed(food):
-	# TODO this initial design doesn't account for non-producers
-	if not Inventory.is_currently_holding_item():
-		Inventory.set_current_item(food)
 

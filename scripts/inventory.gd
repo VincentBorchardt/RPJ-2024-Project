@@ -34,7 +34,7 @@ func take_item_from_slot(slot):
 		item_to_be_current = get_inventory_slot(slot)
 		empty_inventory_slot(slot)
 	if is_currently_holding_item():
-		fill_inventory_slot(0, get_current_item())
+		fill_inventory_slot(slot, get_current_item())
 	set_current_item(item_to_be_current)
 
 func get_inventory_slot(slot):

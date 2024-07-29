@@ -11,46 +11,77 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q1e2d")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="FoodBox" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 256.0
-offset_bottom = 720.0
+offset_bottom = 480.0
 
-[node name="BeefButton" type="Button" parent="VBoxContainer"]
+[node name="BeefButton" type="Button" parent="FoodBox"]
 layout_mode = 2
 text = "Beef Base"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="InventoryBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 480.0
+offset_right = 256.0
+offset_bottom = 720.0
+
+[node name="InventoryLabel" type="Label" parent="InventoryBox"]
+layout_mode = 2
+text = "Inventory
+"
+
+[node name="InventorySlot0" type="Button" parent="InventoryBox"]
+layout_mode = 2
+text = "Empty"
+
+[node name="InventorySlot1" type="Button" parent="InventoryBox"]
+layout_mode = 2
+text = "Empty
+"
+
+[node name="InventorySlot2" type="Button" parent="InventoryBox"]
+layout_mode = 2
+text = "Empty
+"
+
+[node name="CurrentItemLabel" type="Label" parent="InventoryBox"]
+visible = false
+layout_mode = 2
+text = "Default"
+
+[node name="TrashButton" type="Button" parent="InventoryBox"]
+visible = false
+layout_mode = 2
+text = "Trash"
+
+[node name="BuildBox" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1024.0
 offset_right = 1280.0
 offset_bottom = 480.0
 
-[node name="TrashButton" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
-text = "Trash"
-
-[node name="BuildModeButton" type="Button" parent="VBoxContainer2"]
+[node name="BuildModeButton" type="Button" parent="BuildBox"]
 layout_mode = 2
 text = "Toggle Build Mode"
 
-[node name="BuildButtonBox" type="VBoxContainer" parent="VBoxContainer2"]
+[node name="BuildButtonBox" type="VBoxContainer" parent="BuildBox"]
 visible = false
 layout_mode = 2
 
-[node name="BuildGrillButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+[node name="BuildGrillButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Grill"
 
-[node name="BuildFieldButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+[node name="BuildFieldButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Field"
 
-[node name="BuildWarehouseButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+[node name="BuildWarehouseButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Warehouse"
 
-[node name="CurrentPlaceable" type="Label" parent="VBoxContainer2/BuildButtonBox"]
+[node name="CurrentPlaceable" type="Label" parent="BuildBox/BuildButtonBox"]
 visible = false
 layout_mode = 2
 
@@ -77,8 +108,11 @@ text = "Test"
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="VBoxContainer2/TrashButton" to="." method="_on_trash_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]
+[connection signal="pressed" from="InventoryBox/InventorySlot0" to="." method="_on_inventory_slot_0_pressed"]
+[connection signal="pressed" from="InventoryBox/InventorySlot1" to="." method="_on_inventory_slot_1_pressed"]
+[connection signal="pressed" from="InventoryBox/InventorySlot2" to="." method="_on_inventory_slot_2_pressed"]
+[connection signal="pressed" from="InventoryBox/TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="pressed" from="BuildBox/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
+[connection signal="pressed" from="BuildBox/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
+[connection signal="pressed" from="BuildBox/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
+[connection signal="pressed" from="BuildBox/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]
