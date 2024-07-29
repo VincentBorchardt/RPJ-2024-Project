@@ -49,5 +49,8 @@ func _on_show_placeable_info(ingredients, building, tile):
 			item_string += food.name + "\n"
 		prep_label.text = item_string
 		prep_box.visible = true
+		# Test for food button and buttons via code in general
+		#var button = FoodButton.new(FoodList.bun)
+		#prep_box.add_child(button)
 	elif building is StorageBuilding:
 		print("storage building WIP")
