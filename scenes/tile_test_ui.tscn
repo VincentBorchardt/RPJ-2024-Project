@@ -46,11 +46,16 @@ text = "Build Grill"
 layout_mode = 2
 text = "Build Field"
 
+[node name="BuildWarehouseButton" type="Button" parent="VBoxContainer2/BuildButtonBox"]
+layout_mode = 2
+text = "Build Warehouse"
+
 [node name="CurrentPlaceable" type="Label" parent="VBoxContainer2/BuildButtonBox"]
 visible = false
 layout_mode = 2
 
 [node name="PlaceableBox" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1024.0
 offset_top = 480.0
@@ -76,3 +81,4 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer2/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]

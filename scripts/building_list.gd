@@ -12,6 +12,7 @@ signal show_ingredient_list(ingredients, building)
 signal show_placeable_info(ingredients, building, tile)
 
 var grill : PrepBuilding
+var warehouse : StorageBuilding
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +21,8 @@ func _ready():
 	# probably combines with not having separate field/building lists
 	grill = PrepBuilding.new("Grill", [FoodList.hamburger],
 		preload("res://assets/sprites/test/tile_0112.png"))
+	warehouse = StorageBuilding.new("Warehouse", [FoodList.bun],
+		preload("res://assets/sprites/test/tile_0111.png"), true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
