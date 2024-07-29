@@ -24,6 +24,7 @@ texture = ExtResource("3_hkxma")
 shape = SubResource("RectangleShape2D_3q717")
 
 [node name="PlaceableTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="update_tile_feature" from="." to="." method="_on_update_tile_feature"]

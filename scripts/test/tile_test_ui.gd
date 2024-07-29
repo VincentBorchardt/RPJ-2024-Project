@@ -16,8 +16,8 @@ extends Control
 @onready var placeable_box = $PlaceableBox
 @onready var prep_box = $PlaceableBox/PrepBox
 @onready var prep_label = $PlaceableBox/PrepBox/PrepLabel
-@onready var prep_button = $PlaceableBox/PrepBox/PrepButton
 @onready var storage_box = $PlaceableBox/StorageBox
+var prep_button : PlaceableButton
 
 
 func _ready():
@@ -35,6 +35,11 @@ func _ready():
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
+	
+	prep_button = PlaceableButton.new(null)
+	prep_button.visible = false
+	prep_button.pressed_with_placeable.connect(_on_placeable_button_pressed)
+	prep_box.add_child(prep_button)
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
@@ -121,10 +126,12 @@ func _on_show_placeable_info(ingredients, building, tile):
 		prep_label.text = item_string
 		# TODO The way this is built it doesn't update until you click on the placeable again
 		if building.currently_prepping:
-			prep_button.text = building.current_creation.name + " Preparing"
+			prep_button.attached_placeable = building
 			if building.food_ready:
+				prep_button.text = building.current_creation.name + " Complete"
 				prep_button.disabled = false
 			else:
+				prep_button.text = building.current_creation.name + " Preparing"
 				prep_button.disabled = true
 			prep_button.visible = true
 		else:
@@ -143,3 +150,7 @@ func _on_show_placeable_info(ingredients, building, tile):
 		storage_box.visible = true
 	# TODO other types of placeables, maybe even turning into a case with functions split out
 	placeable_box.visible = true
+
+func _on_placeable_button_pressed(placeable):
+	if placeable is PrepBuilding:
+		placeable.finish()
