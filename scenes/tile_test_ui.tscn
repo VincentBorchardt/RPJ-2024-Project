@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rq3efqdy66xw"]
+[gd_scene load_steps=3 format=3 uid="uid://rq3efqdy66xw"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_ui.gd" id="1_q1e2d"]
+[ext_resource type="PackedScene" uid="uid://b44j75qn2rokx" path="res://scenes/food_button.tscn" id="2_470cb"]
 
 [node name="TileTestUI" type="Control"]
 layout_mode = 3
@@ -15,6 +16,10 @@ script = ExtResource("1_q1e2d")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 480.0
+
+[node name="FoodButton" parent="FoodBox" instance=ExtResource("2_470cb")]
+visible = false
+layout_mode = 2
 
 [node name="InventoryBox" type="VBoxContainer" parent="."]
 layout_mode = 0

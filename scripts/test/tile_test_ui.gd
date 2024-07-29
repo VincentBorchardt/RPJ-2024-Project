@@ -2,6 +2,7 @@ extends Control
 
 # TODO figure out if I want to separate UI signals here for what's still just a test
 @onready var food_box = $FoodBox
+@onready var food_button = $FoodBox/FoodButton
 
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
 @onready var inventory_slot_1 = $InventoryBox/InventorySlot1
@@ -25,6 +26,7 @@ func _ready():
 	var cow_button = FoodButton.new(FoodList.cow)
 	cow_button.pressed_with_food.connect(_on_food_button_pressed)
 	food_box.add_child(cow_button)
+	#food_button.attached_food = FoodList.bun
 	
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
@@ -117,6 +119,7 @@ func _on_show_placeable_info(ingredients, building, tile):
 		for food in ingredients:
 			item_string += food.name + "\n"
 		prep_label.text = item_string
+		# TODO The way this is built it doesn't update until you click on the placeable again
 		if building.currently_prepping:
 			prep_button.text = building.current_creation.name + " Preparing"
 			if building.food_ready:

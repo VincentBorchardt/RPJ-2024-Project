@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44j75qn2rokx"]
+
+[ext_resource type="Script" path="res://scripts/food_button.gd" id="1_g8jat"]
+
+[node name="FoodButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_g8jat")
