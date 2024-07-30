@@ -2,7 +2,7 @@ extends Control
 
 # TODO figure out if I want to separate UI signals here for what's still just a test
 @onready var food_box = $FoodBox
-@onready var food_button = $FoodBox/FoodButton
+@onready var cow_button = $FoodBox/CowButton
 
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
 @onready var inventory_slot_1 = $InventoryBox/InventorySlot1
@@ -17,16 +17,13 @@ extends Control
 @onready var prep_box = $PlaceableBox/PrepBox
 @onready var prep_label = $PlaceableBox/PrepBox/PrepLabel
 @onready var storage_box = $PlaceableBox/StorageBox
-var prep_button : PlaceableButton
+@onready var prep_button = $PlaceableBox/PrepBox/PrepButton
 
 
 func _ready():
 	# TODO This doesn't work at all if you try to add a FoodButton in the scene tree
 	# Need to investigate this, it won't scale at all for lots of foods
-	var cow_button = FoodButton.new(FoodList.cow)
-	cow_button.pressed_with_food.connect(_on_food_button_pressed)
-	food_box.add_child(cow_button)
-	#food_button.attached_food = FoodList.bun
+	cow_button.attached_food = FoodList.cow
 	
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
@@ -35,11 +32,6 @@ func _ready():
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
-	
-	prep_button = PlaceableButton.new(null)
-	prep_button.visible = false
-	prep_button.pressed_with_placeable.connect(_on_placeable_button_pressed)
-	prep_box.add_child(prep_button)
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
@@ -144,7 +136,8 @@ func _on_show_placeable_info(ingredients, building, tile):
 			storage_box.remove_child(node)
 			node.queue_free()
 		for food in ingredients:
-			var button = FoodButton.new(food)
+			var button = FoodButton.new()
+			button.attached_food = food
 			button.pressed_with_food.connect(_on_food_button_pressed)
 			storage_box.add_child(button)
 		storage_box.visible = true

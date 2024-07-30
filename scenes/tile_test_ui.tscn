@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://rq3efqdy66xw"]
+[gd_scene load_steps=4 format=3 uid="uid://rq3efqdy66xw"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_ui.gd" id="1_q1e2d"]
 [ext_resource type="PackedScene" uid="uid://b44j75qn2rokx" path="res://scenes/food_button.tscn" id="2_470cb"]
+[ext_resource type="Script" path="res://scripts/placeable_button.gd" id="3_gbu8b"]
 
 [node name="TileTestUI" type="Control"]
 layout_mode = 3
@@ -17,8 +18,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 480.0
 
-[node name="FoodButton" parent="FoodBox" instance=ExtResource("2_470cb")]
-visible = false
+[node name="CowButton" parent="FoodBox" instance=ExtResource("2_470cb")]
 layout_mode = 2
 
 [node name="InventoryBox" type="VBoxContainer" parent="."]
@@ -105,11 +105,13 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 text = "Test"
+script = ExtResource("3_gbu8b")
 
 [node name="StorageBox" type="VBoxContainer" parent="PlaceableBox"]
 visible = false
 layout_mode = 2
 
+[connection signal="pressed_with_food" from="FoodBox/CowButton" to="." method="_on_food_button_pressed"]
 [connection signal="pressed" from="InventoryBox/InventorySlot0" to="." method="_on_inventory_slot_0_pressed"]
 [connection signal="pressed" from="InventoryBox/InventorySlot1" to="." method="_on_inventory_slot_1_pressed"]
 [connection signal="pressed" from="InventoryBox/InventorySlot2" to="." method="_on_inventory_slot_2_pressed"]
@@ -118,3 +120,4 @@ layout_mode = 2
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]
+[connection signal="pressed_with_placeable" from="PlaceableBox/PrepBox/PrepButton" to="." method="_on_placeable_button_pressed"]
