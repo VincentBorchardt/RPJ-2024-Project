@@ -11,6 +11,7 @@ extends Control
 @onready var trash_button = $InventoryBox/TrashButton
 
 @onready var build_buttons = $BuildBox/BuildButtonBox
+@onready var road_button = $BuildBox/BuildButtonBox/BuildRoadButton
 @onready var current_placeable_label = $BuildBox/BuildButtonBox/CurrentPlaceable
 
 @onready var placeable_box = $PlaceableBox
@@ -32,6 +33,11 @@ func _ready():
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
+	# TODO replace the other build buttons with PlaceableButton like this
+	# Maybe there's a way to condense the ceremony?
+	# But that would be obsolete with the resource overhaul
+	road_button.attached_placeable = BuildingList.road
+	road_button.text = "Build " + road_button.attached_placeable.placeable_name
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
@@ -90,6 +96,9 @@ func _on_build_mode_turn_build_mode_off():
 func _on_build_mode_turn_build_mode_on():
 	build_buttons.visible = true
 
+func _on_build_button_pressed(placeable):
+	BuildMode.select_placeable(placeable)
+
 func _on_build_grill_button_pressed():
 	BuildMode.select_placeable(BuildingList.grill)
 
@@ -147,3 +156,6 @@ func _on_show_placeable_info(ingredients, building, tile):
 func _on_placeable_button_pressed(placeable):
 	if placeable is PrepBuilding:
 		placeable.finish()
+
+
+

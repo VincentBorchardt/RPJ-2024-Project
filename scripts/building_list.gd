@@ -14,6 +14,7 @@ signal show_placeable_info(ingredients, building, tile)
 var grill : PrepBuilding
 var warehouse : StorageBuilding
 var field : PrepBuilding
+var road : Road
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,4 +29,5 @@ func _ready():
 	field = PrepBuilding.new("Field", [FoodList.beef],
 		preload("res://assets/sprites/test/tile_0109.png")
 	)
+	road = Road.new("Road", preload("res://assets/sprites/test/tile_0121.png"))
 

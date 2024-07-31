@@ -82,6 +82,10 @@ text = "Build Field"
 layout_mode = 2
 text = "Build Warehouse"
 
+[node name="BuildRoadButton" type="Button" parent="BuildBox/BuildButtonBox"]
+layout_mode = 2
+script = ExtResource("3_gbu8b")
+
 [node name="CurrentPlaceable" type="Label" parent="BuildBox/BuildButtonBox"]
 visible = false
 layout_mode = 2
@@ -120,4 +124,5 @@ layout_mode = 2
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]
+[connection signal="pressed_with_placeable" from="BuildBox/BuildButtonBox/BuildRoadButton" to="." method="_on_build_button_pressed"]
 [connection signal="pressed_with_placeable" from="PlaceableBox/PrepBox/PrepButton" to="." method="_on_placeable_button_pressed"]
