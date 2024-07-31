@@ -10,6 +10,8 @@ signal show_ingredient_list(ingredients, building)
 # TODO just threw this signal here, maybe should put all these back in a signal bus?
 
 signal show_placeable_info(ingredients, building, tile)
+signal open_tile(tile)
+signal block_tile(tile)
 
 var grill : PrepBuilding
 var warehouse : StorageBuilding
