@@ -12,6 +12,7 @@ signal update_tile_feature()
 		update_tile_feature.emit()
 
 func _ready():
+	add_to_group("Tiles")
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildingList.start_building_timer.connect(_on_placeable_list_start_timer)

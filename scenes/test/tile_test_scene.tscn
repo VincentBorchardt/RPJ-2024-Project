@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl2enin2kdhpt"]
+[gd_scene load_steps=5 format=3 uid="uid://dl2enin2kdhpt"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_scene.gd" id="1_gdbsu"]
 [ext_resource type="PackedScene" uid="uid://rq3efqdy66xw" path="res://scenes/test/tile_test_ui.tscn" id="2_v0ss1"]
 [ext_resource type="PackedScene" uid="uid://bev6mgo444j38" path="res://scenes/tile.tscn" id="3_hpq1o"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="3_nrk8f"]
 
 [node name="TileTestScene" type="Node2D"]
 script = ExtResource("1_gdbsu")
@@ -10,6 +11,7 @@ script = ExtResource("1_gdbsu")
 [node name="TileTestUI" parent="." instance=ExtResource("2_v0ss1")]
 
 [node name="Tiles" type="Node" parent="."]
+script = ExtResource("3_nrk8f")
 
 [node name="Tile" parent="Tiles" instance=ExtResource("3_hpq1o")]
 position = Vector2(288, 32)
@@ -60,49 +62,49 @@ position = Vector2(672, 96)
 position = Vector2(736, 96)
 
 [node name="Tile17" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(288, 159)
+position = Vector2(288, 160)
 
 [node name="Tile18" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(352, 159)
+position = Vector2(352, 160)
 
 [node name="Tile19" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(416, 159)
+position = Vector2(416, 160)
 
 [node name="Tile20" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(480, 159)
+position = Vector2(480, 160)
 
 [node name="Tile21" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(544, 159)
+position = Vector2(544, 160)
 
 [node name="Tile22" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(608, 159)
+position = Vector2(608, 160)
 
 [node name="Tile23" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(672, 159)
+position = Vector2(672, 160)
 
 [node name="Tile24" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(736, 159)
+position = Vector2(736, 160)
 
 [node name="Tile25" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(288, 223)
+position = Vector2(288, 224)
 
 [node name="Tile26" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(352, 223)
+position = Vector2(352, 224)
 
 [node name="Tile27" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(416, 223)
+position = Vector2(416, 224)
 
 [node name="Tile28" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(480, 223)
+position = Vector2(480, 224)
 
 [node name="Tile29" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(544, 223)
+position = Vector2(544, 224)
 
 [node name="Tile30" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(608, 223)
+position = Vector2(608, 224)
 
 [node name="Tile31" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(672, 223)
+position = Vector2(672, 224)
 
 [node name="Tile32" parent="Tiles" instance=ExtResource("3_hpq1o")]
-position = Vector2(736, 223)
+position = Vector2(736, 224)
