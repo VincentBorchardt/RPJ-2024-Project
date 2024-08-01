@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://tmxeklqyxoqm"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_3mfbj"]
+[ext_resource type="Texture2D" uid="uid://cpnapduq2s8sl" path="res://assets/sprites/test/tile_0096.png" id="1_ophee"]
+
+[resource]
+script = ExtResource("1_3mfbj")
+name = "Bun"
+base_price = 5
+time_to_complete = 10
+base_texture = ExtResource("1_ophee")
+components = Array[ExtResource("1_3mfbj")]([])

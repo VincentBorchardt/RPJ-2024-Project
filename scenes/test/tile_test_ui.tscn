@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://rq3efqdy66xw"]
+[gd_scene load_steps=9 format=3 uid="uid://rq3efqdy66xw"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_ui.gd" id="1_q1e2d"]
 [ext_resource type="PackedScene" uid="uid://b44j75qn2rokx" path="res://scenes/food_button.tscn" id="2_470cb"]
+[ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="3_2xh7s"]
 [ext_resource type="Script" path="res://scripts/placeable_button.gd" id="3_gbu8b"]
 [ext_resource type="Resource" uid="uid://6kpy82vxwyb0" path="res://resources/placeable/road.tres" id="4_qjs1w"]
+[ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="4_wq4ng"]
+[ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="5_orbvy"]
+[ext_resource type="Resource" uid="uid://c37unjfqlf04h" path="res://resources/placeable/warehouse.tres" id="6_bl3hl"]
 
 [node name="TileTestUI" type="Control"]
 layout_mode = 3
@@ -21,6 +25,8 @@ offset_bottom = 480.0
 
 [node name="CowButton" parent="FoodBox" instance=ExtResource("2_470cb")]
 layout_mode = 2
+text = "Cow"
+attached_food = ExtResource("3_2xh7s")
 
 [node name="InventoryBox" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -74,14 +80,20 @@ layout_mode = 2
 [node name="BuildGrillButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Grill"
+script = ExtResource("3_gbu8b")
+attached_placeable = ExtResource("4_wq4ng")
 
 [node name="BuildFieldButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Field"
+script = ExtResource("3_gbu8b")
+attached_placeable = ExtResource("5_orbvy")
 
 [node name="BuildWarehouseButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
 text = "Build Warehouse"
+script = ExtResource("3_gbu8b")
+attached_placeable = ExtResource("6_bl3hl")
 
 [node name="BuildRoadButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
@@ -125,7 +137,8 @@ layout_mode = 2
 [connection signal="pressed" from="InventoryBox/TrashButton" to="." method="_on_trash_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildModeButton" to="." method="_on_build_mode_button_pressed"]
 [connection signal="pressed" from="BuildBox/BuildButtonBox/BuildGrillButton" to="." method="_on_build_grill_button_pressed"]
-[connection signal="pressed" from="BuildBox/BuildButtonBox/BuildFieldButton" to="." method="_on_build_field_button_pressed"]
-[connection signal="pressed" from="BuildBox/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_warehouse_button_pressed"]
+[connection signal="pressed_with_placeable" from="BuildBox/BuildButtonBox/BuildGrillButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed_with_placeable" from="BuildBox/BuildButtonBox/BuildFieldButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed_with_placeable" from="BuildBox/BuildButtonBox/BuildWarehouseButton" to="." method="_on_build_button_pressed"]
 [connection signal="pressed_with_placeable" from="BuildBox/BuildButtonBox/BuildRoadButton" to="." method="_on_build_button_pressed"]
 [connection signal="pressed_with_placeable" from="PlaceableBox/PrepBox/PrepButton" to="." method="_on_placeable_button_pressed"]

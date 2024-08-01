@@ -22,8 +22,7 @@ extends Control
 
 
 func _ready():
-	print(road_button.text)
-	cow_button.attached_food = FoodList.cow
+	#cow_button.attached_food = FoodList.cow
 	
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
@@ -99,15 +98,6 @@ func _on_build_button_pressed(placeable):
 	print("build button pressed")
 	print(placeable.placeable_name)
 	BuildMode.select_placeable(placeable)
-
-func _on_build_grill_button_pressed():
-	BuildMode.select_placeable(BuildingList.grill)
-
-func _on_build_field_button_pressed():
-	BuildMode.select_placeable(BuildingList.field)
-
-func _on_build_warehouse_button_pressed():
-	BuildMode.select_placeable(BuildingList.warehouse)
 
 func _on_build_mode_selection_updated(placeable):
 	if placeable == null:

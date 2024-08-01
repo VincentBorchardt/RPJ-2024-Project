@@ -13,6 +13,7 @@ extends Control
 @onready var field2_button = $FieldContainer/Field2
 @onready var field1_timer = $FieldContainer/Field1/Field1Timer
 
+var grill = preload("res://resources/placeable/grill.tres")
 
 func _ready():
 	BuildingList.prepare_food.connect(_on_building_list_prepare_food)
@@ -29,7 +30,7 @@ func _ready():
 
 # FIELD STUFF
 func _on_beef_button_pressed():
-	FieldList.field1.plant_field(FoodList.beef)
+	FieldList.field1.plant_field(preload("res://resources/food/beef.tres"))
 
 func _on_field_list_start_planting(food, field):
 	field1_button.text = food.name + " Growing"
@@ -56,7 +57,7 @@ func _on_field_list_finish_creation(food, field):
 func _on_grill_place_button_pressed():
 	if Inventory.is_currently_holding_item():
 		var current = Inventory.take_current_item()
-		BuildingList.grill.add_food(current)
+		grill.add_food(current)
 
 func _on_building_list_ingredient_list_changed(ingredients, building):
 	if (not ingredients.is_empty()):
@@ -78,14 +79,14 @@ func _on_building_list_start_building_timer(wait_time, building):
 	grill_timer.start(wait_time)
 
 func _on_grill_timer_timeout():
-	BuildingList.grill.timer_complete()
+	grill.timer_complete()
 
 func _on_building_list_food_prepared(food, building):
 	grill_results.text = food.name + " Complete"
 	grill_results.disabled = false
 
 func _on_grill_results_button_pressed():
-	BuildingList.grill.finish()
+	grill.finish()
 
 func _on_building_list_finish_creation(food, building):
 	grill_results.disabled = true
@@ -97,7 +98,7 @@ func _on_bun_button_pressed():
 	# problem is that some like fields do other things
 	print("bun button pressed")
 	if not Inventory.is_currently_holding_item():
-		Inventory.set_current_item(FoodList.bun)
+		Inventory.set_current_item(preload("res://resources/food/bun.tres"))
 
 func _on_inventory_0_pressed():
 	Inventory.take_item_from_slot(0)

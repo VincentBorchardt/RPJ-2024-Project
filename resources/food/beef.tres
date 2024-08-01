@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Food" load_steps=4 format=3 uid="uid://b7esg16lydpb1"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_j6uyn"]
+[ext_resource type="Texture2D" uid="uid://cckpg21oyr0r2" path="res://assets/sprites/test/tile_0104.png" id="1_lsc2t"]
+[ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="2_0f3om"]
+
+[resource]
+script = ExtResource("1_j6uyn")
+name = "Beef"
+base_price = 3
+time_to_complete = 5
+base_texture = ExtResource("1_lsc2t")
+components = [ExtResource("2_0f3om")]

@@ -8,7 +8,7 @@ signal pressed_with_placeable(placeable)
 		if (value != null):
 			if icon == null:
 				icon = value.base_texture
-			if text == null:
+			if text == "":
 				text = value.placeable_name
 
 func _pressed():
