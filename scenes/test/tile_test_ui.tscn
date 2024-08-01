@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rq3efqdy66xw"]
+[gd_scene load_steps=5 format=3 uid="uid://rq3efqdy66xw"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_ui.gd" id="1_q1e2d"]
 [ext_resource type="PackedScene" uid="uid://b44j75qn2rokx" path="res://scenes/food_button.tscn" id="2_470cb"]
 [ext_resource type="Script" path="res://scripts/placeable_button.gd" id="3_gbu8b"]
+[ext_resource type="Resource" uid="uid://6kpy82vxwyb0" path="res://resources/placeable/road.tres" id="4_qjs1w"]
 
 [node name="TileTestUI" type="Control"]
 layout_mode = 3
@@ -84,7 +85,9 @@ text = "Build Warehouse"
 
 [node name="BuildRoadButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
+text = "Build Road"
 script = ExtResource("3_gbu8b")
+attached_placeable = ExtResource("4_qjs1w")
 
 [node name="CurrentPlaceable" type="Label" parent="BuildBox/BuildButtonBox"]
 visible = false

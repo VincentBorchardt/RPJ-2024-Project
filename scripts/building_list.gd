@@ -31,5 +31,5 @@ func _ready():
 	field = PrepBuilding.new("Field", [FoodList.beef],
 		preload("res://assets/sprites/test/tile_0109.png")
 	)
-	road = Road.new("Road", preload("res://assets/sprites/test/tile_0121.png"))
+	#road = Road.new("Road", preload("res://assets/sprites/test/tile_0121.png"))
 

@@ -22,8 +22,7 @@ extends Control
 
 
 func _ready():
-	# TODO This doesn't work at all if you try to add a FoodButton in the scene tree
-	# Need to investigate this, it won't scale at all for lots of foods
+	print(road_button.text)
 	cow_button.attached_food = FoodList.cow
 	
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
@@ -36,8 +35,8 @@ func _ready():
 	# TODO replace the other build buttons with PlaceableButton like this
 	# Maybe there's a way to condense the ceremony?
 	# But that would be obsolete with the resource overhaul
-	road_button.attached_placeable = BuildingList.road
-	road_button.text = "Build " + road_button.attached_placeable.placeable_name
+	#road_button.attached_placeable = BuildingList.road
+	#road_button.text = "Build " + road_button.attached_placeable.placeable_name
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
@@ -97,6 +96,8 @@ func _on_build_mode_turn_build_mode_on():
 	build_buttons.visible = true
 
 func _on_build_button_pressed(placeable):
+	print("build button pressed")
+	print(placeable.placeable_name)
 	BuildMode.select_placeable(placeable)
 
 func _on_build_grill_button_pressed():
@@ -156,6 +157,4 @@ func _on_show_placeable_info(ingredients, building, tile):
 func _on_placeable_button_pressed(placeable):
 	if placeable is PrepBuilding:
 		placeable.finish()
-
-
 

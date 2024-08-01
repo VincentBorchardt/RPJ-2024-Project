@@ -1,7 +1,7 @@
 class_name PrepBuilding extends Placeable
 
 # TODO Why can't I type these arrays?
-var food_preparable : Array = []
+@export var food_preparable : Array = []
 var current_creation : Food = null
 var current_ingredients : Array = []
 

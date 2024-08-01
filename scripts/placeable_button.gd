@@ -6,8 +6,10 @@ signal pressed_with_placeable(placeable)
 	set(value):
 		attached_placeable = value
 		if (value != null):
-			text = value.placeable_name
-			icon = value.base_texture
+			if icon == null:
+				icon = value.base_texture
+			if text == null:
+				text = value.placeable_name
 
 func _pressed():
 	pressed_with_placeable.emit(attached_placeable)
