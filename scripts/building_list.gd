@@ -1,5 +1,6 @@
 extends Node
 
+# TODO This is just a Signal Bus after the resource overhaul, should probably get a name change
 signal prepare_food(food, building)
 signal ingredient_list_changed(ingredients, building)
 signal start_building_timer(wait_time, building)

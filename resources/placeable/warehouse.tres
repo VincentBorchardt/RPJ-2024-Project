@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_tcbj0")
-food_stored = [ExtResource("2_msvy1")]
+food_stored = Array[Resource("res://scripts/food.gd")]([ExtResource("2_msvy1")])
 producer = true
 placeable_name = "Warehouse"
 base_texture = ExtResource("1_p4qjt")

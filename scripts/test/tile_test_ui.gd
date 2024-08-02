@@ -1,8 +1,6 @@
 extends Control
 
 # TODO figure out if I want to separate UI signals here for what's still just a test
-@onready var food_box = $FoodBox
-@onready var cow_button = $FoodBox/CowButton
 
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
 @onready var inventory_slot_1 = $InventoryBox/InventorySlot1
@@ -11,7 +9,6 @@ extends Control
 @onready var trash_button = $InventoryBox/TrashButton
 
 @onready var build_buttons = $BuildBox/BuildButtonBox
-@onready var road_button = $BuildBox/BuildButtonBox/BuildRoadButton
 @onready var current_placeable_label = $BuildBox/BuildButtonBox/CurrentPlaceable
 
 @onready var placeable_box = $PlaceableBox
@@ -22,8 +19,6 @@ extends Control
 
 
 func _ready():
-	#cow_button.attached_food = FoodList.cow
-	
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
 	
@@ -31,18 +26,12 @@ func _ready():
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
-	# TODO replace the other build buttons with PlaceableButton like this
-	# Maybe there's a way to condense the ceremony?
-	# But that would be obsolete with the resource overhaul
-	#road_button.attached_placeable = BuildingList.road
-	#road_button.text = "Build " + road_button.attached_placeable.placeable_name
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
 	# TODO this initial design doesn't account for non-producers
 	if not Inventory.is_currently_holding_item():
 		Inventory.set_current_item(food)
-
 
 # INVENTORY BOX STUFF
 func _on_inventory_slot_0_pressed():
@@ -67,19 +56,23 @@ func _on_inventory_current_item_changed(food):
 
 func _on_inventory_inventory_slot_changed(slot, food):
 	var name = "Empty"
-	if food != null:
-		name = food.name
-	#else:
-		#name = "Empty"
+	var button
 	match slot:
 		0: 
-			inventory_slot_0.text = name
+			button = inventory_slot_0
 		1:
-			inventory_slot_1.text = name
+			button = inventory_slot_1
 		2:
-			inventory_slot_2.text = name
+			button = inventory_slot_2
 		_:
 			print("slot not connected")
+	if button != null:
+		if food != null:
+			button.attached_food = food
+			name = food.name
+		else:
+			button.text = name
+			button.icon = null
 
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()

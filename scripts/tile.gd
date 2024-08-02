@@ -1,4 +1,4 @@
-extends Area2D
+class_name Tile extends Area2D
 
 signal update_tile_feature()
 

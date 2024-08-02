@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://rq3efqdy66xw"]
+[gd_scene load_steps=10 format=3 uid="uid://rq3efqdy66xw"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_ui.gd" id="1_q1e2d"]
 [ext_resource type="PackedScene" uid="uid://b44j75qn2rokx" path="res://scenes/food_button.tscn" id="2_470cb"]
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="3_2xh7s"]
 [ext_resource type="Script" path="res://scripts/placeable_button.gd" id="3_gbu8b"]
+[ext_resource type="Script" path="res://scripts/food_button.gd" id="4_546um"]
 [ext_resource type="Resource" uid="uid://6kpy82vxwyb0" path="res://resources/placeable/road.tres" id="4_qjs1w"]
 [ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="4_wq4ng"]
 [ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="5_orbvy"]
@@ -42,16 +43,19 @@ text = "Inventory
 [node name="InventorySlot0" type="Button" parent="InventoryBox"]
 layout_mode = 2
 text = "Empty"
+script = ExtResource("4_546um")
 
 [node name="InventorySlot1" type="Button" parent="InventoryBox"]
 layout_mode = 2
 text = "Empty
 "
+script = ExtResource("4_546um")
 
 [node name="InventorySlot2" type="Button" parent="InventoryBox"]
 layout_mode = 2
 text = "Empty
 "
+script = ExtResource("4_546um")
 
 [node name="CurrentItemLabel" type="Label" parent="InventoryBox"]
 visible = false
