@@ -18,6 +18,7 @@ func _ready():
 # TODO this might need some special casing for story purposes, like making the final order important
 # or making the tutorial work right
 func _process(delta):
+	# TODO set a delay on a separate timer to allow time for animations/other end level cleanup?
 	if current_orders.is_empty():
 		if upcoming_orders.is_empty():
 			print("end level triggered")
@@ -31,9 +32,11 @@ func add_current_order():
 	current_orders.append(new_order)
 	current_orders_changed.emit(current_orders)
 
-func submit_order(food):
-	if current_orders.has(food):
-		# TODO add code if food isn't in there?
-		# or accept that inventory trashes the item if you submit wrong?
-		current_orders.erase(food)
-		current_orders_changed.emit()
+func submit_order():
+	if Inventory.is_currently_holding_item():
+		var food = Inventory.take_current_item()
+		if current_orders.has(food):
+			# TODO add code if food isn't in there?
+			# or accept that inventory trashes the item if you submit wrong?
+			current_orders.erase(food)
+			current_orders_changed.emit(current_orders)

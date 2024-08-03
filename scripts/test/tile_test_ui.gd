@@ -1,5 +1,6 @@
 extends Control
 
+signal submit_order()
 # TODO figure out if I want to separate UI signals here for what's still just a test
 
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
@@ -57,7 +58,6 @@ func _on_inventory_current_item_changed(food):
 		trash_button.visible = false
 
 func _on_inventory_inventory_slot_changed(slot, food):
-	var name = "Empty"
 	var button
 	match slot:
 		0: 
@@ -71,9 +71,9 @@ func _on_inventory_inventory_slot_changed(slot, food):
 	if button != null:
 		if food != null:
 			button.attached_food = food
-			name = food.name
+			button.text = food.name
 		else:
-			button.text = name
+			button.text = "Empty"
 			button.icon = null
 
 func _on_trash_button_pressed():
@@ -86,7 +86,7 @@ func _on_order_queue_current_orders_changed(orders):
 		current_orders.text += food.name + "\n"
 
 func _on_submit_button_pressed():
-	Inventory.submit_order()
+	submit_order.emit()
 
 # BUILD BOX STUFF
 func _on_build_mode_button_pressed():

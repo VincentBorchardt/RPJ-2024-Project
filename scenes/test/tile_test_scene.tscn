@@ -115,3 +115,4 @@ position = Vector2(672, 224)
 position = Vector2(736, 224)
 
 [connection signal="current_orders_changed" from="OrderQueue" to="TileTestUI" method="_on_order_queue_current_orders_changed"]
+[connection signal="submit_order" from="TileTestUI" to="." method="_on_tile_test_ui_submit_order"]
