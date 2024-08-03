@@ -1,5 +1,7 @@
 extends Node
 
+# TODO figure out if this would be better as an component of each scene rather than an autoload
+
 signal current_item_changed(food)
 signal inventory_slot_changed(slot, food)
 
@@ -51,3 +53,9 @@ func empty_inventory_slot(slot):
 func trash_current_item():
 	if is_currently_holding_item():
 		set_current_item(null)
+
+func submit_order():
+	if is_currently_holding_item():
+		print("submitting item")
+		#OrderQueue.submit_order(current_hold_item)
+		

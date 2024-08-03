@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl2enin2kdhpt"]
+[gd_scene load_steps=7 format=3 uid="uid://dl2enin2kdhpt"]
 
 [ext_resource type="Script" path="res://scripts/test/tile_test_scene.gd" id="1_gdbsu"]
+[ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="2_o2r1v"]
 [ext_resource type="PackedScene" uid="uid://rq3efqdy66xw" path="res://scenes/test/tile_test_ui.tscn" id="2_v0ss1"]
+[ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="3_450gv"]
 [ext_resource type="PackedScene" uid="uid://bev6mgo444j38" path="res://scenes/tile.tscn" id="3_hpq1o"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="3_nrk8f"]
 
 [node name="TileTestScene" type="Node2D"]
 script = ExtResource("1_gdbsu")
+
+[node name="OrderQueue" parent="." instance=ExtResource("2_o2r1v")]
+upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("3_450gv")])
 
 [node name="TileTestUI" parent="." instance=ExtResource("2_v0ss1")]
 
@@ -108,3 +113,5 @@ position = Vector2(672, 224)
 
 [node name="Tile32" parent="Tiles" instance=ExtResource("3_hpq1o")]
 position = Vector2(736, 224)
+
+[connection signal="current_orders_changed" from="OrderQueue" to="TileTestUI" method="_on_order_queue_current_orders_changed"]

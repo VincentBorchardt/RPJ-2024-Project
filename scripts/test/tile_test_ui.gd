@@ -8,6 +8,8 @@ extends Control
 @onready var current_item_label = $InventoryBox/CurrentItemLabel
 @onready var trash_button = $InventoryBox/TrashButton
 
+@onready var current_orders = $OrderQueueBox/CurrentOrders
+
 @onready var build_buttons = $BuildBox/BuildButtonBox
 @onready var current_placeable_label = $BuildBox/BuildButtonBox/CurrentPlaceable
 
@@ -77,6 +79,15 @@ func _on_inventory_inventory_slot_changed(slot, food):
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()
 
+# ORDER QUEUE STUFF
+func _on_order_queue_current_orders_changed(orders):
+	current_orders.text = ""
+	for food in orders:
+		current_orders.text += food.name + "\n"
+
+func _on_submit_button_pressed():
+	Inventory.submit_order()
+
 # BUILD BOX STUFF
 func _on_build_mode_button_pressed():
 	BuildMode.toggle_build_mode()
@@ -140,4 +151,3 @@ func _on_show_placeable_info(ingredients, building, tile):
 func _on_placeable_button_pressed(placeable):
 	if placeable is PrepBuilding:
 		placeable.finish()
-

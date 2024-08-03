@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcqslfu5prjqw"]
+
+[ext_resource type="Script" path="res://scripts/order_queue.gd" id="1_livj0"]
+
+[node name="OrderQueue" type="Node"]
+script = ExtResource("1_livj0")
+
+[node name="OrderTimer" type="Timer" parent="."]
