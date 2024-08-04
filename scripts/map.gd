@@ -27,7 +27,7 @@ func _ready():
 	_initialize_grid()
 	BuildingList.open_tile.connect(_open_tile)
 	BuildingList.block_tile.connect(_block_tile)
-
+	WorkerList.update_worker_path.connect(_update_worker_path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -77,6 +77,12 @@ func _block_tile(tile):
 	blocked_tiles.append(tile)
 	_block_grid_point(tile.position, true)
 
-func get_worker_path(start, end):
+func _update_worker_path(worker):
+	print(open_tiles)
+	var start = worker.start_tile.position / tile_size.x
+	print(start)
+	var end = worker.end_tile.position / tile_size.x
+	print(end)
 	var path = astar_grid.get_point_path(Vector2i(start), Vector2i(end))
-	return path
+	worker.path = path
+	print(path)

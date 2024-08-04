@@ -11,6 +11,9 @@ signal submit_order()
 
 @onready var current_orders = $OrderQueueBox/CurrentOrders
 
+@onready var worker_box = $WorkerBox
+var worker_buttons : Array[WorkerButton] = []
+
 @onready var build_buttons = $BuildBox/BuildButtonBox
 @onready var current_placeable_label = $BuildBox/BuildButtonBox/CurrentPlaceable
 
@@ -88,9 +91,24 @@ func _on_order_queue_current_orders_changed(orders):
 func _on_submit_button_pressed():
 	submit_order.emit()
 
+# WORKER BOX STUFF
+func _on_add_worker_button_pressed():
+	var worker = WorkerList.create_worker()
+	var worker_button = WorkerButton.new()
+	worker_button.attached_worker = worker
+	worker_button.text = "Worker " + str(worker.id)
+	worker_button.pressed_with_worker.connect(_on_pressed_with_worker)
+	worker_box.add_child(worker_button)
+	worker_buttons.append(worker_button)
+
+func _on_pressed_with_worker(worker):
+	if not BuildMode.currently_in_build_mode:
+		WorkerList.start_worker_mode(worker)
+
 # BUILD BOX STUFF
 func _on_build_mode_button_pressed():
-	BuildMode.toggle_build_mode()
+	if not WorkerList.currently_in_worker_mode:
+		BuildMode.toggle_build_mode()
 
 func _on_build_mode_turn_build_mode_off():
 	build_buttons.visible = false
@@ -151,3 +169,6 @@ func _on_show_placeable_info(ingredients, building, tile):
 func _on_placeable_button_pressed(placeable):
 	if placeable is PrepBuilding:
 		placeable.finish()
+
+
+

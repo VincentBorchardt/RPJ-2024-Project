@@ -1,6 +1,5 @@
 class_name PrepBuilding extends Placeable
 
-# TODO Why can't I type these arrays?
 @export var food_preparable : Array[Food] = []
 
 var current_creation : Food = null
@@ -8,11 +7,6 @@ var current_ingredients : Array = []
 
 var currently_prepping = false
 var food_ready = false
-
-#func _init(label, makeable, picture):
-	#placeable_name = label
-	#food_preparable = makeable
-	#base_texture = picture
 
 func add_food(food):
 	# TODO this should check if the added food actually can make any of the food

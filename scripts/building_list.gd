@@ -14,6 +14,8 @@ signal show_placeable_info(ingredients, building, tile)
 signal open_tile(tile)
 signal block_tile(tile)
 
+signal set_grid_point(tile)
+
 func _ready():
 	pass
 

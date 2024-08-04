@@ -25,7 +25,7 @@ func set_placeable(placeable):
 	if placeable is Road:
 		BuildingList.open_tile.emit(self)
 	else:
-		BuildingList.block_tile.emit(self)
+		BuildingList.open_tile.emit(self)
 
 func _on_build_mode_turn_build_mode_off():
 	highlight.visible = false
@@ -35,11 +35,16 @@ func _on_build_mode_turn_build_mode_on():
 		highlight.visible = true
 
 func _on_input_event(viewport, event, shape_idx):
+	# TODO this is getting very messy, doing multiple things
 	if event is InputEventMouseButton and event.pressed:
 		if BuildMode.can_place() and tile_feature == null:
 			var placeable = BuildMode.get_current_placeable()
 			set_placeable(placeable)
 			BuildMode.select_placeable(null)
+		elif WorkerList.currently_in_worker_mode and tile_feature != null:
+			if not (tile_feature is Road):
+				print("emitting grid point")
+				BuildingList.set_grid_point.emit(self)
 		elif (not BuildMode.currently_in_build_mode) and tile_feature != null:
 			tile_feature.activate_placeable(self)
 
