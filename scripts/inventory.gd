@@ -54,8 +54,6 @@ func trash_current_item():
 	if is_currently_holding_item():
 		set_current_item(null)
 
-func submit_order():
-	if is_currently_holding_item():
-		print("submitting item")
-		#OrderQueue.submit_order(current_hold_item)
-		
+func clear_inventory():
+	inventory.clear()
+	trash_current_item()

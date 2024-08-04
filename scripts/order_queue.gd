@@ -7,7 +7,9 @@ signal end_level()
 @export var endless: bool = false
 
 var current_orders: Array[Food] = []
+var ending_level: bool = false
 @onready var order_timer = $OrderTimer
+@onready var end_level_timer = $EndLevelTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,13 +20,14 @@ func _ready():
 # TODO this might need some special casing for story purposes, like making the final order important
 # or making the tutorial work right
 func _process(delta):
-	# TODO set a delay on a separate timer to allow time for animations/other end level cleanup?
-	if current_orders.is_empty():
-		if upcoming_orders.is_empty():
-			print("end level triggered")
-			end_level.emit()
-		else:
-			add_current_order()
+	if not ending_level:
+		if current_orders.is_empty():
+			if upcoming_orders.is_empty():
+				print("end level started")
+				ending_level = true
+				end_level_timer.start(3)
+			else:
+				add_current_order()
 
 func add_current_order():
 	assert (upcoming_orders.is_empty() != true)
@@ -40,3 +43,8 @@ func submit_order():
 			# or accept that inventory trashes the item if you submit wrong?
 			current_orders.erase(food)
 			current_orders_changed.emit(current_orders)
+
+
+func _on_end_level_timer_timeout():
+	print("end level timer timeout")
+	end_level.emit()
