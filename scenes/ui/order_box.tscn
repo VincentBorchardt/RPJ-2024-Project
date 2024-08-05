@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://kf003ypspfyk"]
+
+[ext_resource type="Script" path="res://scripts/ui/order_box.gd" id="1_fe4aq"]
+
+[node name="OrderBox" type="VBoxContainer"]
+offset_right = 256.0
+offset_bottom = 300.0
+alignment = 2
+script = ExtResource("1_fe4aq")
+
+[node name="CurrentOrders" type="Label" parent="."]
+layout_mode = 2
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 2
+text = "Submit Order"

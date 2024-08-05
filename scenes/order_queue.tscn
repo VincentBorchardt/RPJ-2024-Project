@@ -4,10 +4,12 @@
 
 [node name="OrderQueue" type="Node"]
 script = ExtResource("1_livj0")
+time_between_orders = 5
 
 [node name="OrderTimer" type="Timer" parent="."]
 
 [node name="EndLevelTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="timeout" from="OrderTimer" to="." method="_on_order_timer_timeout"]
 [connection signal="timeout" from="EndLevelTimer" to="." method="_on_end_level_timer_timeout"]

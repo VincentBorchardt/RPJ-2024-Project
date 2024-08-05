@@ -4,6 +4,8 @@ signal current_orders_changed(orders)
 signal end_level()
 
 @export var upcoming_orders: Array[Food] = []
+#@export var order_delay: int
+@export var time_between_orders: int
 @export var endless: bool = false
 
 var current_orders: Array[Food] = []
@@ -13,8 +15,9 @@ var ending_level: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# randomize the array of upcoming orders
-	pass # Replace with function body.
+	# randomize the array of upcoming orders?
+	order_timer.wait_time = time_between_orders
+	start_adding_orders()
 
 
 # TODO this might need some special casing for story purposes, like making the final order important
@@ -31,7 +34,7 @@ func _process(delta):
 
 func add_current_order():
 	assert (upcoming_orders.is_empty() != true)
-	var new_order = upcoming_orders.pop_back()
+	var new_order = upcoming_orders.pop_front()
 	current_orders.append(new_order)
 	current_orders_changed.emit(current_orders)
 
@@ -44,7 +47,14 @@ func submit_order():
 			current_orders.erase(food)
 			current_orders_changed.emit(current_orders)
 
+func start_adding_orders():
+	order_timer.start()
 
 func _on_end_level_timer_timeout():
 	print("end level timer timeout")
 	end_level.emit()
+
+func _on_order_timer_timeout():
+	print("order timer trigger")
+	if not upcoming_orders.is_empty():
+		add_current_order()

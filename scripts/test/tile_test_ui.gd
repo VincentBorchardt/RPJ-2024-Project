@@ -86,6 +86,8 @@ func _on_trash_button_pressed():
 func _on_order_queue_current_orders_changed(orders):
 	current_orders.text = ""
 	for food in orders:
+		#var temp = current_orders.text
+		#current_orders.text = food.name + "\n" + temp
 		current_orders.text += food.name + "\n"
 
 func _on_submit_button_pressed():
@@ -119,7 +121,7 @@ func _on_build_mode_turn_build_mode_on():
 func _on_build_button_pressed(placeable):
 	print("build button pressed")
 	print(placeable.placeable_name)
-	BuildMode.select_placeable(placeable)
+	BuildMode.select_placeable(placeable.duplicate())
 
 func _on_build_mode_selection_updated(placeable):
 	if placeable == null:
