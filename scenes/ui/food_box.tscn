@@ -5,6 +5,6 @@
 
 [node name="FoodBox" type="VBoxContainer"]
 offset_right = 256.0
-offset_bottom = 480.0
+offset_bottom = 300.0
 script = ExtResource("1_e6v8r")
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("2_nhfpi")])

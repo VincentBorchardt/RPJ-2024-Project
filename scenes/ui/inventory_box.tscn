@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtutr15p1mfw8"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_box.gd" id="1_2dqc1"]
+[ext_resource type="Script" path="res://scripts/food_button.gd" id="1_dmocv"]
+
+[node name="InventoryBox" type="VBoxContainer"]
+offset_right = 256.0
+offset_bottom = 300.0
+script = ExtResource("1_2dqc1")
+
+[node name="InventoryLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="InventorySlot0" type="Button" parent="."]
+layout_mode = 2
+text = "Empty"
+script = ExtResource("1_dmocv")
+
+[node name="InventorySlot1" type="Button" parent="."]
+layout_mode = 2
+text = "Empty"
+script = ExtResource("1_dmocv")
+
+[node name="InventorySlot2" type="Button" parent="."]
+layout_mode = 2
+text = "Empty"
+script = ExtResource("1_dmocv")
+
+[node name="InventorySlot3" type="Button" parent="."]
+layout_mode = 2
+text = "Empty"
+script = ExtResource("1_dmocv")
+
+[node name="InventorySlot4" type="Button" parent="."]
+layout_mode = 2
+text = "Empty"
+script = ExtResource("1_dmocv")
+
+[node name="CurrentItemLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "Current Item: Empty"
+
+[node name="TrashButton" type="Button" parent="."]
+visible = false
+layout_mode = 2
+text = "Trash"
+
+[connection signal="pressed" from="InventorySlot0" to="." method="_on_inventory_slot_0_pressed"]
+[connection signal="pressed" from="InventorySlot1" to="." method="_on_inventory_slot_1_pressed"]
+[connection signal="pressed" from="InventorySlot2" to="." method="_on_inventory_slot_2_pressed"]
+[connection signal="pressed" from="InventorySlot3" to="." method="_on_inventory_slot_3_pressed"]
+[connection signal="pressed" from="InventorySlot4" to="." method="_on_inventory_slot_4_pressed"]
