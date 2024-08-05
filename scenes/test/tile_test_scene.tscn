@@ -15,7 +15,7 @@ upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("3_450gv
 
 [node name="TileTestUI" parent="." instance=ExtResource("2_v0ss1")]
 
-[node name="Tiles" type="Node" parent="."]
+[node name="Tiles" type="Node2D" parent="."]
 script = ExtResource("3_nrk8f")
 
 [node name="Tile" parent="Tiles" instance=ExtResource("3_hpq1o")]

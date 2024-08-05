@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var all_tiles : Array
 var open_tiles : Array = []

@@ -8,5 +8,6 @@ script = ExtResource("1_livj0")
 [node name="OrderTimer" type="Timer" parent="."]
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="EndLevelTimer" to="." method="_on_end_level_timer_timeout"]

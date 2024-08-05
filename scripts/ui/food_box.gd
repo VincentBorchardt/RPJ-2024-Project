@@ -3,17 +3,13 @@ extends VBoxContainer
 @export var available_food : Array[Food]:
 	set(array):
 		available_food = array
-		#remove_children()
+		remove_children()
 		update_food_buttons()
 
 func _ready():
-	# TODO if we change the setup so food is assigned post-ready,
-	# this likely needs to be moved into a setter (along with clearing children)
-	update_food_buttons()
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
