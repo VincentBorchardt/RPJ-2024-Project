@@ -2,6 +2,7 @@ extends VBoxContainer
 
 signal submit_order()
 
+# TODO does this box need a title?
 @onready var current_orders = $CurrentOrders
 
 # Called when the node enters the scene tree for the first time.
