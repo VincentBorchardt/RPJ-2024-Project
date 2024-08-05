@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosls3x6g4ud"]
+
+[ext_resource type="Script" path="res://scripts/ui/food_box.gd" id="1_e6v8r"]
+[ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="2_nhfpi"]
+
+[node name="FoodBox" type="VBoxContainer"]
+offset_right = 256.0
+offset_bottom = 480.0
+script = ExtResource("1_e6v8r")
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("2_nhfpi")])

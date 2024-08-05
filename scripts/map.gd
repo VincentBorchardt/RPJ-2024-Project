@@ -78,7 +78,7 @@ func _block_tile(tile):
 	_block_grid_point(tile.position, true)
 
 func _update_worker_path(worker):
-	print(open_tiles)
+	print(open_tiles.map(translate_tile))
 	var start = worker.start_tile.position / tile_size.x
 	print(start)
 	var end = worker.end_tile.position / tile_size.x
@@ -86,3 +86,7 @@ func _update_worker_path(worker):
 	var path = astar_grid.get_point_path(Vector2i(start), Vector2i(end))
 	worker.path = path
 	print(path)
+	print(Array(path).map(func div(vec) : return vec / 64))
+
+func translate_tile(tile):
+	return tile.position / 64
