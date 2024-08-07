@@ -7,7 +7,7 @@ signal pressed_with_food(food)
 		attached_food = food
 		if food != null:
 			if text == "":
-				text = food.name
+				text = food.name + ": Cost = " + str(food.price)
 			if icon == null:
 				icon = food.base_texture
 

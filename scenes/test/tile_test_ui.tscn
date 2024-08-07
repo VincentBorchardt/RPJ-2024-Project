@@ -26,7 +26,6 @@ offset_bottom = 480.0
 
 [node name="CowButton" parent="FoodBox" instance=ExtResource("2_470cb")]
 layout_mode = 2
-text = "Cow"
 attached_food = ExtResource("3_2xh7s")
 
 [node name="InventoryBox" type="VBoxContainer" parent="."]
@@ -37,7 +36,7 @@ offset_bottom = 720.0
 
 [node name="InventoryLabel" type="Label" parent="InventoryBox"]
 layout_mode = 2
-text = "Inventory
+text = "Inventory: Coins = 100
 "
 
 [node name="InventorySlot0" type="Button" parent="InventoryBox"]
@@ -117,25 +116,25 @@ layout_mode = 2
 
 [node name="BuildGrillButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
-text = "Build Grill"
+text = "Build Grill: Cost = 10"
 script = ExtResource("3_gbu8b")
 attached_placeable = ExtResource("4_wq4ng")
 
 [node name="BuildFieldButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
-text = "Build Field"
+text = "Build Field: Cost = 3"
 script = ExtResource("3_gbu8b")
 attached_placeable = ExtResource("5_orbvy")
 
 [node name="BuildWarehouseButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
-text = "Build Warehouse"
+text = "Build Warehouse: Cost = 5"
 script = ExtResource("3_gbu8b")
 attached_placeable = ExtResource("6_bl3hl")
 
 [node name="BuildRoadButton" type="Button" parent="BuildBox/BuildButtonBox"]
 layout_mode = 2
-text = "Build Road"
+text = "Build Road: Cost = 1"
 script = ExtResource("3_gbu8b")
 attached_placeable = ExtResource("4_qjs1w")
 
