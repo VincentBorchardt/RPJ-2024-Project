@@ -23,13 +23,19 @@ func get_current_placeable():
 	return build_mode_selection
 
 func select_placeable(placeable):
-	build_mode_selection = placeable
-	selection_updated.emit(placeable)
+	if Inventory.can_afford_item(placeable):
+		build_mode_selection = placeable
+		Inventory.current_currency -= placeable.price
+		selection_updated.emit(placeable)
+
+func deselect_placeable():
+	build_mode_selection = null
+	selection_updated.emit(null)
 
 func toggle_build_mode():
 	if currently_in_build_mode:
 		currently_in_build_mode = false
-		select_placeable(null)
+		deselect_placeable()
 		turn_build_mode_off.emit()
 	else:
 		currently_in_build_mode = true

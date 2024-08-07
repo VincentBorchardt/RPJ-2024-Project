@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_tga5x")
 name = "Cow"
-base_price = 1
+price = 1
 time_to_complete = 2
 base_texture = ExtResource("1_xure7")
-components = []
+components = Array[ExtResource("1_tga5x")]([])

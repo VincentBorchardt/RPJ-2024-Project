@@ -43,7 +43,7 @@ func timer_complete():
 
 func finish():
 	if (not Inventory.is_currently_holding_item()):
-		Inventory.set_current_item(current_creation)
+		Inventory.current_hold_item = current_creation
 		BuildingList.finish_creation.emit(current_creation, self)
 		current_creation = null
 		currently_prepping = false

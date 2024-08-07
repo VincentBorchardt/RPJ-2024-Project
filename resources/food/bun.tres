@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_3mfbj")
 name = "Bun"
-base_price = 5
+price = 5
 time_to_complete = 10
 base_texture = ExtResource("1_ophee")
 components = Array[ExtResource("1_3mfbj")]([])

@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_c7nqd")
 name = "Hamburger"
-base_price = 10
+price = 10
 time_to_complete = 5
 base_texture = ExtResource("1_s87fh")
 components = Array[ExtResource("1_c7nqd")]([ExtResource("2_yl7hg"), ExtResource("3_7jqa2")])

@@ -3,6 +3,7 @@ extends Control
 signal submit_order()
 # TODO figure out if I want to separate UI signals here for what's still just a test
 
+@onready var inventory_label = $InventoryBox/InventoryLabel
 @onready var inventory_slot_0 = $InventoryBox/InventorySlot0
 @onready var inventory_slot_1 = $InventoryBox/InventorySlot1
 @onready var inventory_slot_2 = $InventoryBox/InventorySlot2
@@ -27,6 +28,7 @@ var worker_buttons : Array[WorkerButton] = []
 func _ready():
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+	Inventory.currency_changed.connect(_on_inventory_currency_changed)
 	
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
@@ -35,9 +37,7 @@ func _ready():
 
 # FOOD BOX STUFF
 func _on_food_button_pressed(food):
-	# TODO this initial design doesn't account for non-producers
-	if not Inventory.is_currently_holding_item():
-		Inventory.set_current_item(food)
+	Inventory.attempt_to_purchase_item(food)
 
 # INVENTORY BOX STUFF
 func _on_inventory_slot_0_pressed():
@@ -79,6 +79,11 @@ func _on_inventory_inventory_slot_changed(slot, food):
 			button.text = "Empty"
 			button.icon = null
 
+func _on_inventory_currency_changed(currency_count):
+	# TODO this doesn't work on the initial load for some reason, might not transfer to full thing
+	print("currency changed end")
+	inventory_label.text = "Inventory: Coins = " + str(currency_count)
+
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()
 
@@ -119,8 +124,6 @@ func _on_build_mode_turn_build_mode_on():
 	build_buttons.visible = true
 
 func _on_build_button_pressed(placeable):
-	print("build button pressed")
-	print(placeable.placeable_name)
 	BuildMode.select_placeable(placeable.duplicate())
 
 func _on_build_mode_selection_updated(placeable):

@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_ofl4x")
 placeable_name = "Road"
+price = 1
 base_texture = ExtResource("1_i47ok")

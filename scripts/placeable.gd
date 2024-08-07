@@ -1,6 +1,7 @@
 class_name Placeable extends Resource
 
 @export var placeable_name : String = "Default Placeable"
+@export var price : int
 @export var base_texture : Texture2D
 
 # TODO A lot of shared logic between buildings and road should go here eventually

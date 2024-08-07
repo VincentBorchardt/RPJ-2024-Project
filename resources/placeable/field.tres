@@ -8,4 +8,5 @@
 script = ExtResource("1_v48vq")
 food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_ni4ib")])
 placeable_name = "Field"
+price = 3
 base_texture = ExtResource("1_eq4w2")

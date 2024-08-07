@@ -2,7 +2,7 @@
 class_name Food extends Resource
 
 @export var name : String = "Default Food"
-@export var base_price : int = 0
+@export var price : int = 0
 @export var time_to_complete : int = 0
 @export var base_texture : Texture2D
 @export var components : Array[Food] = []

@@ -40,7 +40,7 @@ func _on_input_event(viewport, event, shape_idx):
 		if BuildMode.can_place() and tile_feature == null:
 			var placeable = BuildMode.get_current_placeable()
 			set_placeable(placeable)
-			BuildMode.select_placeable(null)
+			BuildMode.deselect_placeable()
 		elif WorkerList.currently_in_worker_mode and tile_feature != null:
 			if not (tile_feature is Road):
 				print("emitting grid point")
