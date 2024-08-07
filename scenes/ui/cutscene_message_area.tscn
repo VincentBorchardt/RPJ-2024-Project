@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://bn1sfd1m0cre4"]
+[gd_scene load_steps=2 format=3 uid="uid://bn1sfd1m0cre4"]
+
+[ext_resource type="Script" path="res://scripts/ui/cutscene_message_area.gd" id="1_y8ffg"]
 
 [node name="CutsceneMessageArea" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_y8ffg")
 
 [node name="SpeakerLabel" type="Label" parent="."]
 offset_right = 250.0
@@ -33,3 +36,5 @@ offset_right = 1600.0
 offset_bottom = 350.0
 theme_override_font_sizes/font_size = 24
 text = "Next"
+
+[connection signal="pressed" from="AdvanceTextButton" to="." method="_on_advance_text_button_pressed"]

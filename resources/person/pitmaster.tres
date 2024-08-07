@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://cnjoyujvfqitc"]
+
+[ext_resource type="Script" path="res://scripts/resources/person.gd" id="1_8ihkq"]
+[ext_resource type="Texture2D" uid="uid://s7auu82if14k" path="res://assets/characters/pitmaster-lkb-full.png" id="1_g7n2j"]
+
+[resource]
+script = ExtResource("1_8ihkq")
+person_name = "The Pitmaster"
+full_picture = ExtResource("1_g7n2j")

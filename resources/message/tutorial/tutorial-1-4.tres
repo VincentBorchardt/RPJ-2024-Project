@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bdy6qe8dvwbao"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_6v0xs"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_4df0d"]
+
+[resource]
+script = ExtResource("1_6v0xs")
+speaker = ExtResource("2_4df0d")
+message = "I am The Pitmaster, and I am your new overlord…I mean boss."
+image_location = 1

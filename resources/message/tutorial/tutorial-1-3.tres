@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bht4qmqnswqh2"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_rb6rd"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_puwyg"]
+
+[resource]
+script = ExtResource("1_rb6rd")
+speaker = ExtResource("2_puwyg")
+message = "I am, but who are you? Where is everyone? And why are there no grills or other cooking instruments?"

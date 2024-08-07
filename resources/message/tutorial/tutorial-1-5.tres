@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cny6ktnhggrus"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_hpq75"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_hadlw"]
+
+[resource]
+script = ExtResource("1_hpq75")
+speaker = ExtResource("2_hadlw")
+message = "Wait, The Pitmaster? From the 40-year-old commercials? And what am I supposed to be doing if there’s no food here?"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=12 format=3 uid="uid://ce8rqxnl32p72"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/tutorial_cutscene_1.gd" id="1_4o62p"]
+[ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="1_abmjs"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_3wg87"]
+[ext_resource type="Resource" uid="uid://bivlw6fl52l24" path="res://resources/message/tutorial/tutorial-1-1.tres" id="3_tx8he"]
+[ext_resource type="Resource" uid="uid://c6nqjcyxnu05w" path="res://resources/message/tutorial/tutorial-1-2.tres" id="4_5jbon"]
+[ext_resource type="Resource" uid="uid://bht4qmqnswqh2" path="res://resources/message/tutorial/tutorial-1-3.tres" id="5_7k2po"]
+[ext_resource type="Resource" uid="uid://bdy6qe8dvwbao" path="res://resources/message/tutorial/tutorial-1-4.tres" id="6_wjmon"]
+[ext_resource type="Resource" uid="uid://cny6ktnhggrus" path="res://resources/message/tutorial/tutorial-1-5.tres" id="7_iq67e"]
+[ext_resource type="Resource" uid="uid://bxd3jwoot8mkh" path="res://resources/message/tutorial/tutorial-1-6.tres" id="8_40qbv"]
+[ext_resource type="Resource" uid="uid://dh6kvnpivrdaa" path="res://resources/message/tutorial/tutorial-1-7.tres" id="9_kpd37"]
+[ext_resource type="Resource" uid="uid://cmiw4042wgh4g" path="res://resources/message/tutorial/tutorial-1-8.tres" id="10_r1u5x"]
+
+[node name="TutorialCutscene1" type="Node2D"]
+script = ExtResource("1_4o62p")
+
+[node name="MessageQueue" parent="." instance=ExtResource("2_3wg87")]
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_tx8he"), ExtResource("4_5jbon"), ExtResource("5_7k2po"), ExtResource("6_wjmon"), ExtResource("7_iq67e"), ExtResource("8_40qbv"), ExtResource("9_kpd37"), ExtResource("10_r1u5x")])
+
+[node name="CutsceneUI" parent="." instance=ExtResource("1_abmjs")]
+
+[connection signal="get_new_message" from="CutsceneUI" to="." method="_on_cutscene_ui_get_new_message"]

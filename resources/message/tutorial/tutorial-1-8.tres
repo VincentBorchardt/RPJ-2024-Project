@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cmiw4042wgh4g"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_805de"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_x64h7"]
+
+[resource]
+script = ExtResource("1_805de")
+speaker = ExtResource("2_x64h7")
+message = "That’s classified. Let’s start by making a simple Hamburger: growing a Cow in a Field, then putting the resulting Beef on the Grill alongside a Bun from the Warehouse."
+image_location = 1

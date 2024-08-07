@@ -1,10 +1,6 @@
-class_name Message extends Resource
+extends Node
 
-@export var speaker : Person
-@export_multiline var message : String
-@export var image_location : Location
-
-enum Location {LEFT, RIGHT}
+@export var messages : Array[Message]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,3 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func get_new_message():
+	print("getting new message")
+	return messages.pop_front()

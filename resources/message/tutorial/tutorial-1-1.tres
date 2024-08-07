@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bivlw6fl52l24"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_dwna8"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_p7bdj"]
+
+[resource]
+script = ExtResource("1_dwna8")
+speaker = ExtResource("2_p7bdj")
+message = "Oh boy, it’s time for my first day at my new job! They hired me right on the spot to take orders, but there are surprisingly few people here…"

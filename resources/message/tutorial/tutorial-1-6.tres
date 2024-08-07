@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bxd3jwoot8mkh"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_f47jo"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_jtyxb"]
+
+[resource]
+script = ExtResource("1_f47jo")
+speaker = ExtResource("2_jtyxb")
+message = "There’s plenty of food here. You just need to check out our state of the art order system. You just place down your buildings and tools onto this grid, let them grow and prepare the food, then take the prepared food and serve it to the customer."
+image_location = 1
