@@ -56,6 +56,6 @@ func _on_end_level_timer_timeout():
 	end_level.emit()
 
 func _on_order_timer_timeout():
-	print("order timer trigger")
+	#print("order timer trigger")
 	if not upcoming_orders.is_empty():
 		add_current_order()

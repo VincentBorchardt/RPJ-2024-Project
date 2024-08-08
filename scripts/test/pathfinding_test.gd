@@ -38,7 +38,11 @@ func draw_grid():
 
 func update_path():
 	# This is the function that actually gets a path, so you can have multiple points on one grid
-	line_2d.points = PackedVector2Array(astar_grid.get_point_path(start, end))
+	var path = astar_grid.get_point_path(start, end)
+	line_2d.points = PackedVector2Array(path)
+	print("new path found")
+	print(path)
+	
 
 func fill_walls():
 	for x in grid_size.x:

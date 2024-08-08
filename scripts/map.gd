@@ -19,8 +19,10 @@ var astar_grid = AStarGrid2D.new()
 # TODO This needs to be hardcoded, I don't know if there's an algorithmic way
 # Theoretically if the grid is too big it shouldn't matter since blank cells can't be traversed
 # TileTestScene's Grid is 8 by 4
+# Main scene's Grid is 17 by 5, I want to pad it by one on each side
+# It shouldn't matter if it's too big since most of the tiles are blocked
 var grid_origin = Vector2i(0, 0)
-var grid_size = Vector2i(8, 4)
+var grid_size = Vector2i(18, 6)
 
 func _ready():
 	_initialize_tiles()
@@ -78,6 +80,7 @@ func _block_tile(tile):
 	_block_grid_point(tile.position, true)
 
 func _update_worker_path(worker):
+	astar_grid.update()
 	print(open_tiles.map(translate_tile))
 	var start = worker.start_tile.position / tile_size.x
 	print(start)

@@ -51,12 +51,10 @@ func _on_inventory_slot_2_pressed():
 
 func _on_inventory_current_item_changed(food):
 	if (food != null):
-		print("setting current item")
 		current_item_label.text = "Current Item: " + food.name
 		current_item_label.visible = true
 		trash_button.visible = true
 	else:
-		print("removing current item")
 		current_item_label.visible = false
 		trash_button.visible = false
 
@@ -81,7 +79,6 @@ func _on_inventory_inventory_slot_changed(slot, food):
 
 func _on_inventory_currency_changed(currency_count):
 	# TODO this doesn't work on the initial load for some reason, might not transfer to full thing
-	print("currency changed end")
 	inventory_label.text = "Inventory: Coins = " + str(currency_count)
 
 func _on_trash_button_pressed():

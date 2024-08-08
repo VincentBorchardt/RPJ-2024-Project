@@ -19,7 +19,6 @@ var current_currency : int = 0:
 	set(value):
 		assert(value >= 0)
 		current_currency = value
-		print("emitting currency changed signal")
 		currency_changed.emit(value)
 
 func _ready():
@@ -85,7 +84,6 @@ func reset_currency():
 	current_currency = starting_currency
 
 func clear_inventory():
-	print("clearing inventory")
 	inventory.clear()
 	trash_current_item()
 	reset_currency()

@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+@onready var inventory_label = $InventoryLabel
 @onready var inventory_slot_0 = $InventorySlot0
 @onready var inventory_slot_1 = $InventorySlot1
 @onready var inventory_slot_2 = $InventorySlot2
@@ -11,6 +12,7 @@ extends VBoxContainer
 func _ready():
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
+	Inventory.currency_changed.connect(_on_inventory_currency_changed)
 
 func _on_inventory_slot_0_pressed():
 	Inventory.take_item_from_slot(0)
@@ -29,12 +31,10 @@ func _on_inventory_slot_4_pressed():
 
 func _on_inventory_current_item_changed(food):
 	if (food != null):
-		print("setting current item")
 		current_item_label.text = "Current Item: " + food.name
 		current_item_label.visible = true
 		trash_button.visible = true
 	else:
-		print("removing current item")
 		current_item_label.visible = false
 		trash_button.visible = false
 
@@ -62,6 +62,10 @@ func _select_slot_button(slot):
 		_:
 			assert(false, "unreachable in _select_slot_button")
 			print("slot not connected")
+
+func _on_inventory_currency_changed(currency_count):
+	# TODO this doesn't work on the initial load for some reason, might not transfer to full thing
+	inventory_label.text = "Inventory: Coins = " + str(currency_count)
 
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()
