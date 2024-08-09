@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq3n6xqgr4hx6"]
+
+[ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
+[ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
+[ext_resource type="PackedScene" uid="uid://ce8rqxnl32p72" path="res://scenes/cutscenes/tutorial_cutscene_1.tscn" id="3_px55q"]
+
+[node name="TitleScreenLeftBox" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1050.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bqmp")
+
+[node name="StoryModeButton" type="Button" parent="."]
+layout_mode = 2
+text = "Start Story Mode"
+script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("3_px55q")
+
+[node name="EndlessModeButton" type="Button" parent="."]
+layout_mode = 2
+text = "Start Endless Mode"
+script = ExtResource("2_ttbhf")
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 2
+text = "Options"
+
+[node name="DebugButton" type="Button" parent="."]
+layout_mode = 2
+text = "Show Debug Options"
+
+[node name="DebugBox" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="TutorialLabel" type="Label" parent="DebugBox"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="TutorialBox" type="HBoxContainer" parent="DebugBox"]
+layout_mode = 2
+
+[node name="TutorialStart" type="Button" parent="DebugBox/TutorialBox"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("3_px55q")
+
+[node name="Tutorial1" type="Button" parent="DebugBox/TutorialBox"]
+layout_mode = 2
+text = "Play 1"
+script = ExtResource("2_ttbhf")
+
+[node name="TutorialMiddle" type="Button" parent="DebugBox/TutorialBox"]
+layout_mode = 2
+text = "Middle"
+script = ExtResource("2_ttbhf")
+
+[node name="Tutorial2" type="Button" parent="DebugBox/TutorialBox"]
+layout_mode = 2
+text = "Play 2"
+script = ExtResource("2_ttbhf")
+
+[node name="TutorialEnd" type="Button" parent="DebugBox/TutorialBox"]
+layout_mode = 2
+text = "End"
+script = ExtResource("2_ttbhf")
+
+[node name="Level1Label" type="Label" parent="DebugBox"]
+layout_mode = 2
+text = "Level 1"
+
+[node name="Level1Box" type="HBoxContainer" parent="DebugBox"]
+layout_mode = 2
+
+[node name="Level1Start" type="Button" parent="DebugBox/Level1Box"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_ttbhf")
+
+[node name="Level1Play" type="Button" parent="DebugBox/Level1Box"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("2_ttbhf")
+
+[node name="Level1End" type="Button" parent="DebugBox/Level1Box"]
+layout_mode = 2
+text = "End"
+script = ExtResource("2_ttbhf")
+
+[connection signal="pressed_with_scene" from="StoryModeButton" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/TutorialBox/TutorialStart" to="." method="_on_scene_button_pressed"]

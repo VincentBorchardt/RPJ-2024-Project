@@ -22,6 +22,7 @@ Inventory="*res://scripts/inventory.gd"
 FieldList="*res://scripts/test/field_list.gd"
 BuildMode="*res://scripts/build_mode.gd"
 WorkerList="*res://scripts/worker_list.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
