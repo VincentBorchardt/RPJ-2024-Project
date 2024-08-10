@@ -11,6 +11,7 @@ signal show_ingredient_list(ingredients, building)
 # TODO just threw this signal here, maybe should put all these back in a signal bus?
 
 signal show_placeable_info(ingredients, building, tile)
+signal update_placeable_timer (percent_done, tile)
 signal open_tile(tile)
 signal block_tile(tile)
 

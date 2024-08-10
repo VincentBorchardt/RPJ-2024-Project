@@ -31,6 +31,9 @@ layout_mode = 2
 [node name="PrepItemsLabel" type="Label" parent="TilePopupBox/PrepBox"]
 layout_mode = 2
 
+[node name="PrepProgressBar" type="ProgressBar" parent="TilePopupBox/PrepBox"]
+layout_mode = 2
+
 [node name="PrepButton" type="Button" parent="TilePopupBox/PrepBox"]
 layout_mode = 2
 script = ExtResource("3_8kcoe")

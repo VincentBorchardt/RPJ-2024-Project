@@ -19,6 +19,13 @@ func _ready():
 	BuildingList.show_ingredient_list.connect(_on_building_list_show_ingredient_list)
 	FieldList.start_timer.connect(_on_placeable_list_start_timer)
 
+func _process(delta):
+	if placeable_timer.time_left > 0:
+		BuildingList.update_placeable_timer.emit(get_timer_percent_done(), self)
+
+func get_timer_percent_done():
+	return (1 - (placeable_timer.time_left / placeable_timer.wait_time)) * 100
+
 func set_placeable(placeable):
 	tile_feature = placeable
 	highlight.visible = false
@@ -57,6 +64,7 @@ func _on_placeable_list_start_timer(wait_time, building):
 
 func _on_placeable_timer_timeout():
 	tile_feature.timer_complete()
+	BuildingList.update_placeable_timer.emit(get_timer_percent_done(), self)
 
 func _on_building_list_show_ingredient_list(ingredients, building):
 	if building == tile_feature:
