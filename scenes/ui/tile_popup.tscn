@@ -38,5 +38,10 @@ script = ExtResource("3_8kcoe")
 [node name="StorageBox" type="VBoxContainer" parent="TilePopupBox"]
 layout_mode = 2
 
+[node name="PopupTimeout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="pressed" from="TilePopupBox/ClosePopup" to="." method="_on_close_popup_pressed"]
 [connection signal="pressed_with_placeable" from="TilePopupBox/PrepBox/PrepButton" to="." method="_on_prep_button_pressed"]
+[connection signal="timeout" from="PopupTimeout" to="." method="_on_popup_timeout_timeout"]

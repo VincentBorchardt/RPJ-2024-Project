@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var placeable_label = $TilePopupBox/PlaceableLabel
+@onready var popup_timeout = $PopupTimeout
 
 @onready var prep_box = $TilePopupBox/PrepBox
 @onready var prep_items_label = $TilePopupBox/PrepBox/PrepItemsLabel
@@ -20,10 +21,11 @@ func _process(delta):
 
 func close_popup():
 	self.visible = false
+	popup_timeout.stop()
 
 func _on_show_placeable_info(ingredients, building, tile):
 	current_tile = tile
-	# TODO Position code
+	self.offset = tile.global_position
 	# TODO If necessary, make the popup go the other way, checking position
 	prep_box.visible = false
 	storage_box.visible = false
@@ -34,6 +36,7 @@ func _on_show_placeable_info(ingredients, building, tile):
 		_show_storage_box(ingredients, building)
 	# TODO other types of placeables, maybe even turning into a case with functions split out
 	self.visible = true
+	popup_timeout.start()
 
 func _show_prep_box(ingredients, building):
 	var item_string = ""
@@ -77,4 +80,8 @@ func _on_prep_button_pressed(placeable):
 
 
 func _on_close_popup_pressed():
+	close_popup()
+
+
+func _on_popup_timeout_timeout():
 	close_popup()
