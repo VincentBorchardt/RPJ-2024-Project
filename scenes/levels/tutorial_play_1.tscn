@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv6hj8g6h35u5"]
+[gd_scene load_steps=10 format=3 uid="uid://cv6hj8g6h35u5"]
 
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="1_3j80h"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_ilbho"]
 [ext_resource type="PackedScene" uid="uid://bk88ik7wglil4" path="res://scenes/grid.tscn" id="2_ax61x"]
 [ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="2_dcuhn"]
 [ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="3_81tf4"]
@@ -10,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c37unjfqlf04h" path="res://resources/placeable/warehouse.tres" id="8_0dk3g"]
 
 [node name="TutorialPlay1" type="Node2D"]
+script = ExtResource("1_ilbho")
 
 [node name="OrderQueue" parent="." instance=ExtResource("1_3j80h")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("2_dcuhn")])
@@ -22,3 +24,4 @@ available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("5_2lspy"
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("6_17mgh"), ExtResource("7_36fdb"), ExtResource("8_0dk3g")])
 
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
+[connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

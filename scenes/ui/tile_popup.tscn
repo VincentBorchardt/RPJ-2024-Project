@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bocsrfn0m3emm"]
+
+[ext_resource type="Script" path="res://scripts/ui/tile_popup.gd" id="1_5p3np"]
+[ext_resource type="Texture2D" uid="uid://dd1khnrnb855u" path="res://assets/backgrounds/tile_popup_background.png" id="1_kmpyq"]
+[ext_resource type="Script" path="res://scripts/placeable_button.gd" id="3_8kcoe"]
+
+[node name="TilePopup" type="CanvasLayer"]
+script = ExtResource("1_5p3np")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_kmpyq")
+offset = Vector2(128, 150)
+
+[node name="TilePopupBox" type="VBoxContainer" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 101.0
+offset_bottom = 86.0
+
+[node name="ClosePopup" type="Button" parent="TilePopupBox"]
+layout_mode = 2
+text = "Close Tile"
+
+[node name="PlaceableLabel" type="Label" parent="TilePopupBox"]
+layout_mode = 2
+text = "Default"
+
+[node name="PrepBox" type="VBoxContainer" parent="TilePopupBox"]
+layout_mode = 2
+
+[node name="PrepItemsLabel" type="Label" parent="TilePopupBox/PrepBox"]
+layout_mode = 2
+
+[node name="PrepButton" type="Button" parent="TilePopupBox/PrepBox"]
+layout_mode = 2
+script = ExtResource("3_8kcoe")
+
+[node name="StorageBox" type="VBoxContainer" parent="TilePopupBox"]
+layout_mode = 2
+
+[connection signal="pressed" from="TilePopupBox/ClosePopup" to="." method="_on_close_popup_pressed"]
+[connection signal="pressed_with_placeable" from="TilePopupBox/PrepBox/PrepButton" to="." method="_on_prep_button_pressed"]

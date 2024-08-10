@@ -1,5 +1,7 @@
 extends Control
 
+signal submit_order
+
 @export var available_food: Array[Food]
 @export var available_placeables: Array[Placeable]
 
@@ -20,3 +22,6 @@ func _process(delta):
 
 func _on_order_queue_current_orders_changed(orders):
 	order_box.change_orders(orders)
+
+func _on_order_box_submit_order():
+	submit_order.emit()

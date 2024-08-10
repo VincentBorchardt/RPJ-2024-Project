@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsblupcpeqoqf"]
+[gd_scene load_steps=7 format=3 uid="uid://bsblupcpeqoqf"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ix5wn"]
 [ext_resource type="PackedScene" uid="uid://kf003ypspfyk" path="res://scenes/ui/order_box.tscn" id="2_vlgni"]
 [ext_resource type="PackedScene" uid="uid://bosls3x6g4ud" path="res://scenes/ui/food_box.tscn" id="3_c6i4w"]
 [ext_resource type="PackedScene" uid="uid://dtutr15p1mfw8" path="res://scenes/ui/inventory_box.tscn" id="4_8h13l"]
 [ext_resource type="PackedScene" uid="uid://v16nig8y0ape" path="res://scenes/ui/placeable_box.tscn" id="5_gym5i"]
+[ext_resource type="PackedScene" uid="uid://bocsrfn0m3emm" path="res://scenes/ui/tile_popup.tscn" id="6_75xix"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -41,3 +42,8 @@ offset_left = 1344.0
 offset_top = 300.0
 offset_right = 1575.0
 offset_bottom = 600.0
+
+[node name="TilePopup" parent="." instance=ExtResource("6_75xix")]
+visible = false
+
+[connection signal="submit_order" from="OrderBox" to="." method="_on_order_box_submit_order"]
