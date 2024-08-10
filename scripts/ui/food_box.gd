@@ -26,5 +26,4 @@ func remove_children():
 		node.queue_free()
 
 func _on_food_button_pressed(food):
-	if not Inventory.is_currently_holding_item():
-		Inventory.set_current_item(food)
+	Inventory.attempt_to_purchase_item(food)

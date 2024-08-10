@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="2_nhfpi"]
 
 [node name="FoodBox" type="VBoxContainer"]
-offset_right = 256.0
+offset_right = 231.0
 offset_bottom = 300.0
 script = ExtResource("1_e6v8r")
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("2_nhfpi")])

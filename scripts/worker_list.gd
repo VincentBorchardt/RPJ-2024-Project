@@ -2,6 +2,8 @@ extends Node
 
 signal update_worker_info(worker)
 signal update_worker_path(worker)
+signal turn_worker_mode_off()
+signal turn_worker_mode_on()
 
 var workers : Dictionary = {}
 var current_id = 1
@@ -17,7 +19,7 @@ func _ready():
 func _process(delta):
 	pass
 
-# TODO I need to make sure this creates unique workers, unlike the current problems with buildings
+
 func create_worker():
 	var new_worker = Worker.new()
 	new_worker.id = current_id
@@ -25,11 +27,18 @@ func create_worker():
 	current_id += 1
 	return new_worker
 
+func end_worker_mode():
+	currently_in_worker_mode = false
+	current_worker = null
+	turn_worker_mode_off.emit()
+
 func start_worker_mode(worker):
+	BuildMode.set_build_mode(false)
 	if not currently_in_worker_mode:
 		currently_in_worker_mode = true
 		current_worker = worker
 		worker.reset()
+		turn_worker_mode_on.emit()
 
 func _on_building_list_set_grid_point(tile):
 	print("starting set grid point")
@@ -42,5 +51,4 @@ func _on_building_list_set_grid_point(tile):
 		current_worker.end_tile = tile
 		update_worker_info.emit(current_worker)
 		update_worker_path.emit(current_worker)
-		currently_in_worker_mode = false
-		current_worker = null
+		end_worker_mode()

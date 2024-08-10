@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://v16nig8y0ape"]
+
+[ext_resource type="Script" path="res://scripts/ui/placeable_box.gd" id="1_wyfcx"]
+
+[node name="PlaceableBox" type="VBoxContainer"]
+offset_right = 231.0
+offset_bottom = 300.0
+script = ExtResource("1_wyfcx")
+
+[node name="BuildModeToggle" type="CheckButton" parent="."]
+layout_mode = 2
+text = "Build Mode On"
+
+[node name="ButtonsBox" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="CurrentPlaceable" type="Label" parent="."]
+layout_mode = 2
+
+[connection signal="toggled" from="BuildModeToggle" to="." method="_on_build_mode_button_toggled"]

@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_order_queue_current_orders_changed(orders):
+func change_orders(orders):
 	current_orders.text = ""
 	for food in orders:
 		var temp = current_orders.text
