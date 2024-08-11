@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Food" load_steps=5 format=3 uid="uid://3782s0ecxmy6"]
 
 [ext_resource type="Script" path="res://scripts/food.gd" id="1_c7nqd"]
-[ext_resource type="Texture2D" uid="uid://c7gkfc30cqfxm" path="res://assets/sprites/test/tile_0108.png" id="1_s87fh"]
+[ext_resource type="Texture2D" uid="uid://bl2n8gt243umg" path="res://assets/resource_icons/burger.png" id="1_hjaxv"]
 [ext_resource type="Resource" uid="uid://b7esg16lydpb1" path="res://resources/food/beef.tres" id="2_yl7hg"]
 [ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="3_7jqa2"]
 
@@ -10,5 +10,5 @@ script = ExtResource("1_c7nqd")
 name = "Hamburger"
 price = 10
 time_to_complete = 5
-base_texture = ExtResource("1_s87fh")
+base_texture = ExtResource("1_hjaxv")
 components = Array[ExtResource("1_c7nqd")]([ExtResource("2_yl7hg"), ExtResource("3_7jqa2")])
