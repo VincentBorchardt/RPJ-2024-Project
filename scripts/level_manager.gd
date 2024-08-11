@@ -3,10 +3,13 @@ extends Node2D
 @export var next_level : PackedScene
 
 @onready var order_queue = $OrderQueue
+@onready var message_queue = $MessageQueue
+@onready var game_ui = $GameUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var message = message_queue.get_first_message()
+	game_ui.display_message(message)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

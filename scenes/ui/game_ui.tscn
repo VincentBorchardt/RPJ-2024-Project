@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsblupcpeqoqf"]
+[gd_scene load_steps=8 format=3 uid="uid://bsblupcpeqoqf"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ix5wn"]
 [ext_resource type="PackedScene" uid="uid://kf003ypspfyk" path="res://scenes/ui/order_box.tscn" id="2_vlgni"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtutr15p1mfw8" path="res://scenes/ui/inventory_box.tscn" id="4_8h13l"]
 [ext_resource type="PackedScene" uid="uid://v16nig8y0ape" path="res://scenes/ui/placeable_box.tscn" id="5_gym5i"]
 [ext_resource type="PackedScene" uid="uid://bocsrfn0m3emm" path="res://scenes/ui/tile_popup.tscn" id="6_75xix"]
+[ext_resource type="PackedScene" uid="uid://btghtkerya6ao" path="res://scenes/ui/message_area.tscn" id="6_yg2mc"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -20,20 +21,19 @@ script = ExtResource("1_ix5wn")
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
-offset_right = 256.0
 
 [node name="FoodBox" parent="." instance=ExtResource("3_c6i4w")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 300.0
-offset_right = 256.0
+offset_right = 231.0
 offset_bottom = 600.0
 
 [node name="InventoryBox" parent="." instance=ExtResource("4_8h13l")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 600.0
-offset_right = 256.0
+offset_right = 231.0
 offset_bottom = 900.0
 
 [node name="PlaceableBox" parent="." instance=ExtResource("5_gym5i")]
@@ -42,6 +42,12 @@ offset_left = 1344.0
 offset_top = 300.0
 offset_right = 1575.0
 offset_bottom = 600.0
+
+[node name="MessageArea" parent="." instance=ExtResource("6_yg2mc")]
+offset_left = 256.0
+offset_top = 620.0
+offset_right = 1344.0
+offset_bottom = 900.0
 
 [node name="TilePopup" parent="." instance=ExtResource("6_75xix")]
 visible = false

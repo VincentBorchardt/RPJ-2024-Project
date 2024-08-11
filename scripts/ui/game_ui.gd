@@ -8,6 +8,7 @@ signal submit_order
 @onready var order_box = $OrderBox
 @onready var food_box = $FoodBox
 @onready var placeable_box = $PlaceableBox
+@onready var message_area = $MessageArea
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,8 @@ func _ready():
 func _process(delta):
 	pass
 
+func display_message(message):
+	message_area.display_new_message(message)
 
 func _on_order_queue_current_orders_changed(orders):
 	order_box.change_orders(orders)

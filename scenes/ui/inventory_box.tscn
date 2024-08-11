@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/food_button.gd" id="1_dmocv"]
 
 [node name="InventoryBox" type="VBoxContainer"]
-offset_right = 231.0
+offset_right = 206.0
 offset_bottom = 300.0
 script = ExtResource("1_2dqc1")
 

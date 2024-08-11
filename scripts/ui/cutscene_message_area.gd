@@ -9,6 +9,8 @@ var previous_messages : Array[Message] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO move this up a level or two, this is logic
+	# the signal itself is fine
 	get_new_message.emit()
 
 
