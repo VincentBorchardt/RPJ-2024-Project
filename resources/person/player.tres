@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://clrsvhkhsuwmj"]
 
-[ext_resource type="Texture2D" uid="uid://b7qgswqdj1aeq" path="res://assets/sprites/test/tile_0087.png" id="1_byxnd"]
+[ext_resource type="Texture2D" uid="uid://dogv52escimmt" path="res://assets/characters/player_temp.png" id="1_626mr"]
 [ext_resource type="Script" path="res://scripts/resources/person.gd" id="1_kyryq"]
 
 [resource]
 script = ExtResource("1_kyryq")
 person_name = "Player"
-full_picture = ExtResource("1_byxnd")
+full_picture = ExtResource("1_626mr")

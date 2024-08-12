@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var next_scene : PackedScene
+
 @onready var message_queue = $MessageQueue
 @onready var cutscene_ui = $CutsceneUI
 
@@ -20,5 +22,4 @@ func _on_cutscene_ui_get_new_message():
 	if message != null:
 		cutscene_ui.display_new_message(message)
 	else:
-		# move to a new scene
-		pass
+		get_tree().change_scene_to_packed(next_scene)

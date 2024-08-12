@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Food" load_steps=2 format=3 uid="uid://8i5nghkya6dv"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_n2457"]
+
+[resource]
+script = ExtResource("1_n2457")
+name = "Chick"
+price = 2
+time_to_complete = 7
+components = Array[ExtResource("1_n2457")]([])
