@@ -20,8 +20,13 @@ func _on_cutscene_message_area_get_new_message():
 	get_new_message.emit()
 
 func display_new_message(message):
+	var picture
+	if message.alt_picture != null:
+		picture = message.alt_picture
+	else:
+		picture = message.speaker.full_picture
 	if message.image_location == Message.Location.LEFT:
-		left_image.texture = message.speaker.full_picture
+		left_image.texture = picture
 	elif message.image_location == Message.Location.RIGHT:
-		right_image.texture = message.speaker.full_picture
+		right_image.texture = picture
 	cutscene_message_area.display_new_message(message)
