@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="PrepBuilding" load_steps=3 format=3 uid="uid://dtoqbon7ly541"]
 
-[ext_resource type="Texture2D" uid="uid://cdkgqohgff8ku" path="res://assets/sprites/test/tile_0124.png" id="1_ls5bu"]
 [ext_resource type="Script" path="res://scripts/prep_building.gd" id="1_v1vfu"]
+[ext_resource type="Texture2D" uid="uid://bescltmfvfw2m" path="res://assets/resource_icons/slow_cooker.png" id="1_y2wni"]
 
 [resource]
 script = ExtResource("1_v1vfu")
 food_preparable = Array[Resource("res://scripts/food.gd")]([])
 placeable_name = "Slow Cooker"
 price = 6
-base_texture = ExtResource("1_ls5bu")
+base_texture = ExtResource("1_y2wni")

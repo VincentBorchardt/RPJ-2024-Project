@@ -16,9 +16,10 @@ func add_food(food):
 	check_prepare_food()
 
 func check_prepare_food():
-	for food in food_preparable:
-		if array_contains_array (current_ingredients, food.components) and current_creation == null:
-			prepare_food(food)
+	if not currently_prepping:
+		for food in food_preparable:
+			if array_contains_array (current_ingredients, food.components) and current_creation == null:
+				prepare_food(food)
 
 func prepare_food(food):
 	for entry in food.components:
@@ -48,6 +49,7 @@ func finish():
 		current_creation = null
 		currently_prepping = false
 		food_ready = false
+		check_prepare_food()
 
 func activate_placeable(tile):
 	if Inventory.is_currently_holding_item():

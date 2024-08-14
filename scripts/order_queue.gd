@@ -44,6 +44,7 @@ func submit_order():
 		if current_orders.has(food):
 			# TODO add code if food isn't in there?
 			# or accept that inventory trashes the item if you submit wrong?
+			Inventory.sell_item(food)
 			current_orders.erase(food)
 			# TODO probably a signal here to do UI stuff like the customer coming up?
 			current_orders_changed.emit(current_orders)

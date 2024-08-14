@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://5hl5xbxfby87"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_deoon"]
+[ext_resource type="Texture2D" uid="uid://chkcw026sgx8l" path="res://assets/resource_icons/cheese.png" id="1_gvvf4"]
+
+[resource]
+script = ExtResource("1_deoon")
+name = "Cheese"
+price = 4
+time_to_complete = 6
+base_texture = ExtResource("1_gvvf4")
+components = Array[ExtResource("1_deoon")]([])

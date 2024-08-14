@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Food" load_steps=5 format=3 uid="uid://bdt7r8yruuwyl"]
+
+[ext_resource type="Texture2D" uid="uid://b17cq528cv5fq" path="res://assets/resource_icons/ham_pancakes.png" id="1_7mgsj"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_qnvsd"]
+[ext_resource type="Resource" uid="uid://cbt4v640keprr" path="res://resources/food/pancakes.tres" id="2_meyak"]
+[ext_resource type="Resource" uid="uid://brillpy6bkia5" path="res://resources/food/ham.tres" id="3_c4w5a"]
+
+[resource]
+script = ExtResource("1_qnvsd")
+name = "Pancakes and Ham"
+price = 10
+time_to_complete = 1
+base_texture = ExtResource("1_7mgsj")
+components = Array[ExtResource("1_qnvsd")]([ExtResource("2_meyak"), ExtResource("3_c4w5a")])

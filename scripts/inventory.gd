@@ -49,6 +49,9 @@ func attempt_to_purchase_item(food):
 		current_hold_item = food
 		current_currency -= food.price
 
+func sell_item(food):
+	current_currency += food.price
+
 #func set_current_item(food):
 	#current_hold_item = food
 	#current_item_changed.emit(food)
