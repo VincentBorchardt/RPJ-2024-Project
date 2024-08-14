@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://00y5qdsajm0i"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_jj1en"]
+[ext_resource type="Texture2D" uid="uid://be8dl0ru5xkhb" path="res://assets/resource_icons/barbeque_sauce.png" id="1_jsea0"]
+
+[resource]
+script = ExtResource("1_jj1en")
+name = "BBQ Sauce"
+price = 6
+time_to_complete = 0
+base_texture = ExtResource("1_jsea0")
+components = Array[ExtResource("1_jj1en")]([])

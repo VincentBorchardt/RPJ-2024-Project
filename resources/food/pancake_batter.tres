@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://b0o0x86hgqmtr"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_bccwc"]
+[ext_resource type="Texture2D" uid="uid://bag6ju0t5kxpx" path="res://assets/resource_icons/pancake_batter.png" id="1_iwfh2"]
+
+[resource]
+script = ExtResource("1_bccwc")
+name = "Pancake Batter"
+price = 7
+time_to_complete = 0
+base_texture = ExtResource("1_iwfh2")
+components = Array[ExtResource("1_bccwc")]([])

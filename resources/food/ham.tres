@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Food" load_steps=4 format=3 uid="uid://brillpy6bkia5"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_0x5i2"]
+[ext_resource type="Texture2D" uid="uid://fgwt7ll2t42y" path="res://assets/resource_icons/ham_leg.png" id="1_rcekg"]
+[ext_resource type="Resource" uid="uid://dnnib4e1387vy" path="res://resources/food/pig.tres" id="2_1qqkl"]
+
+[resource]
+script = ExtResource("1_0x5i2")
+name = "Ham"
+price = 9
+time_to_complete = 6
+base_texture = ExtResource("1_rcekg")
+components = Array[ExtResource("1_0x5i2")]([ExtResource("2_1qqkl")])

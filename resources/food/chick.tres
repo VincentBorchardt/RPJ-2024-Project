@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Food" load_steps=2 format=3 uid="uid://8i5nghkya6dv"]
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://8i5nghkya6dv"]
 
 [ext_resource type="Script" path="res://scripts/food.gd" id="1_n2457"]
+[ext_resource type="Texture2D" uid="uid://cx5tuy53oeocp" path="res://assets/resource_icons/chick.png" id="1_wvgur"]
 
 [resource]
 script = ExtResource("1_n2457")
 name = "Chick"
 price = 2
 time_to_complete = 7
+base_texture = ExtResource("1_wvgur")
 components = Array[ExtResource("1_n2457")]([])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Food" load_steps=4 format=3 uid="uid://6l4oqjt2jwnm"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_70nxx"]
+[ext_resource type="Texture2D" uid="uid://bp4ng7jf7t5vr" path="res://assets/resource_icons/chicken_drumstick_raw.png" id="1_t1b8f"]
+[ext_resource type="Resource" uid="uid://8i5nghkya6dv" path="res://resources/food/chick.tres" id="2_l4q1o"]
+
+[resource]
+script = ExtResource("1_70nxx")
+name = "Chicken"
+price = 8
+time_to_complete = 4
+base_texture = ExtResource("1_t1b8f")
+components = Array[ExtResource("1_70nxx")]([ExtResource("2_l4q1o")])

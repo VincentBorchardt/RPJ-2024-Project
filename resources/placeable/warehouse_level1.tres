@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StorageBuilding" load_steps=3 format=3 uid="uid://bt705su2brf73"]
+
+[ext_resource type="Texture2D" uid="uid://da8bmk17hhg7y" path="res://assets/sprites/test/tile_0111.png" id="1_kdya2"]
+[ext_resource type="Script" path="res://scripts/storage_building.gd" id="1_muual"]
+
+[resource]
+script = ExtResource("1_muual")
+food_stored = Array[Resource("res://scripts/food.gd")]([])
+producer = true
+placeable_name = "Warehouse"
+price = 5
+base_texture = ExtResource("1_kdya2")

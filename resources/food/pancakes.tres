@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Food" load_steps=4 format=3 uid="uid://cbt4v640keprr"]
+
+[ext_resource type="Texture2D" uid="uid://ch8nbx22dgieq" path="res://assets/resource_icons/pancakes.png" id="1_k4qce"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_ppf4u"]
+[ext_resource type="Resource" uid="uid://b0o0x86hgqmtr" path="res://resources/food/pancake_batter.tres" id="2_647jc"]
+
+[resource]
+script = ExtResource("1_ppf4u")
+name = "Default Food"
+price = 10
+time_to_complete = 3
+base_texture = ExtResource("1_k4qce")
+components = Array[ExtResource("1_ppf4u")]([ExtResource("2_647jc")])
