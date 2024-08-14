@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ce8rqxnl32p72"]
 
-[ext_resource type="Script" path="res://scripts/cutscenes/tutorial_cutscene_1.gd" id="1_4o62p"]
 [ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="1_abmjs"]
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_lblth"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_3wg87"]
 [ext_resource type="PackedScene" uid="uid://cv6hj8g6h35u5" path="res://scenes/levels/tutorial_play_1.tscn" id="2_l64xn"]
 [ext_resource type="Resource" uid="uid://bivlw6fl52l24" path="res://resources/message/tutorial/tutorial-1-1.tres" id="3_tx8he"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://cmiw4042wgh4g" path="res://resources/message/tutorial/tutorial-1-8.tres" id="10_r1u5x"]
 
 [node name="TutorialCutscene1" type="Node2D"]
-script = ExtResource("1_4o62p")
+script = ExtResource("1_lblth")
 next_scene = ExtResource("2_l64xn")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_3wg87")]

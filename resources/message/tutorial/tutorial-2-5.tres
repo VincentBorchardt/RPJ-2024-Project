@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://0w34vmc2fgh7"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_3hkej"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_qj5o1"]
+
+[resource]
+script = ExtResource("1_3hkej")
+speaker = ExtResource("2_qj5o1")
+message = "Workers that are independent, hospitable, and clearly secondary? And why does that backronym sound familiar?"
+image_location = 0

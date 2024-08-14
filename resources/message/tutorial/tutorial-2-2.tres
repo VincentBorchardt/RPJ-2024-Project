@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bod4qa8e8iwbr"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_tn8q2"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_dp23h"]
+
+[resource]
+script = ExtResource("1_tn8q2")
+speaker = ExtResource("2_dp23h")
+message = "It’s very neat, but how is this happening? How can I click things on a screen and end up with a perfectly-cooked burger?"
+image_location = 0

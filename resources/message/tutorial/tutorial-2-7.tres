@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://lyymedq48ugl"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_22e2v"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_huqjy"]
+
+[resource]
+script = ExtResource("1_22e2v")
+speaker = ExtResource("2_huqjy")
+message = "It’s okay, they agreed to help us once the television opportunities dried up. They’ll do anything for a couple batches of our Mystery House Ketchup."
+image_location = 1

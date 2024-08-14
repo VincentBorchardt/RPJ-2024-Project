@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var next_level : PackedScene
+@export var next_scene : PackedScene
 
 @onready var order_queue = $OrderQueue
 @onready var message_queue = $MessageQueue
@@ -21,3 +21,7 @@ func _on_game_ui_submit_order():
 	# TODO This should really be taking in an item from Inventory initially
 	# That future-proofs it against workers submitting orders autonomously
 	order_queue.submit_order()
+
+
+func _on_order_queue_end_level():
+	get_tree().change_scene_to_packed(next_scene)

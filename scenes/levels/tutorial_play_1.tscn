@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv6hj8g6h35u5"]
+[gd_scene load_steps=13 format=3 uid="uid://cv6hj8g6h35u5"]
 
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="1_3j80h"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_ilbho"]
 [ext_resource type="PackedScene" uid="uid://bk88ik7wglil4" path="res://scenes/grid.tscn" id="2_ax61x"]
 [ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="2_dcuhn"]
+[ext_resource type="PackedScene" uid="uid://chl26qamibgtf" path="res://scenes/cutscenes/tutorial_cutscene_2.tscn" id="2_il1ua"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_k18hm"]
 [ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="3_81tf4"]
 [ext_resource type="Resource" uid="uid://dottocadrsibe" path="res://resources/message/tutorial/tutorial-play1-start.tres" id="3_nq36u"]
@@ -14,6 +15,7 @@
 
 [node name="TutorialPlay1" type="Node2D"]
 script = ExtResource("1_ilbho")
+next_scene = ExtResource("2_il1ua")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_k18hm")]
 starting_message = ExtResource("3_nq36u")
@@ -29,4 +31,5 @@ available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("5_2lspy"
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("6_17mgh"), ExtResource("7_36fdb"), ExtResource("8_0dk3g")])
 
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
+[connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
 [connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=13 format=3 uid="uid://chl26qamibgtf"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_bkcai"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="1_hh6ls"]
+[ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="2_1rfb7"]
+[ext_resource type="Resource" uid="uid://df53nvkvgw137" path="res://resources/message/tutorial/tutorial-2-1.tres" id="3_5t573"]
+[ext_resource type="Resource" uid="uid://bod4qa8e8iwbr" path="res://resources/message/tutorial/tutorial-2-2.tres" id="4_w7dg8"]
+[ext_resource type="Resource" uid="uid://bhllru3ivh5p6" path="res://resources/message/tutorial/tutorial-2-3.tres" id="5_dhrj6"]
+[ext_resource type="Resource" uid="uid://c1msy0f35ymua" path="res://resources/message/tutorial/tutorial-2-4.tres" id="6_1rn2q"]
+[ext_resource type="Resource" uid="uid://0w34vmc2fgh7" path="res://resources/message/tutorial/tutorial-2-5.tres" id="7_syptt"]
+[ext_resource type="Resource" uid="uid://d2u3w6720qaid" path="res://resources/message/tutorial/tutorial-2-6.tres" id="8_vxb1k"]
+[ext_resource type="Resource" uid="uid://lyymedq48ugl" path="res://resources/message/tutorial/tutorial-2-7.tres" id="9_2tcwj"]
+[ext_resource type="Resource" uid="uid://co38bmvjsvqmq" path="res://resources/message/tutorial/tutorial-2-8.tres" id="10_kb3ae"]
+[ext_resource type="Resource" uid="uid://c016gddkcvftg" path="res://resources/message/tutorial/tutorial-2-9.tres" id="11_lox11"]
+
+[node name="TutorialCutscene2" type="Node2D"]
+script = ExtResource("1_bkcai")
+
+[node name="MessageQueue" parent="." instance=ExtResource("1_hh6ls")]
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_5t573"), ExtResource("4_w7dg8"), ExtResource("5_dhrj6"), ExtResource("6_1rn2q"), ExtResource("7_syptt"), ExtResource("8_vxb1k"), ExtResource("9_2tcwj"), ExtResource("10_kb3ae"), ExtResource("11_lox11")])
+
+[node name="CutsceneUI" parent="." instance=ExtResource("2_1rfb7")]
+
+[connection signal="get_new_message" from="CutsceneUI" to="." method="_on_cutscene_ui_get_new_message"]

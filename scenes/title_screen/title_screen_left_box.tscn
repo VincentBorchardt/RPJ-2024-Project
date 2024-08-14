@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq3n6xqgr4hx6"]
+[gd_scene load_steps=6 format=3 uid="uid://dq3n6xqgr4hx6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
 [ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
 [ext_resource type="PackedScene" uid="uid://ce8rqxnl32p72" path="res://scenes/cutscenes/tutorial_cutscene_1.tscn" id="3_px55q"]
 [ext_resource type="PackedScene" uid="uid://cv6hj8g6h35u5" path="res://scenes/levels/tutorial_play_1.tscn" id="4_3t870"]
+[ext_resource type="PackedScene" uid="uid://chl26qamibgtf" path="res://scenes/cutscenes/tutorial_cutscene_2.tscn" id="5_dg8fc"]
 
 [node name="TitleScreenLeftBox" type="VBoxContainer"]
 anchors_preset = 15
@@ -61,13 +62,16 @@ attached_scene = ExtResource("4_3t870")
 layout_mode = 2
 text = "Middle"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("5_dg8fc")
 
 [node name="Tutorial2" type="Button" parent="DebugBox/TutorialBox"]
+visible = false
 layout_mode = 2
 text = "Play 2"
 script = ExtResource("2_ttbhf")
 
 [node name="TutorialEnd" type="Button" parent="DebugBox/TutorialBox"]
+visible = false
 layout_mode = 2
 text = "End"
 script = ExtResource("2_ttbhf")
@@ -99,3 +103,4 @@ script = ExtResource("2_ttbhf")
 [connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/TutorialBox/TutorialStart" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/TutorialBox/Tutorial1" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/TutorialBox/TutorialMiddle" to="." method="_on_scene_button_pressed"]
