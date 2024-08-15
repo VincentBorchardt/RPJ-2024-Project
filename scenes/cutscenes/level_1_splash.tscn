@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://hgobdf0ycb3o"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/splash_manager.gd" id="1_8144n"]
+[ext_resource type="PackedScene" uid="uid://wgj3uboev5by" path="res://scenes/cutscenes/level_1_start_cutscene.tscn" id="2_eol46"]
+
+[node name="level_1_splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8144n")
+next_scene = ExtResource("2_eol46")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 100.0
+offset_right = 1200.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 96
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 700.0
+offset_right = 1200.0
+offset_bottom = 800.0
+theme_override_font_sizes/font_size = 48
+text = "Temp Subtitle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplashTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="SplashTimer" to="." method="_on_splash_timer_timeout"]
