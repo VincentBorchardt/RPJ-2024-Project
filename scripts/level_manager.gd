@@ -24,4 +24,7 @@ func _on_game_ui_submit_order():
 
 
 func _on_order_queue_end_level():
-	get_tree().change_scene_to_packed(next_scene)
+	if next_scene != null:
+		get_tree().change_scene_to_packed(next_scene)
+	else:
+		get_tree().change_scene_to_file("res://scenes/title_screen/title_screen.tscn")

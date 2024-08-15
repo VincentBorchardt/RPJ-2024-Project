@@ -22,4 +22,7 @@ func _on_cutscene_ui_get_new_message():
 	if message != null:
 		cutscene_ui.display_new_message(message)
 	else:
-		get_tree().change_scene_to_packed(next_scene)
+		if next_scene != null:
+			get_tree().change_scene_to_packed(next_scene)
+		else:
+			get_tree().change_scene_to_file("res://scenes/title_screen/title_screen.tscn")
