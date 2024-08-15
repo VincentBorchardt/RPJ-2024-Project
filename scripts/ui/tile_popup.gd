@@ -56,8 +56,9 @@ func _show_prep_box(ingredients, building, tile):
 	prep_box.visible = true
 
 func _update_active_prep_box(percent_done, building):
-	prep_button.attached_placeable = building
+	#prep_button.attached_placeable = building
 	prep_progress_bar.value = percent_done
+	prep_button.icon = building.current_creation.base_texture
 	if building.food_ready:
 		prep_button.text = building.current_creation.name + " Complete"
 		prep_button.disabled = false

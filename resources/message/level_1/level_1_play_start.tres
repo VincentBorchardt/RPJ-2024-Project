@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://c0ygccecdda3s"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_f6236"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_hhg3e"]
+
+[resource]
+script = ExtResource("1_f6236")
+speaker = ExtResource("2_hhg3e")
+message = "Remember to judicious with your spending, but quick with your preparation. Those orders are coming fast!"
+image_location = 0

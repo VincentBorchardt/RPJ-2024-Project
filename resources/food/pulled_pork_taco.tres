@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Food" load_steps=5 format=3 uid="uid://bwj8uym0405wt"]
+
+[ext_resource type="Texture2D" uid="uid://22c0bua80jqg" path="res://assets/resource_icons/pulled_pork_taco.png" id="1_d5q7w"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_s2g1o"]
+[ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="2_lo470"]
+[ext_resource type="Resource" uid="uid://bsqhlgmgsd6ba" path="res://resources/food/taco_shell.tres" id="3_c7n65"]
+
+[resource]
+script = ExtResource("1_s2g1o")
+name = "Pulled Pork Taco"
+price = 20
+time_to_complete = 4
+base_texture = ExtResource("1_d5q7w")
+components = Array[ExtResource("1_s2g1o")]([ExtResource("2_lo470"), ExtResource("3_c7n65")])

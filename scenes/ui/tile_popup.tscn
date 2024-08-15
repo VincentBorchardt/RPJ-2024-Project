@@ -9,7 +9,7 @@ script = ExtResource("1_5p3np")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_kmpyq")
-offset = Vector2(128, 150)
+offset = Vector2(175, 175)
 
 [node name="TilePopupBox" type="VBoxContainer" parent="."]
 offset_left = 20.0

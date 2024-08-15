@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://bsqhlgmgsd6ba"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_2ykat"]
+[ext_resource type="Texture2D" uid="uid://b1ysr7f2hnrcr" path="res://assets/resource_icons/taco_shell.png" id="1_sdn2g"]
+
+[resource]
+script = ExtResource("1_2ykat")
+name = "Taco Shell"
+price = 7
+time_to_complete = 0
+base_texture = ExtResource("1_sdn2g")
+components = Array[ExtResource("1_2ykat")]([])

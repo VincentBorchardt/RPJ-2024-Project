@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_ppf4u")
-name = "Default Food"
+name = "Pancakes"
 price = 10
 time_to_complete = 3
 base_texture = ExtResource("1_k4qce")

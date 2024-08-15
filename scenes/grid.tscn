@@ -55,6 +55,7 @@ position = Vector2(928, 32)
 position = Vector2(992, 32)
 
 [node name="Tile17" parent="." instance=ExtResource("2_410hp")]
+visible = false
 position = Vector2(1056, 32)
 
 [node name="Tile18" parent="." instance=ExtResource("2_410hp")]
@@ -106,6 +107,7 @@ position = Vector2(928, 96)
 position = Vector2(992, 96)
 
 [node name="Tile34" parent="." instance=ExtResource("2_410hp")]
+visible = false
 position = Vector2(1056, 96)
 
 [node name="Tile35" parent="." instance=ExtResource("2_410hp")]
@@ -157,6 +159,7 @@ position = Vector2(928, 160)
 position = Vector2(992, 160)
 
 [node name="Tile51" parent="." instance=ExtResource("2_410hp")]
+visible = false
 position = Vector2(1056, 160)
 
 [node name="Tile52" parent="." instance=ExtResource("2_410hp")]
@@ -208,6 +211,7 @@ position = Vector2(928, 224)
 position = Vector2(992, 224)
 
 [node name="Tile68" parent="." instance=ExtResource("2_410hp")]
+visible = false
 position = Vector2(1056, 224)
 
 [node name="Tile69" parent="." instance=ExtResource("2_410hp")]
@@ -259,4 +263,5 @@ position = Vector2(928, 288)
 position = Vector2(992, 288)
 
 [node name="Tile85" parent="." instance=ExtResource("2_410hp")]
+visible = false
 position = Vector2(1056, 288)

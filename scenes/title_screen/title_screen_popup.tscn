@@ -16,6 +16,13 @@ offset_left = 25.0
 offset_top = 25.0
 offset_right = 1375.0
 offset_bottom = 675.0
+text = "Credits and Sources:
+
+Kyle and Robot Party Chat: Setting and Character Ideas
+
+lkb: Character Portraits
+
+PiiiXL, Azuna Pixels, Henry Software, GhostPixxells, Deep Dive Game Studio: Various Pixel Art"
 
 [node name="LicensesLabel" type="RichTextLabel" parent="."]
 visible = false

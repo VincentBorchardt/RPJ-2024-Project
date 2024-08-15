@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Food" load_steps=4 format=3 uid="uid://cslgsh4in2g5p"]
+
+[ext_resource type="Texture2D" uid="uid://ddbqjqajfeoe3" path="res://assets/resource_icons/bbq_pork.png" id="1_5bcxg"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_8verm"]
+[ext_resource type="Resource" uid="uid://brillpy6bkia5" path="res://resources/food/ham.tres" id="2_fxrg7"]
+
+[resource]
+script = ExtResource("1_8verm")
+name = "BBQ Pork"
+price = 12
+time_to_complete = 15
+base_texture = ExtResource("1_5bcxg")
+components = Array[ExtResource("1_8verm")]([ExtResource("2_fxrg7")])

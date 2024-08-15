@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_0x5i2")
-name = "Ham"
-price = 9
+name = "Pork"
+price = 7
 time_to_complete = 6
 base_texture = ExtResource("1_rcekg")
 components = Array[ExtResource("1_0x5i2")]([ExtResource("2_1qqkl")])
