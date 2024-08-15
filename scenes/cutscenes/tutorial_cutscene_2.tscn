@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://chl26qamibgtf"]
+[gd_scene load_steps=14 format=3 uid="uid://chl26qamibgtf"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_bkcai"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="1_hh6ls"]
 [ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="2_1rfb7"]
+[ext_resource type="PackedScene" uid="uid://wgj3uboev5by" path="res://scenes/cutscenes/level_1_start_cutscene.tscn" id="2_eshib"]
 [ext_resource type="Resource" uid="uid://df53nvkvgw137" path="res://resources/message/tutorial/tutorial-2-1.tres" id="3_5t573"]
 [ext_resource type="Resource" uid="uid://bod4qa8e8iwbr" path="res://resources/message/tutorial/tutorial-2-2.tres" id="4_w7dg8"]
 [ext_resource type="Resource" uid="uid://bhllru3ivh5p6" path="res://resources/message/tutorial/tutorial-2-3.tres" id="5_dhrj6"]
@@ -15,6 +16,7 @@
 
 [node name="TutorialCutscene2" type="Node2D"]
 script = ExtResource("1_bkcai")
+next_scene = ExtResource("2_eshib")
 
 [node name="MessageQueue" parent="." instance=ExtResource("1_hh6ls")]
 messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_5t573"), ExtResource("4_w7dg8"), ExtResource("5_dhrj6"), ExtResource("6_1rn2q"), ExtResource("7_syptt"), ExtResource("8_vxb1k"), ExtResource("9_2tcwj"), ExtResource("10_kb3ae"), ExtResource("11_lox11")])

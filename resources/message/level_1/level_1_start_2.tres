@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bsqqvg5eyfy6g"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_ef4dw"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_q7p0n"]
+
+[resource]
+script = ExtResource("1_ef4dw")
+speaker = ExtResource("2_q7p0n")
+message = "It’s a job, and an “interesting” one at that. So what are we whipping up today?"
+image_location = 0

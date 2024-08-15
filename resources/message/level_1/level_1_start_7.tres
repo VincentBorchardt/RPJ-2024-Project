@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://b85f7ymx4bqjn"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_018bn"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_mhj2s"]
+
+[resource]
+script = ExtResource("1_018bn")
+speaker = ExtResource("2_mhj2s")
+message = "Ah, the wonders of automation and cheap labor…"
+image_location = 0
