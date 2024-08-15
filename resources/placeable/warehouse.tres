@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StorageBuilding" load_steps=4 format=3 uid="uid://c37unjfqlf04h"]
 
-[ext_resource type="Texture2D" uid="uid://da8bmk17hhg7y" path="res://assets/sprites/test/tile_0111.png" id="1_p4qjt"]
+[ext_resource type="Texture2D" uid="uid://5et4bgkhtb1s" path="res://assets/resource_icons/warehouse.png" id="1_a7qjt"]
 [ext_resource type="Script" path="res://scripts/storage_building.gd" id="1_tcbj0"]
 [ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="2_msvy1"]
 
@@ -10,4 +10,4 @@ food_stored = Array[Resource("res://scripts/food.gd")]([ExtResource("2_msvy1")])
 producer = true
 placeable_name = "Warehouse"
 price = 5
-base_texture = ExtResource("1_p4qjt")
+base_texture = ExtResource("1_a7qjt")
