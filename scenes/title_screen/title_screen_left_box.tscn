@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq3n6xqgr4hx6"]
+[gd_scene load_steps=10 format=3 uid="uid://dq3n6xqgr4hx6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
 [ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://chl26qamibgtf" path="res://scenes/cutscenes/tutorial_cutscene_2.tscn" id="5_dg8fc"]
 [ext_resource type="PackedScene" uid="uid://wgj3uboev5by" path="res://scenes/cutscenes/level_1_start_cutscene.tscn" id="6_kt2eu"]
 [ext_resource type="PackedScene" uid="uid://bengvxwd8hsom" path="res://scenes/levels/level_1_play.tscn" id="7_xhfyw"]
+[ext_resource type="PackedScene" uid="uid://b68vkijkyft62" path="res://scenes/cutscenes/level_1_end_cutscene.tscn" id="9_5irr8"]
 
 [node name="TitleScreenLeftBox" type="VBoxContainer"]
 anchors_preset = 15
@@ -44,7 +45,7 @@ layout_mode = 2
 
 [node name="TutorialLabel" type="Label" parent="DebugBox"]
 layout_mode = 2
-text = "Tutorial"
+text = "Introduction"
 
 [node name="TutorialBox" type="HBoxContainer" parent="DebugBox"]
 layout_mode = 2
@@ -81,7 +82,7 @@ script = ExtResource("2_ttbhf")
 
 [node name="Level1Label" type="Label" parent="DebugBox"]
 layout_mode = 2
-text = "Level 1"
+text = "Day 1"
 
 [node name="Level1Box" type="HBoxContainer" parent="DebugBox"]
 layout_mode = 2
@@ -102,6 +103,29 @@ attached_scene = ExtResource("7_xhfyw")
 layout_mode = 2
 text = "End"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("9_5irr8")
+
+[node name="Level2Label" type="Label" parent="DebugBox"]
+layout_mode = 2
+text = "Day 2"
+
+[node name="Level2Box" type="HBoxContainer" parent="DebugBox"]
+layout_mode = 2
+
+[node name="Level2Start" type="Button" parent="DebugBox/Level2Box"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_ttbhf")
+
+[node name="Level2Play" type="Button" parent="DebugBox/Level2Box"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("2_ttbhf")
+
+[node name="Level2End" type="Button" parent="DebugBox/Level2Box"]
+layout_mode = 2
+text = "End"
+script = ExtResource("2_ttbhf")
 
 [connection signal="pressed_with_scene" from="StoryModeButton" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
@@ -111,3 +135,4 @@ script = ExtResource("2_ttbhf")
 [connection signal="pressed_with_scene" from="DebugBox/TutorialBox/TutorialMiddle" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1Start" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1Play" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1End" to="." method="_on_scene_button_pressed"]
