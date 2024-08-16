@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Message" load_steps=2 format=3 uid="uid://dk7tdn00x2qhc"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_iihdp"]
+
+[resource]
+script = ExtResource("1_iihdp")
+message = "Meet me after your shift behind the restaurant if you're not an auxilary."
+image_location = 0

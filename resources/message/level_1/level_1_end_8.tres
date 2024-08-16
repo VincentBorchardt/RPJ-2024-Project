@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dvg701bmsckh"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_x60wq"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_qwuh4"]
+
+[resource]
+script = ExtResource("1_x60wq")
+speaker = ExtResource("2_qwuh4")
+message = "I need to recruit some more help first, but what you can do is take the Breakfast shift tomorrow morning. When an order for Pancakes and Ham comes in, just put the two ingredients together in the Assembler, serve it, and take what’s left over, all without letting the boss find out."
+image_location = 1

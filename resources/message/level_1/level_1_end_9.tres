@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cx1omvdulbfdg"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_g2phx"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_1fwlv"]
+
+[resource]
+script = ExtResource("1_g2phx")
+speaker = ExtResource("2_1fwlv")
+message = "Can do. I’m sick of making Tacos anyway."
+image_location = 0

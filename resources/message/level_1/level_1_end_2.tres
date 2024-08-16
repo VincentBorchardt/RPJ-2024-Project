@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dxk3yjnhbbjrq"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_uag0a"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_ow7jv"]
+
+[resource]
+script = ExtResource("1_uag0a")
+speaker = ExtResource("2_ow7jv")
+message = "So you’re the schlub who Pittie got to run the counter this week, huh?"
+image_location = 1

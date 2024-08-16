@@ -1,16 +1,15 @@
-[gd_resource type="Resource" script_class="StorageBuilding" load_steps=8 format=3 uid="uid://bt705su2brf73"]
+[gd_resource type="Resource" script_class="StorageBuilding" load_steps=7 format=3 uid="uid://bt705su2brf73"]
 
 [ext_resource type="Texture2D" uid="uid://5et4bgkhtb1s" path="res://assets/resource_icons/warehouse.png" id="1_m4vst"]
 [ext_resource type="Script" path="res://scripts/storage_building.gd" id="1_muual"]
 [ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="2_1titu"]
-[ext_resource type="Resource" uid="uid://b0o0x86hgqmtr" path="res://resources/food/pancake_batter.tres" id="3_ae260"]
 [ext_resource type="Resource" uid="uid://bsqhlgmgsd6ba" path="res://resources/food/taco_shell.tres" id="4_gy3gx"]
 [ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="5_vkefn"]
 [ext_resource type="Resource" uid="uid://5hl5xbxfby87" path="res://resources/food/cheese.tres" id="6_30fro"]
 
 [resource]
 script = ExtResource("1_muual")
-food_stored = Array[Resource("res://scripts/food.gd")]([ExtResource("2_1titu"), ExtResource("3_ae260"), ExtResource("4_gy3gx"), ExtResource("5_vkefn"), ExtResource("6_30fro")])
+food_stored = Array[Resource("res://scripts/food.gd")]([ExtResource("2_1titu"), ExtResource("4_gy3gx"), ExtResource("5_vkefn"), ExtResource("6_30fro")])
 producer = true
 placeable_name = "Warehouse"
 price = 5

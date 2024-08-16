@@ -1,0 +1,24 @@
+[gd_scene load_steps=13 format=3 uid="uid://b68vkijkyft62"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_tencc"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_hefg3"]
+[ext_resource type="Resource" uid="uid://bg4kipdyept3k" path="res://resources/message/level_1/level_1_end_1.tres" id="3_jpvog"]
+[ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="3_sg543"]
+[ext_resource type="Resource" uid="uid://dxk3yjnhbbjrq" path="res://resources/message/level_1/level_1_end_2.tres" id="4_1cyl8"]
+[ext_resource type="Resource" uid="uid://26dayycwyop5" path="res://resources/message/level_1/level_1_end_3.tres" id="5_3ekbs"]
+[ext_resource type="Resource" uid="uid://blx0s4lweo1pt" path="res://resources/message/level_1/level_1_end_4.tres" id="6_n8bsn"]
+[ext_resource type="Resource" uid="uid://btkbgjam8ow6v" path="res://resources/message/level_1/level_1_end_5.tres" id="7_5y6ng"]
+[ext_resource type="Resource" uid="uid://b3lfjheyurt03" path="res://resources/message/level_1/level_1_end_6.tres" id="8_x0h5x"]
+[ext_resource type="Resource" uid="uid://wyn28po6j144" path="res://resources/message/level_1/level_1_end_7.tres" id="9_gn5mb"]
+[ext_resource type="Resource" uid="uid://dvg701bmsckh" path="res://resources/message/level_1/level_1_end_8.tres" id="10_cw3lq"]
+[ext_resource type="Resource" uid="uid://cx1omvdulbfdg" path="res://resources/message/level_1/level_1_end_9.tres" id="11_sq064"]
+
+[node name="Level1CutsceneEnd" type="Node2D"]
+script = ExtResource("1_tencc")
+
+[node name="MessageQueue" parent="." instance=ExtResource("2_hefg3")]
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_jpvog"), ExtResource("4_1cyl8"), ExtResource("5_3ekbs"), ExtResource("6_n8bsn"), ExtResource("7_5y6ng"), ExtResource("8_x0h5x"), ExtResource("9_gn5mb"), ExtResource("10_cw3lq"), ExtResource("11_sq064")])
+
+[node name="CutsceneUI" parent="." instance=ExtResource("3_sg543")]
+
+[connection signal="get_new_message" from="CutsceneUI" to="." method="_on_cutscene_ui_get_new_message"]

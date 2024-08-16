@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://wyn28po6j144"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_ryup4"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_kt3kt"]
+
+[resource]
+script = ExtResource("1_ryup4")
+speaker = ExtResource("2_kt3kt")
+message = "But The Pitmaster is watching me like a hawk whenever I’m on the clock. Do you have any ideas?"
+image_location = 0

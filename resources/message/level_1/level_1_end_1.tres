@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bg4kipdyept3k"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_pm6tq"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_nqfoq"]
+
+[resource]
+script = ExtResource("1_pm6tq")
+speaker = ExtResource("2_nqfoq")
+message = "This seems very sketchy, but they clearly know what’s going on with the Taxxies, and I want to help them out…"
+image_location = 0

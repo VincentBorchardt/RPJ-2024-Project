@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://blx0s4lweo1pt"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_kieqp"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_paffp"]
+
+[resource]
+script = ExtResource("1_kieqp")
+speaker = ExtResource("2_paffp")
+message = "Just Pork, BBQ Sauce, and Taxxie pain, my friend. I can tell you’re not happy with this arrangement either."
+image_location = 1
