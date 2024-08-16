@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://tby72uj4jd6e"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_vktj0"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_j03w2"]
+
+[resource]
+script = ExtResource("1_vktj0")
+speaker = ExtResource("2_j03w2")
+message = "Hey, you’re here early! Any reason you’re trying the breakfast shift, or are you auditioning to take over for a TAXXIE?"
+image_location = 1

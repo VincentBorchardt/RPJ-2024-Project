@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://g7oq2ruekrg"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_vnn06"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_aou5y"]
+
+[resource]
+script = ExtResource("1_vnn06")
+speaker = ExtResource("2_aou5y")
+message = "I just want to try something new and make some new dishes. Anything else I should know before the breakfast rush?"
+image_location = 0

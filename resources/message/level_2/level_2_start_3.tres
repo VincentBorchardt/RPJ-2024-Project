@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cxli66yhfmghl"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_ftwxc"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_cdq44"]
+
+[resource]
+script = ExtResource("1_ftwxc")
+speaker = ExtResource("2_cdq44")
+message = "Nothing too special. Our dehydrated Smokey Pig Sticks are our specialty breakfast meat, and they’re often served with Pancakes right off the Griddle. We also offer our BBQ Pork for breakfast as well."
+image_location = 1

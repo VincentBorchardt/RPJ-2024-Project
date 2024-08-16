@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://c17ke8xrm68rc"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_4ry2d"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_2omff"]
+
+[resource]
+script = ExtResource("1_4ry2d")
+speaker = ExtResource("2_2omff")
+message = "Bring on the early birds!"
+image_location = 0
