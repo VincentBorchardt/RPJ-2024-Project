@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://ci3nuwn7m6qjk"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_854mx"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_rlo2p"]
+
+[resource]
+script = ExtResource("1_854mx")
+speaker = ExtResource("2_rlo2p")
+message = "We're expecting a lot of Smokey Pig Stick orders today, so you might want to get a head start on dehydrating them."
+image_location = 0

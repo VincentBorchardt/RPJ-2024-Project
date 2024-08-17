@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://1bemf72s46sr"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_w8bl5"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_yqra7"]
+
+[resource]
+script = ExtResource("1_w8bl5")
+speaker = ExtResource("2_yqra7")
+message = "Meet at the normal place. And bring the stuff."
+image_location = 0

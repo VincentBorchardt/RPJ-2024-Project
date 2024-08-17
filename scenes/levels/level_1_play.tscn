@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bengvxwd8hsom"]
+[gd_scene load_steps=19 format=3 uid="uid://bengvxwd8hsom"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_kd5hb"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_q5b6g"]
+[ext_resource type="PackedScene" uid="uid://b68vkijkyft62" path="res://scenes/cutscenes/level_1_end_cutscene.tscn" id="2_w12r8"]
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="3_a15vu"]
 [ext_resource type="Resource" uid="uid://c0ygccecdda3s" path="res://resources/message/level_1/level_1_play_start.tres" id="3_nfhif"]
 [ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="4_2kdbj"]
@@ -20,6 +21,7 @@
 
 [node name="Level1Play" type="Node2D"]
 script = ExtResource("1_kd5hb")
+next_scene = ExtResource("2_w12r8")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_q5b6g")]
 starting_message = ExtResource("3_nfhif")

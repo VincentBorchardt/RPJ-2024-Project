@@ -1,0 +1,41 @@
+[gd_scene load_steps=19 format=3 uid="uid://doj55xyasplty"]
+
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_gjixc"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_8minj"]
+[ext_resource type="Resource" uid="uid://ci3nuwn7m6qjk" path="res://resources/message/level_2/level_2_play_start.tres" id="3_tmg7k"]
+[ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="4_vrswx"]
+[ext_resource type="Resource" uid="uid://cbt4v640keprr" path="res://resources/food/pancakes.tres" id="5_chhc8"]
+[ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="6_jnmwn"]
+[ext_resource type="Resource" uid="uid://dhw108lfd3n2h" path="res://resources/food/smokey_pig_sticks.tres" id="7_mff0o"]
+[ext_resource type="Resource" uid="uid://d00ibrxpwxm6t" path="res://resources/food/pancakes_and_pig_sticks.tres" id="8_32lvn"]
+[ext_resource type="PackedScene" uid="uid://bk88ik7wglil4" path="res://scenes/grid.tscn" id="9_0msnf"]
+[ext_resource type="Resource" uid="uid://bdt7r8yruuwyl" path="res://resources/food/pancakes_and_ham.tres" id="9_5tv2l"]
+[ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="10_o636g"]
+[ext_resource type="Resource" uid="uid://dnnib4e1387vy" path="res://resources/food/pig.tres" id="12_dw5nw"]
+[ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="13_4lbtk"]
+[ext_resource type="Resource" uid="uid://03pclgdw5s65" path="res://resources/placeable/warehouse_level2.tres" id="14_lls2r"]
+[ext_resource type="Resource" uid="uid://3js5rqtl8gne" path="res://resources/placeable/assembler.tres" id="16_ocaae"]
+[ext_resource type="Resource" uid="uid://biswt154ffhsw" path="res://resources/placeable/griddle.tres" id="16_qstl7"]
+[ext_resource type="Resource" uid="uid://b454mufhl5lin" path="res://resources/placeable/dehydrator.tres" id="17_38d55"]
+[ext_resource type="Resource" uid="uid://dtoqbon7ly541" path="res://resources/placeable/slow_cooker.tres" id="17_pfius"]
+
+[node name="Level2Play" type="Node2D"]
+script = ExtResource("1_gjixc")
+
+[node name="MessageQueue" parent="." instance=ExtResource("2_8minj")]
+starting_message = ExtResource("3_tmg7k")
+
+[node name="OrderQueue" parent="." instance=ExtResource("4_vrswx")]
+upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("5_chhc8"), ExtResource("6_jnmwn"), ExtResource("7_mff0o"), ExtResource("8_32lvn"), ExtResource("6_jnmwn"), ExtResource("9_5tv2l"), ExtResource("7_mff0o"), ExtResource("8_32lvn"), ExtResource("7_mff0o"), ExtResource("8_32lvn")])
+time_between_orders = 15
+
+[node name="Grid" parent="." instance=ExtResource("9_0msnf")]
+position = Vector2(256, 300)
+
+[node name="GameUI" parent="." instance=ExtResource("10_o636g")]
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("12_dw5nw")])
+available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("13_4lbtk"), ExtResource("14_lls2r"), ExtResource("16_ocaae"), ExtResource("16_qstl7"), ExtResource("17_pfius"), ExtResource("17_38d55")])
+
+[connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
+[connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

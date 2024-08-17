@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="StorageBuilding" load_steps=6 format=3 uid="uid://03pclgdw5s65"]
+
+[ext_resource type="Script" path="res://scripts/storage_building.gd" id="1_a0es2"]
+[ext_resource type="Texture2D" uid="uid://5et4bgkhtb1s" path="res://assets/resource_icons/warehouse.png" id="1_u3jly"]
+[ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="2_hfrnl"]
+[ext_resource type="Resource" uid="uid://b0o0x86hgqmtr" path="res://resources/food/pancake_batter.tres" id="3_jn531"]
+[ext_resource type="Resource" uid="uid://b2el2uuc1yufc" path="res://resources/food/liquid_smoke.tres" id="4_buwlj"]
+
+[resource]
+script = ExtResource("1_a0es2")
+food_stored = Array[Resource("res://scripts/food.gd")]([ExtResource("2_hfrnl"), ExtResource("3_jn531"), ExtResource("4_buwlj")])
+producer = true
+placeable_name = "Warehouse"
+price = 5
+base_texture = ExtResource("1_u3jly")

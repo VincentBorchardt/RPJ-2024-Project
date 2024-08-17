@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dihejex33ea3s"]
+[gd_scene load_steps=9 format=3 uid="uid://dihejex33ea3s"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_o2b5r"]
+[ext_resource type="PackedScene" uid="uid://doj55xyasplty" path="res://scenes/levels/level_2_play.tscn" id="2_cnmbf"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="3_6as12"]
 [ext_resource type="Resource" uid="uid://tby72uj4jd6e" path="res://resources/message/level_2/level_2_start_1.tres" id="3_cvpjx"]
 [ext_resource type="Resource" uid="uid://g7oq2ruekrg" path="res://resources/message/level_2/level_2_start_2.tres" id="4_lhytt"]
@@ -10,6 +11,7 @@
 
 [node name="Level2StartCutscene" type="Node2D"]
 script = ExtResource("1_o2b5r")
+next_scene = ExtResource("2_cnmbf")
 
 [node name="MessageQueue" parent="." instance=ExtResource("3_6as12")]
 messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_cvpjx"), ExtResource("4_lhytt"), ExtResource("5_skfs3"), ExtResource("6_m704c")])

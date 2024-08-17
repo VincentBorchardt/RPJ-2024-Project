@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="PrepBuilding" load_steps=5 format=3 uid="uid://3js5rqtl8gne"]
+[gd_resource type="Resource" script_class="PrepBuilding" load_steps=6 format=3 uid="uid://3js5rqtl8gne"]
 
 [ext_resource type="Script" path="res://scripts/prep_building.gd" id="1_5p8vk"]
 [ext_resource type="Texture2D" uid="uid://dylt5s8xmlc53" path="res://assets/resource_icons/assembler.png" id="1_f11jk"]
 [ext_resource type="Resource" uid="uid://bdt7r8yruuwyl" path="res://resources/food/pancakes_and_ham.tres" id="2_mgbuy"]
 [ext_resource type="Resource" uid="uid://bwj8uym0405wt" path="res://resources/food/pulled_pork_taco.tres" id="3_bhexe"]
+[ext_resource type="Resource" uid="uid://d00ibrxpwxm6t" path="res://resources/food/pancakes_and_pig_sticks.tres" id="4_w0me0"]
 
 [resource]
 script = ExtResource("1_5p8vk")
-food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_mgbuy"), ExtResource("3_bhexe")])
+food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_mgbuy"), ExtResource("3_bhexe"), ExtResource("4_w0me0")])
 placeable_name = "Assembler"
 price = 2
 base_texture = ExtResource("1_f11jk")

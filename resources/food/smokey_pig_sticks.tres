@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Food" load_steps=5 format=3 uid="uid://dhw108lfd3n2h"]
+
+[ext_resource type="Texture2D" uid="uid://0i6ky7x0hq6r" path="res://assets/resource_icons/pig_sticks.png" id="1_3ch7f"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_umvhw"]
+[ext_resource type="Resource" uid="uid://brillpy6bkia5" path="res://resources/food/ham.tres" id="2_yg21v"]
+[ext_resource type="Resource" uid="uid://b2el2uuc1yufc" path="res://resources/food/liquid_smoke.tres" id="3_qagpk"]
+
+[resource]
+script = ExtResource("1_umvhw")
+name = "Smokey Pig Sticks"
+price = 8
+time_to_complete = 15
+base_texture = ExtResource("1_3ch7f")
+components = Array[ExtResource("1_umvhw")]([ExtResource("2_yg21v"), ExtResource("3_qagpk")])

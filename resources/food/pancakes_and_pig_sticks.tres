@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Food" load_steps=5 format=3 uid="uid://d00ibrxpwxm6t"]
+
+[ext_resource type="Texture2D" uid="uid://ckhbcopcckdgi" path="res://assets/resource_icons/pancakes_pig_sticks.png" id="1_pjynq"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_y44y1"]
+[ext_resource type="Resource" uid="uid://cbt4v640keprr" path="res://resources/food/pancakes.tres" id="2_m5okn"]
+[ext_resource type="Resource" uid="uid://dhw108lfd3n2h" path="res://resources/food/smokey_pig_sticks.tres" id="3_k7po8"]
+
+[resource]
+script = ExtResource("1_y44y1")
+name = "Pancakes and Pig Sticks"
+price = 15
+time_to_complete = 2
+base_texture = ExtResource("1_pjynq")
+components = Array[ExtResource("1_y44y1")]([ExtResource("2_m5okn"), ExtResource("3_k7po8")])

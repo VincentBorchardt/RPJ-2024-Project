@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://b2el2uuc1yufc"]
+
+[ext_resource type="Texture2D" uid="uid://djcaj3o1tqkeq" path="res://assets/resource_icons/liquid_smoke.png" id="1_7hulr"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_ajtnl"]
+
+[resource]
+script = ExtResource("1_ajtnl")
+name = "Liquid Smoke"
+price = 6
+time_to_complete = 0
+base_texture = ExtResource("1_7hulr")
+components = Array[ExtResource("1_ajtnl")]([])
