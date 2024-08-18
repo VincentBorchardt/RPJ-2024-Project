@@ -25,7 +25,13 @@ lkb: Character Portraits
 
 PiiiXL, Azuna Pixels, Henry Software, GhostPixxells, Deep Dive Game Studio, Bagong Games, poppants: Various Pixel Art Icons
 
-SpinachChicken: Wood Tiles"
+SpinachChicken: Wood Tiles
+
+Starry Skydancer: Wood Background
+
+Burning Pants: TV Background
+
+"
 
 [node name="LicensesLabel" type="RichTextLabel" parent="."]
 visible = false

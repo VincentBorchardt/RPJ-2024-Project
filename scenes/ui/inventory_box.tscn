@@ -5,7 +5,7 @@
 
 [node name="InventoryBox" type="VBoxContainer"]
 offset_right = 206.0
-offset_bottom = 300.0
+offset_bottom = 255.0
 script = ExtResource("1_2dqc1")
 
 [node name="InventoryLabel" type="Label" parent="."]

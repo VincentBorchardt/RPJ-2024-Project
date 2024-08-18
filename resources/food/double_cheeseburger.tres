@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_7gbyt")
-name = "Double Cheeseburger"
+name = "Dbl Cheeseburger"
 price = 20
 time_to_complete = 4
 base_texture = ExtResource("1_iqs68")

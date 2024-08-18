@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsblupcpeqoqf"]
+[gd_scene load_steps=12 format=3 uid="uid://bsblupcpeqoqf"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ix5wn"]
 [ext_resource type="Texture2D" uid="uid://dd3ciiogbtjt1" path="res://assets/backgrounds/wood_background.png" id="2_h7kag"]
 [ext_resource type="PackedScene" uid="uid://kf003ypspfyk" path="res://scenes/ui/order_box.tscn" id="2_vlgni"]
 [ext_resource type="PackedScene" uid="uid://bosls3x6g4ud" path="res://scenes/ui/food_box.tscn" id="3_c6i4w"]
+[ext_resource type="Texture2D" uid="uid://bu1kb8lk2hn3w" path="res://assets/backgrounds/screen_background_256x300.png" id="3_j8x1j"]
+[ext_resource type="Texture2D" uid="uid://un8vdkh34h84" path="res://assets/backgrounds/screen_background_256x320.png" id="4_3rjau"]
 [ext_resource type="PackedScene" uid="uid://dtutr15p1mfw8" path="res://scenes/ui/inventory_box.tscn" id="4_8h13l"]
 [ext_resource type="PackedScene" uid="uid://v16nig8y0ape" path="res://scenes/ui/placeable_box.tscn" id="5_gym5i"]
 [ext_resource type="PackedScene" uid="uid://cgx7ttl7cdbhs" path="res://scenes/ui/customer_area.tscn" id="6_3kad1"]
@@ -23,16 +25,24 @@ script = ExtResource("1_ix5wn")
 position = Vector2(800, 450)
 texture = ExtResource("2_h7kag")
 
+[node name="OrderBackground" type="Sprite2D" parent="."]
+position = Vector2(128, 150)
+texture = ExtResource("3_j8x1j")
+
 [node name="OrderBox" parent="." instance=ExtResource("2_vlgni")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
 
+[node name="FoodBackground" type="Sprite2D" parent="."]
+position = Vector2(128, 460)
+texture = ExtResource("4_3rjau")
+
 [node name="FoodBox" parent="." instance=ExtResource("3_c6i4w")]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 300.0
-offset_right = 231.0
+offset_left = 15.0
+offset_top = 320.0
+offset_right = 221.0
 offset_bottom = 600.0
 
 [node name="InventoryBox" parent="." instance=ExtResource("4_8h13l")]
@@ -40,7 +50,7 @@ layout_mode = 0
 offset_left = 25.0
 offset_top = 620.0
 offset_right = 231.0
-offset_bottom = 920.0
+offset_bottom = 875.0
 
 [node name="PlaceableBox" parent="." instance=ExtResource("5_gym5i")]
 layout_mode = 0

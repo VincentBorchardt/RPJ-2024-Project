@@ -25,12 +25,12 @@ ending_message = ExtResource("5_n83np")
 [node name="OrderQueue" parent="." instance=ExtResource("1_3j80h")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("2_dcuhn")])
 
-[node name="Grid" parent="." instance=ExtResource("2_ax61x")]
-position = Vector2(256, 300)
-
 [node name="GameUI" parent="." instance=ExtResource("3_81tf4")]
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("5_2lspy"), ExtResource("10_p8u2h")])
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("6_17mgh"), ExtResource("7_36fdb")])
+
+[node name="Grid" parent="." instance=ExtResource("2_ax61x")]
+position = Vector2(256, 300)
 
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
