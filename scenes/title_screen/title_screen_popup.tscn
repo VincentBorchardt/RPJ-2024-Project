@@ -62,6 +62,24 @@ Portions of this software are copyright © 2023 The FreeType Project (www.freety
     Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 "
 
+[node name="InstructionsLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1375.0
+offset_bottom = 675.0
+text = "Make food by building structures on the grid, then placing food on them.
+
+Turn on Build Mode, then click a building and click a place on the grid to build it.
+
+When not in Build Mode, you can click on a tile to see what's in it, and buy food from the Warehouse.
+
+Then you can take food from either the sidebar or the Warehouse, which makes it your current item. Then you can click to put it into tiles to make new food, often in combination with other food items.
+
+Once you have an order, you can submit it by holding it and clicking Submit Order. If too many orders stack up you'll fail the day, so be careful!
+
+Once you put an item in a tile, you can't get it back (unless you make something new with it), so use your inventory in the lower-left corner to store items for later use."
+
 [node name="OptionsBox" type="VBoxContainer" parent="."]
 offset_left = 500.0
 offset_top = 25.0

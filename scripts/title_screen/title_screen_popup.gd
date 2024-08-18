@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var credits_label = $CreditsLabel
 @onready var licenses_label = $LicensesLabel
+@onready var instructions_label = $InstructionsLabel
 @onready var options_box = $OptionsBox
 
 
@@ -17,13 +18,9 @@ func _process(delta):
 func close_popup():
 	credits_label.visible = false
 	licenses_label.visible = false
+	instructions_label.visible = false
 	options_box.visible = false
 	self.visible = false
-
-func show_options():
-	close_popup()
-	options_box.visible = true
-	self.visible = true
 
 func show_credits():
 	close_popup()
@@ -35,6 +32,15 @@ func show_licenses():
 	licenses_label.visible = true
 	self.visible = true
 
+func show_instructions():
+	close_popup()
+	instructions_label.visible = true
+	self.visible = true
+
+func show_options():
+	close_popup()
+	options_box.visible = true
+	self.visible = true
 
 func _on_money_button_toggled(toggled_on):
 	pass # Replace with function body.

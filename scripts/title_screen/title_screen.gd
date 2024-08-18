@@ -22,3 +22,7 @@ func _on_credits_button_pressed():
 
 func _on_licenses_button_pressed():
 	popup.show_licenses()
+
+
+func _on_instructions_button_pressed():
+	popup.show_instructions()
