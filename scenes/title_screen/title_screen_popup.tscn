@@ -80,6 +80,11 @@ Once you have an order, you can submit it by holding it and clicking Submit Orde
 
 Once you put an item in a tile, you can't get it back (unless you make something new with it), so use your inventory in the lower-left corner to store items for later use."
 
+[node name="CookbookLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="OptionsBox" type="VBoxContainer" parent="."]
 offset_left = 500.0
 offset_top = 25.0

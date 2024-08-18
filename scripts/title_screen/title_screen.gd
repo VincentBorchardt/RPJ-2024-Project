@@ -26,3 +26,7 @@ func _on_licenses_button_pressed():
 
 func _on_instructions_button_pressed():
 	popup.show_instructions()
+
+
+func _on_cookbook_button_pressed():
+	popup.show_cookbook()

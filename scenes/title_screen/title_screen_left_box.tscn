@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq3n6xqgr4hx6"]
+[gd_scene load_steps=13 format=3 uid="uid://dq3n6xqgr4hx6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
 [ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://wgj3uboev5by" path="res://scenes/cutscenes/level_1_start_cutscene.tscn" id="6_kt2eu"]
 [ext_resource type="PackedScene" uid="uid://bengvxwd8hsom" path="res://scenes/levels/level_1_play.tscn" id="7_xhfyw"]
 [ext_resource type="PackedScene" uid="uid://b68vkijkyft62" path="res://scenes/cutscenes/level_1_end_cutscene.tscn" id="9_5irr8"]
+[ext_resource type="PackedScene" uid="uid://dihejex33ea3s" path="res://scenes/cutscenes/level_2_start_cutscene.tscn" id="10_unegt"]
+[ext_resource type="PackedScene" uid="uid://doj55xyasplty" path="res://scenes/levels/level_2_play.tscn" id="11_35p21"]
+[ext_resource type="PackedScene" uid="uid://boddss027qtvs" path="res://scenes/cutscenes/level_2_end_cutscene.tscn" id="12_tbr2o"]
 
 [node name="TitleScreenLeftBox" type="VBoxContainer"]
 anchors_preset = 15
@@ -116,16 +119,19 @@ layout_mode = 2
 layout_mode = 2
 text = "Start"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("10_unegt")
 
 [node name="Level2Play" type="Button" parent="DebugBox/Level2Box"]
 layout_mode = 2
 text = "Play"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("11_35p21")
 
 [node name="Level2End" type="Button" parent="DebugBox/Level2Box"]
 layout_mode = 2
 text = "End"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("12_tbr2o")
 
 [connection signal="pressed_with_scene" from="StoryModeButton" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
@@ -136,3 +142,6 @@ script = ExtResource("2_ttbhf")
 [connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1Start" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1Play" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level1Box/Level1End" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2Start" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2Play" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2End" to="." method="_on_scene_button_pressed"]

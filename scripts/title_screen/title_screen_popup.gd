@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var credits_label = $CreditsLabel
 @onready var licenses_label = $LicensesLabel
 @onready var instructions_label = $InstructionsLabel
+@onready var cookbook_label = $CookbookLabel
 @onready var options_box = $OptionsBox
 
 
@@ -19,6 +20,7 @@ func close_popup():
 	credits_label.visible = false
 	licenses_label.visible = false
 	instructions_label.visible = false
+	cookbook_label.visible = false
 	options_box.visible = false
 	self.visible = false
 
@@ -35,6 +37,11 @@ func show_licenses():
 func show_instructions():
 	close_popup()
 	instructions_label.visible = true
+	self.visible = true
+
+func show_cookbook():
+	close_popup()
+	cookbook_label.visible = true
 	self.visible = true
 
 func show_options():

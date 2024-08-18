@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddld1qiaul0bw"]
+
+[ext_resource type="Script" path="res://scripts/cookbook_generator.gd" id="1_m40kj"]
+
+[node name="CookbookGenerator" type="Node"]
+script = ExtResource("1_m40kj")
