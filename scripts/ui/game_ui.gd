@@ -32,3 +32,7 @@ func _on_order_box_submit_order():
 
 func _on_message_queue_send_special_message(message):
 	display_message(message)
+
+
+func _on_order_queue_order_submitted(food):
+	pass # Replace with function body.

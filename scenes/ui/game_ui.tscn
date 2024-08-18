@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsblupcpeqoqf"]
+[gd_scene load_steps=9 format=3 uid="uid://bsblupcpeqoqf"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ix5wn"]
 [ext_resource type="PackedScene" uid="uid://kf003ypspfyk" path="res://scenes/ui/order_box.tscn" id="2_vlgni"]
 [ext_resource type="PackedScene" uid="uid://bosls3x6g4ud" path="res://scenes/ui/food_box.tscn" id="3_c6i4w"]
 [ext_resource type="PackedScene" uid="uid://dtutr15p1mfw8" path="res://scenes/ui/inventory_box.tscn" id="4_8h13l"]
 [ext_resource type="PackedScene" uid="uid://v16nig8y0ape" path="res://scenes/ui/placeable_box.tscn" id="5_gym5i"]
+[ext_resource type="PackedScene" uid="uid://cgx7ttl7cdbhs" path="res://scenes/ui/customer_area.tscn" id="6_3kad1"]
 [ext_resource type="PackedScene" uid="uid://bocsrfn0m3emm" path="res://scenes/ui/tile_popup.tscn" id="6_75xix"]
 [ext_resource type="PackedScene" uid="uid://btghtkerya6ao" path="res://scenes/ui/message_area.tscn" id="6_yg2mc"]
 
@@ -42,6 +43,11 @@ offset_left = 1344.0
 offset_top = 300.0
 offset_right = 1575.0
 offset_bottom = 600.0
+
+[node name="CustomerArea" parent="." instance=ExtResource("6_3kad1")]
+layout_mode = 1
+offset_left = 256.0
+offset_right = -256.0
 
 [node name="MessageArea" parent="." instance=ExtResource("6_yg2mc")]
 offset_left = 256.0
