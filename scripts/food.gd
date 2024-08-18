@@ -29,7 +29,8 @@ func _to_string():
 	var string = ""
 	string += name + "\n"
 	string += "  Price = " + str(price) + "\n"
-	string += "  Time to Complete = " + str(time_to_complete) + " sec. \n"
+	if time_to_complete > 0:
+		string += "  Time to Complete = " + str(time_to_complete) + " sec. \n"
 	if not components.is_empty():
 		string += "  Components: "
 		for food in components:

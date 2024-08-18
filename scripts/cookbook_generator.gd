@@ -10,12 +10,21 @@ func _ready():
 func _process(delta):
 	pass
 
-func generate_full_cookbook():
-	var cookbook = ""
+func generate_full_food_cookbook():
+	var cookbook = "Food Items: \n \n"
 	var food_array = get_all_resource_paths("res://resources/food/", false)
 	for entry in food_array:
 		var food = load(entry)
 		cookbook += str(food)
+	return cookbook
+
+func generate_full_building_cookbook():
+	var cookbook = "Prep Buildings: \n \n"
+	var building_array = get_all_resource_paths("res://resources/placeable/", false)
+	for entry in building_array:
+		var building = load(entry)
+		if building is PrepBuilding:
+			cookbook += str(building)
 	return cookbook
 
 ## Returns an array of full file paths to all resources in the directory at the specified path.

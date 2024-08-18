@@ -57,3 +57,15 @@ func activate_placeable(tile):
 		add_food(current)
 	else:
 		BuildingList.show_ingredient_list.emit(current_ingredients, self)
+
+func _to_string():
+	var string = ""
+	string += placeable_name + "\n"
+	string += "  Price = " + str(price) + "\n"
+	if not food_preparable.is_empty():
+		string += "  Food Preparable: "
+		for food in food_preparable:
+			string += food.name + ", "
+		string += "\n"
+	return string
+	

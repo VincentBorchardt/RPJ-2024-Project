@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var licenses_label = $LicensesLabel
 @onready var instructions_label = $InstructionsLabel
 @onready var cookbook_food_label = $CookbookFoodLabel
+@onready var cookbook_building_label = $CookbookBuildingLabel
 @onready var options_box = $OptionsBox
 
 @onready var cookbook_generator = $CookbookGenerator
@@ -23,6 +24,7 @@ func close_popup():
 	licenses_label.visible = false
 	instructions_label.visible = false
 	cookbook_food_label.visible = false
+	cookbook_building_label.visible = false
 	options_box.visible = false
 	self.visible = false
 
@@ -43,8 +45,10 @@ func show_instructions():
 
 func show_cookbook():
 	close_popup()
-	cookbook_food_label.text = cookbook_generator.generate_full_cookbook()
+	cookbook_food_label.text = cookbook_generator.generate_full_food_cookbook()
+	cookbook_building_label.text = cookbook_generator.generate_full_building_cookbook()
 	cookbook_food_label.visible = true
+	cookbook_building_label.visible = true
 	self.visible = true
 
 func show_options():
