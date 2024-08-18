@@ -23,7 +23,9 @@ Kyle and Robot Party Chat: Setting and Character Ideas
 
 lkb: Character Portraits
 
-PiiiXL, Azuna Pixels, Henry Software, GhostPixxells, Deep Dive Game Studio, Bagong Games, poppants: Various Pixel Art"
+PiiiXL, Azuna Pixels, Henry Software, GhostPixxells, Deep Dive Game Studio, Bagong Games, poppants: Various Pixel Art Icons
+
+SpinachChicken: Wood Tiles"
 
 [node name="LicensesLabel" type="RichTextLabel" parent="."]
 visible = false

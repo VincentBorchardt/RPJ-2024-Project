@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bev6mgo444j38"]
 
 [ext_resource type="Script" path="res://scripts/tile.gd" id="1_b6rhe"]
-[ext_resource type="Texture2D" uid="uid://uvwknvhgp1cw" path="res://assets/sprites/test/Ground.png" id="2_ph0en"]
+[ext_resource type="Texture2D" uid="uid://c1ocl6v78kouy" path="res://assets/tiles/wood_tile.png" id="2_0snxg"]
 [ext_resource type="Texture2D" uid="uid://bnt2xhtgqbukf" path="res://assets/sprites/test/TileHighlight.png" id="3_hkxma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3q717"]
@@ -11,7 +11,7 @@ size = Vector2(64, 64)
 script = ExtResource("1_b6rhe")
 
 [node name="Ground" type="Sprite2D" parent="."]
-texture = ExtResource("2_ph0en")
+texture = ExtResource("2_0snxg")
 
 [node name="Highlight" type="Sprite2D" parent="."]
 visible = false

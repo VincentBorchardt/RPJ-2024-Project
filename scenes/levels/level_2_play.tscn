@@ -35,12 +35,12 @@ ending_message = ExtResource("5_vy56d")
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("5_chhc8"), ExtResource("6_jnmwn"), ExtResource("7_mff0o"), ExtResource("8_32lvn"), ExtResource("6_jnmwn"), ExtResource("9_5tv2l"), ExtResource("7_mff0o"), ExtResource("8_32lvn"), ExtResource("7_mff0o"), ExtResource("8_32lvn")])
 time_between_orders = 15
 
-[node name="Grid" parent="." instance=ExtResource("9_0msnf")]
-position = Vector2(256, 300)
-
 [node name="GameUI" parent="." instance=ExtResource("10_o636g")]
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("12_dw5nw"), ExtResource("14_p2e8v"), ExtResource("15_4cwhe"), ExtResource("16_0agnd")])
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("13_4lbtk"), ExtResource("16_ocaae"), ExtResource("16_qstl7"), ExtResource("17_pfius"), ExtResource("17_38d55")])
+
+[node name="Grid" parent="." instance=ExtResource("9_0msnf")]
+position = Vector2(256, 300)
 
 [connection signal="send_special_message" from="MessageQueue" to="GameUI" method="_on_message_queue_send_special_message"]
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
