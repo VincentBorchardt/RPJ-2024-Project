@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/ui/placeable_box.gd" id="1_wyfcx"]
 
 [node name="PlaceableBox" type="VBoxContainer"]
-offset_right = 231.0
+offset_right = 247.0
 offset_bottom = 300.0
 script = ExtResource("1_wyfcx")
 
 [node name="BuildModeToggle" type="CheckButton" parent="."]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Build Mode On"
 
 [node name="ButtonsBox" type="VBoxContainer" parent="."]
@@ -17,5 +18,6 @@ layout_mode = 2
 
 [node name="CurrentPlaceable" type="Label" parent="."]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="toggled" from="BuildModeToggle" to="." method="_on_build_mode_button_toggled"]

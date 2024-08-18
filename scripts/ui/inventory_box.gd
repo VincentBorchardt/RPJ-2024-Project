@@ -31,7 +31,7 @@ func _on_inventory_slot_4_pressed():
 
 func _on_inventory_current_item_changed(food):
 	if (food != null):
-		current_item_label.text = "Current Item: " + food.name
+		current_item_label.text = "Current: " + food.name
 		current_item_label.visible = true
 		trash_button.visible = true
 	else:

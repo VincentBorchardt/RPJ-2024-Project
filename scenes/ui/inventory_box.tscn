@@ -10,6 +10,7 @@ script = ExtResource("1_2dqc1")
 
 [node name="InventoryLabel" type="Label" parent="."]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Inventory"
 horizontal_alignment = 1
 
@@ -41,7 +42,10 @@ script = ExtResource("1_dmocv")
 [node name="CurrentItemLabel" type="Label" parent="."]
 visible = false
 layout_mode = 2
-text = "Current Item: Empty"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Current: Empty"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TrashButton" type="Button" parent="."]
 visible = false
