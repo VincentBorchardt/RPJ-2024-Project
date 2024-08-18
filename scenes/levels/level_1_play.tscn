@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bengvxwd8hsom"]
+[gd_scene load_steps=23 format=3 uid="uid://bengvxwd8hsom"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_kd5hb"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_q5b6g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="3_a15vu"]
 [ext_resource type="Resource" uid="uid://c0ygccecdda3s" path="res://resources/message/level_1/level_1_play_start.tres" id="3_nfhif"]
 [ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="4_2kdbj"]
+[ext_resource type="Resource" uid="uid://dk7tdn00x2qhc" path="res://resources/message/level_1/level_1_play_end.tres" id="5_oy1y0"]
 [ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="6_kafjl"]
 [ext_resource type="Resource" uid="uid://cioqj8gd7fyh7" path="res://resources/food/double_cheeseburger.tres" id="7_nrulu"]
 [ext_resource type="Resource" uid="uid://bwj8uym0405wt" path="res://resources/food/pulled_pork_taco.tres" id="8_3wlis"]
@@ -13,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="11_7mhn1"]
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="12_srydu"]
 [ext_resource type="Resource" uid="uid://dnnib4e1387vy" path="res://resources/food/pig.tres" id="13_ta6gy"]
+[ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="14_bjyl1"]
 [ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="14_paftj"]
 [ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="15_0aq4o"]
-[ext_resource type="Resource" uid="uid://bt705su2brf73" path="res://resources/placeable/warehouse_level1.tres" id="16_ikawv"]
+[ext_resource type="Resource" uid="uid://bsqhlgmgsd6ba" path="res://resources/food/taco_shell.tres" id="15_o18es"]
+[ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="16_mvq4y"]
+[ext_resource type="Resource" uid="uid://5hl5xbxfby87" path="res://resources/food/cheese.tres" id="17_salo2"]
 [ext_resource type="Resource" uid="uid://3js5rqtl8gne" path="res://resources/placeable/assembler.tres" id="17_yoj0d"]
 [ext_resource type="Resource" uid="uid://dtoqbon7ly541" path="res://resources/placeable/slow_cooker.tres" id="18_qjtp3"]
 
@@ -25,6 +29,7 @@ next_scene = ExtResource("2_w12r8")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_q5b6g")]
 starting_message = ExtResource("3_nfhif")
+ending_message = ExtResource("5_oy1y0")
 
 [node name="OrderQueue" parent="." instance=ExtResource("3_a15vu")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("4_2kdbj"), ExtResource("6_kafjl"), ExtResource("7_nrulu"), ExtResource("6_kafjl"), ExtResource("4_2kdbj"), ExtResource("8_3wlis"), ExtResource("7_nrulu"), ExtResource("8_3wlis")])
@@ -34,9 +39,10 @@ time_between_orders = 15
 position = Vector2(256, 300)
 
 [node name="GameUI" parent="." instance=ExtResource("11_7mhn1")]
-available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("12_srydu"), ExtResource("13_ta6gy")])
-available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("14_paftj"), ExtResource("15_0aq4o"), ExtResource("16_ikawv"), ExtResource("17_yoj0d"), ExtResource("18_qjtp3")])
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("12_srydu"), ExtResource("13_ta6gy"), ExtResource("14_bjyl1"), ExtResource("15_o18es"), ExtResource("16_mvq4y"), ExtResource("17_salo2")])
+available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("14_paftj"), ExtResource("15_0aq4o"), ExtResource("17_yoj0d"), ExtResource("18_qjtp3")])
 
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="start_ending_level" from="OrderQueue" to="." method="_on_order_queue_start_ending_level"]
 [connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

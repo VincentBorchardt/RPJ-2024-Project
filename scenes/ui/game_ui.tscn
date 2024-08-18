@@ -33,9 +33,9 @@ offset_bottom = 600.0
 [node name="InventoryBox" parent="." instance=ExtResource("4_8h13l")]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 600.0
+offset_top = 620.0
 offset_right = 231.0
-offset_bottom = 900.0
+offset_bottom = 920.0
 
 [node name="PlaceableBox" parent="." instance=ExtResource("5_gym5i")]
 layout_mode = 0

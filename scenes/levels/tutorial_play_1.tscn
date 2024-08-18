@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv6hj8g6h35u5"]
+[gd_scene load_steps=14 format=3 uid="uid://cv6hj8g6h35u5"]
 
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="1_3j80h"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_ilbho"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="3_81tf4"]
 [ext_resource type="Resource" uid="uid://dottocadrsibe" path="res://resources/message/tutorial/tutorial-play1-start.tres" id="3_nq36u"]
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="5_2lspy"]
+[ext_resource type="Resource" uid="uid://ckq67st0gb80a" path="res://resources/message/tutorial/tutorial-play1-end.tres" id="5_n83np"]
 [ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="6_17mgh"]
 [ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="7_36fdb"]
-[ext_resource type="Resource" uid="uid://c37unjfqlf04h" path="res://resources/placeable/warehouse.tres" id="8_0dk3g"]
+[ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="10_p8u2h"]
 
 [node name="TutorialPlay1" type="Node2D"]
 script = ExtResource("1_ilbho")
@@ -19,6 +20,7 @@ next_scene = ExtResource("2_il1ua")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_k18hm")]
 starting_message = ExtResource("3_nq36u")
+ending_message = ExtResource("5_n83np")
 
 [node name="OrderQueue" parent="." instance=ExtResource("1_3j80h")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("2_dcuhn")])
@@ -27,9 +29,10 @@ upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("2_dcuhn
 position = Vector2(256, 300)
 
 [node name="GameUI" parent="." instance=ExtResource("3_81tf4")]
-available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("5_2lspy")])
-available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("6_17mgh"), ExtResource("7_36fdb"), ExtResource("8_0dk3g")])
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("5_2lspy"), ExtResource("10_p8u2h")])
+available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("6_17mgh"), ExtResource("7_36fdb")])
 
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="start_ending_level" from="OrderQueue" to="." method="_on_order_queue_start_ending_level"]
 [connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

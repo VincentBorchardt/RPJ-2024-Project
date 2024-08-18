@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_805de")
 speaker = ExtResource("2_x64h7")
-message = "That’s classified. Let’s start by making a simple Hamburger: growing a Cow in a Field, then putting the resulting Beef on the Grill alongside a Bun from the Warehouse."
+message = "That’s classified. Let’s start by making a simple Hamburger: growing a Cow in a Field, then putting the resulting Beef on the Grill alongside a Bun."
 image_location = 1

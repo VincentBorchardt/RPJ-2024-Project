@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://ckq67st0gb80a"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_n85au"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_6rul8"]
+
+[resource]
+script = ExtResource("1_n85au")
+speaker = ExtResource("2_6rul8")
+message = "Great job!"
+image_location = 0

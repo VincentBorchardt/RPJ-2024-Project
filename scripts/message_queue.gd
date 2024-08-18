@@ -33,3 +33,4 @@ func get_ending_message():
 func _on_order_queue_order_submitted(food):
 	if food == pancakes_ham:
 		send_special_message.emit(pancakes_ham_message)
+

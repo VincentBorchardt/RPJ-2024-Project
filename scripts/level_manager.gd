@@ -28,3 +28,9 @@ func _on_order_queue_end_level():
 		get_tree().change_scene_to_packed(next_scene)
 	else:
 		get_tree().change_scene_to_file("res://scenes/title_screen/title_screen.tscn")
+
+
+func _on_order_queue_start_ending_level():
+	var end_message = message_queue.get_ending_message()
+	if end_message != null:
+		game_ui.display_message(end_message)

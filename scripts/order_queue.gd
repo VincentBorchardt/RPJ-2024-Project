@@ -2,6 +2,7 @@ class_name OrderQueue extends Node
 
 signal current_orders_changed(orders)
 signal order_submitted(food)
+signal start_ending_level()
 signal end_level()
 
 @export var upcoming_orders: Array[Food] = []
@@ -27,7 +28,7 @@ func _process(delta):
 	if not ending_level:
 		if current_orders.is_empty():
 			if upcoming_orders.is_empty():
-				print("end level started")
+				start_ending_level.emit()
 				ending_level = true
 				end_level_timer.start(3)
 			else:

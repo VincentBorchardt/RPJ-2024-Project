@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_f47jo")
 speaker = ExtResource("2_jtyxb")
-message = "There’s plenty of food here. You just need to check out our state of the art order system. You just place down your buildings and tools onto this grid, let them grow and prepare the food, then take the prepared food and serve it to the customer."
+message = "There’s plenty of food here. You just need to check out our state of the art order system. You just place down your fields and tools onto this grid, let them grow and prepare the food, then take the prepared food and serve it to the customer."
 image_location = 1
