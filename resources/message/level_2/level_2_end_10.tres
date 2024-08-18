@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://6msb37d7vcft"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_gwwgu"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_exssg"]
+
+[resource]
+script = ExtResource("1_gwwgu")
+speaker = ExtResource("2_exssg")
+message = "If it’ll save the Taxxies, it’s what I’ll do. The final challenge awaits!"
+image_location = 0

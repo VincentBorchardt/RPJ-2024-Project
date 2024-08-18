@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cbr6iajy50gbl"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_wp8lg"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_fav8l"]
+
+[resource]
+script = ExtResource("1_wp8lg")
+speaker = ExtResource("2_fav8l")
+message = "I have this kids meal bag full of purple and green dust. I assume that’s what you mean, but how will that save the Taxxies?"
+image_location = 0

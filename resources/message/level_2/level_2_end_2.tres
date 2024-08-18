@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://sram8oayyd3d"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_6kqfk"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_3qi3s"]
+
+[resource]
+script = ExtResource("1_6kqfk")
+speaker = ExtResource("2_3qi3s")
+message = "70’s actually. And that term is such a rude way to speak to a dignified pig such as myself."
+image_location = 1

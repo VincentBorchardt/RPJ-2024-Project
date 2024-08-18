@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://rckas4d0sw15"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_y3cu7"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_ad6al"]
+
+[resource]
+script = ExtResource("1_y3cu7")
+speaker = ExtResource("2_ad6al")
+message = "Yet another cryptic end-of-shift message. What piece of 80’s ephemera is joining me on my quest today?"
+image_location = 0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cjngfgn16bl87"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_7guck"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_q2rqq"]
+
+[resource]
+script = ExtResource("1_7guck")
+speaker = ExtResource("2_q2rqq")
+message = "Be kind to the kid Jam, he’s the only one who can save the Taxxies! Now do you have the stuff?"
+image_location = 1

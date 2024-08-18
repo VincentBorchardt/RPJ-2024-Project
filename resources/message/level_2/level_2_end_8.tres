@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://fyt0n2fb0kua"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_x4s4o"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_uch3m"]
+
+[resource]
+script = ExtResource("1_x4s4o")
+speaker = ExtResource("2_uch3m")
+message = "But what are you going to do?"
+image_location = 0

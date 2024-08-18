@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://c8ncxameie1ms"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_aou5x"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_5wwal"]
+
+[resource]
+script = ExtResource("1_aou5x")
+speaker = ExtResource("2_5wwal")
+message = "If we let the secrets out, we’d risk letting Mr. Pitmaster know our scheme, so you should just give us the bag and focus on running the restaurant like usual. It’s going to be the toughest challenge yet though, and we’ll need some time before we can start the plan, so you’ll need to be on your game and watch for the special order."
+image_location = 1

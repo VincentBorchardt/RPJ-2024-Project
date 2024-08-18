@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://4oblfneb64kj"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_llfju"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_475ma"]
+
+[resource]
+script = ExtResource("1_llfju")
+speaker = ExtResource("2_475ma")
+message = "Exactly! When you “fumble” by putting the standard chicken sandwich into the freezer before serving it, that will distract ol’ Pittie, and then it’ll be time for us to act."
+image_location = 1

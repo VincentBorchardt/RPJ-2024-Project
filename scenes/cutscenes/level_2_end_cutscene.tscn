@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://boddss027qtvs"]
+[gd_scene load_steps=15 format=3 uid="uid://boddss027qtvs"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_2gy0d"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_2uqrj"]
+[ext_resource type="PackedScene" uid="uid://bc08pwc8vhylb" path="res://scenes/cutscenes/level_3_splash.tscn" id="2_gbqq7"]
 [ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="3_c4r6y"]
+[ext_resource type="Resource" uid="uid://rckas4d0sw15" path="res://resources/message/level_2/level_2_end_1.tres" id="4_w165s"]
+[ext_resource type="Resource" uid="uid://sram8oayyd3d" path="res://resources/message/level_2/level_2_end_2.tres" id="5_8uo75"]
+[ext_resource type="Resource" uid="uid://cjngfgn16bl87" path="res://resources/message/level_2/level_2_end_3.tres" id="6_vrq16"]
+[ext_resource type="Resource" uid="uid://cbr6iajy50gbl" path="res://resources/message/level_2/level_2_end_4.tres" id="7_i7xsp"]
+[ext_resource type="Resource" uid="uid://ds42rxlvegvns" path="res://resources/message/level_2/level_2_end_5.tres" id="8_gi8x7"]
+[ext_resource type="Resource" uid="uid://bgul7gj8eve1l" path="res://resources/message/level_2/level_2_end_6.tres" id="9_6qvo3"]
+[ext_resource type="Resource" uid="uid://4oblfneb64kj" path="res://resources/message/level_2/level_2_end_7.tres" id="10_rua7j"]
+[ext_resource type="Resource" uid="uid://fyt0n2fb0kua" path="res://resources/message/level_2/level_2_end_8.tres" id="11_skwhl"]
+[ext_resource type="Resource" uid="uid://c8ncxameie1ms" path="res://resources/message/level_2/level_2_end_9.tres" id="12_lt3hx"]
+[ext_resource type="Resource" uid="uid://6msb37d7vcft" path="res://resources/message/level_2/level_2_end_10.tres" id="13_hgtxc"]
 
 [node name="Level2EndCutscene" type="Node2D"]
 script = ExtResource("1_2gy0d")
+next_scene = ExtResource("2_gbqq7")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_2uqrj")]
-messages = Array[Resource("res://scripts/resources/message.gd")]([null, null, null, null])
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("4_w165s"), ExtResource("5_8uo75"), ExtResource("6_vrq16"), ExtResource("7_i7xsp"), ExtResource("8_gi8x7"), ExtResource("9_6qvo3"), ExtResource("10_rua7j"), ExtResource("11_skwhl"), ExtResource("12_lt3hx"), ExtResource("13_hgtxc")])
 
 [node name="CutsceneUI" parent="." instance=ExtResource("3_c4r6y")]
 

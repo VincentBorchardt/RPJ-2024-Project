@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://ds42rxlvegvns"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_x6nmx"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_kwsbm"]
+
+[resource]
+script = ExtResource("1_x6nmx")
+speaker = ExtResource("2_kwsbm")
+message = "In order to save that species, we must first stop The Pitmaster. Now, we have a source that tomorrow’s dinner service will include both chicken dishes as well as the first desserts The Smoke Box has served since ‘87. This is the perfect opportunity to serve up some cold chicken sandwiches."
+image_location = 1
