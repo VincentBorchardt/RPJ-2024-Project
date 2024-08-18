@@ -26,4 +26,13 @@ func _process(delta):
 	pass
 
 func _to_string():
-	pass
+	var string = ""
+	string += name + "\n"
+	string += "  Price = " + str(price) + "\n"
+	string += "  Time to Complete = " + str(time_to_complete) + " sec. \n"
+	if not components.is_empty():
+		string += "  Components: "
+		for food in components:
+			string += food.name + ", "
+		string += "\n"
+	return string

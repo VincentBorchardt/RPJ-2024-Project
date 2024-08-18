@@ -3,8 +3,10 @@ extends CanvasLayer
 @onready var credits_label = $CreditsLabel
 @onready var licenses_label = $LicensesLabel
 @onready var instructions_label = $InstructionsLabel
-@onready var cookbook_label = $CookbookLabel
+@onready var cookbook_food_label = $CookbookFoodLabel
 @onready var options_box = $OptionsBox
+
+@onready var cookbook_generator = $CookbookGenerator
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +22,7 @@ func close_popup():
 	credits_label.visible = false
 	licenses_label.visible = false
 	instructions_label.visible = false
-	cookbook_label.visible = false
+	cookbook_food_label.visible = false
 	options_box.visible = false
 	self.visible = false
 
@@ -41,7 +43,8 @@ func show_instructions():
 
 func show_cookbook():
 	close_popup()
-	cookbook_label.visible = true
+	cookbook_food_label.text = cookbook_generator.generate_full_cookbook()
+	cookbook_food_label.visible = true
 	self.visible = true
 
 func show_options():

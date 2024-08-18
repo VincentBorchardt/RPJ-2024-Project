@@ -38,6 +38,7 @@ text = "Instructions"
 
 [node name="CookbookButton" type="Button" parent="TitleScreenBottomBox"]
 layout_mode = 2
+text = "Cookbook"
 
 [node name="TitleLabel" type="Label" parent="."]
 offset_left = 600.0

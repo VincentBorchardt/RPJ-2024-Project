@@ -15,8 +15,8 @@ func generate_full_cookbook():
 	var food_array = get_all_resource_paths("res://resources/food/", false)
 	for entry in food_array:
 		var food = load(entry)
-		print(food)
-	pass
+		cookbook += str(food)
+	return cookbook
 
 ## Returns an array of full file paths to all resources in the directory at the specified path.
 ## These file paths can be used to load the resources with load().
