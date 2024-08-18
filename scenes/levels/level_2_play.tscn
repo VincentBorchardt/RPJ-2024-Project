@@ -38,6 +38,8 @@ position = Vector2(256, 300)
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("12_dw5nw")])
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("13_4lbtk"), ExtResource("14_lls2r"), ExtResource("16_ocaae"), ExtResource("16_qstl7"), ExtResource("17_pfius"), ExtResource("17_38d55")])
 
+[connection signal="send_special_message" from="MessageQueue" to="GameUI" method="_on_message_queue_send_special_message"]
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="order_submitted" from="OrderQueue" to="MessageQueue" method="_on_order_queue_order_submitted"]
 [connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

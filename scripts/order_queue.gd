@@ -1,6 +1,7 @@
 class_name OrderQueue extends Node
 
 signal current_orders_changed(orders)
+signal order_submitted(food)
 signal end_level()
 
 @export var upcoming_orders: Array[Food] = []
@@ -46,6 +47,7 @@ func submit_order():
 			# or accept that inventory trashes the item if you submit wrong?
 			Inventory.sell_item(food)
 			current_orders.erase(food)
+			order_submitted.emit(food)
 			# TODO probably a signal here to do UI stuff like the customer coming up?
 			current_orders_changed.emit(current_orders)
 

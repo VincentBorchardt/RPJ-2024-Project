@@ -28,3 +28,7 @@ func _on_order_queue_current_orders_changed(orders):
 
 func _on_order_box_submit_order():
 	submit_order.emit()
+
+
+func _on_message_queue_send_special_message(message):
+	display_message(message)
