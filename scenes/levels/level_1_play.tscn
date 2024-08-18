@@ -45,4 +45,5 @@ available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResourc
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
 [connection signal="start_ending_level" from="OrderQueue" to="." method="_on_order_queue_start_ending_level"]
+[connection signal="close_tiles" from="GameUI" to="Grid" method="_on_game_ui_close_tiles"]
 [connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

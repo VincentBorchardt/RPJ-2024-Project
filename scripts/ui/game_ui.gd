@@ -1,6 +1,7 @@
 extends Control
 
 signal submit_order
+signal close_tiles
 
 @export var available_food: Array[Food]
 @export var available_placeables: Array[Placeable]
@@ -36,3 +37,7 @@ func _on_message_queue_send_special_message(message):
 
 func _on_order_queue_order_submitted(food):
 	pass # Replace with function body.
+
+
+func _on_tile_popup_close_tiles():
+	close_tiles.emit()

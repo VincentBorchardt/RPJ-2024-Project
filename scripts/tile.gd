@@ -46,8 +46,10 @@ func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if BuildMode.can_place() and tile_feature == null:
 			var placeable = BuildMode.get_current_placeable()
-			set_placeable(placeable)
-			BuildMode.deselect_placeable()
+			if Inventory.can_afford_item(placeable):
+				set_placeable(placeable)
+				Inventory.current_currency -= placeable.price
+				BuildMode.deselect_placeable()
 		elif WorkerList.currently_in_worker_mode and tile_feature != null:
 			if not (tile_feature is Road):
 				print("emitting grid point")

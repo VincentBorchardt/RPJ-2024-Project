@@ -93,3 +93,8 @@ func _update_worker_path(worker):
 
 func translate_tile(tile):
 	return tile.position / 64
+
+
+func _on_game_ui_close_tiles():
+	for tile in all_tiles:
+		tile.highlight.visible = false

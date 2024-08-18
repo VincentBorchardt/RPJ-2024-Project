@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal close_tiles()
+
 @onready var placeable_label = $TilePopupBox/PlaceableLabel
 @onready var popup_timeout = $PopupTimeout
 
@@ -17,10 +19,13 @@ func _ready():
 
 func close_popup():
 	self.visible = false
+	close_tiles.emit()
 	popup_timeout.stop()
 
 func _on_show_placeable_info(ingredients, building, tile):
+	close_popup()
 	current_tile = tile
+	tile.highlight.visible = true
 	self.offset = tile.global_position
 	prep_box.visible = false
 	storage_box.visible = false

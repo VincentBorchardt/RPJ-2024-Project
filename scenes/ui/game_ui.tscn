@@ -59,3 +59,4 @@ offset_bottom = 900.0
 visible = false
 
 [connection signal="submit_order" from="OrderBox" to="." method="_on_order_box_submit_order"]
+[connection signal="close_tiles" from="TilePopup" to="." method="_on_tile_popup_close_tiles"]

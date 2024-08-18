@@ -23,10 +23,8 @@ func get_current_placeable():
 	return build_mode_selection
 
 func select_placeable(placeable):
-	if Inventory.can_afford_item(placeable):
-		build_mode_selection = placeable
-		Inventory.current_currency -= placeable.price
-		selection_updated.emit(placeable)
+	build_mode_selection = placeable
+	selection_updated.emit(placeable)
 
 func deselect_placeable():
 	build_mode_selection = null
