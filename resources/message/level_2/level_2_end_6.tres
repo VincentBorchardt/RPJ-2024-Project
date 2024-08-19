@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_ofdtx")
 speaker = ExtResource("2_4gf31")
-message = "No! We can’t denigrate this fine establishment like this with dishes like are served at"
+message = "No! We can’t denigrate this fine establishment with dishes like the ones served at"
 image_location = 0
