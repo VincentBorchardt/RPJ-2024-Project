@@ -42,4 +42,5 @@ offset_bottom = 350.0
 theme_override_font_sizes/font_size = 24
 text = "Next"
 
+[connection signal="pressed" from="PreviousMessagesButton" to="." method="_on_previous_messages_button_pressed"]
 [connection signal="pressed" from="AdvanceTextButton" to="." method="_on_advance_text_button_pressed"]

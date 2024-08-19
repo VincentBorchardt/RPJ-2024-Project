@@ -1,6 +1,7 @@
 extends Control
 
 signal get_new_message()
+signal show_previous_messages(messages)
 
 @onready var speaker_label = $SpeakerLabel
 @onready var cutscene_message = $CutsceneMessage
@@ -27,3 +28,7 @@ func display_new_message(message):
 
 func _on_advance_text_button_pressed():
 	get_new_message.emit()
+
+
+func _on_previous_messages_button_pressed():
+	show_previous_messages.emit(previous_messages)

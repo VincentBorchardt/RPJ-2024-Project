@@ -17,6 +17,13 @@ func _ready():
 	BuildingList.show_placeable_info.connect(_on_show_placeable_info)
 	BuildingList.update_placeable_timer.connect(_on_update_placeable_timer)
 
+func _process(delta):
+	if current_tile != null:
+		if current_tile.tile_feature is PrepBuilding:
+			var building = current_tile.tile_feature
+			var ingredients = building.current_ingredients
+			_build_prep_box(ingredients, building, current_tile)
+
 func close_popup():
 	self.visible = false
 	close_tiles.emit()
@@ -45,19 +52,23 @@ func _on_popup_timeout_timeout():
 	close_popup()
 
 # PREP BOX STUFF
+
+func _build_prep_box(ingredients, building, tile):
+	if current_tile.tile_feature is PrepBuilding:
+		var item_string = ""
+		for food in ingredients:
+			item_string += food.name + "\n"
+		prep_items_label.text = item_string
+		# TODO The way this is built it doesn't update until you click on the placeable again
+		if building.currently_prepping:
+			var percent_done = tile.get_timer_percent_done()
+			prep_button.attached_placeable = building
+			_update_active_prep_box(percent_done, building)
+		else:
+			prep_button.visible = false
+			prep_progress_bar.visible = false
 func _show_prep_box(ingredients, building, tile):
-	var item_string = ""
-	for food in ingredients:
-		item_string += food.name + "\n"
-	prep_items_label.text = item_string
-	# TODO The way this is built it doesn't update until you click on the placeable again
-	if building.currently_prepping:
-		var percent_done = tile.get_timer_percent_done()
-		prep_button.attached_placeable = building
-		_update_active_prep_box(percent_done, building)
-	else:
-		prep_button.visible = false
-		prep_progress_bar.visible = false
+	_build_prep_box(ingredients, building, tile)
 	prep_box.visible = true
 
 func _update_active_prep_box(percent_done, building):

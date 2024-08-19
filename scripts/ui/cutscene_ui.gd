@@ -6,6 +6,9 @@ signal get_new_message()
 @onready var left_image = $LeftImage
 @onready var right_image = $RightImage
 
+@onready var previous_messages_popup = $PreviousMessagesPopup
+@onready var previous_messages_label = $PreviousMessagesPopup/PreviousMessagesLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -30,3 +33,14 @@ func display_new_message(message):
 	elif message.image_location == Message.Location.RIGHT:
 		right_image.texture = picture
 	cutscene_message_area.display_new_message(message)
+
+
+func _on_cutscene_message_area_show_previous_messages(messages):
+	var message_string = "Previous Messages: \n \n"
+	for entry in messages:
+		message_string += entry.speaker.person_name + ": " + entry.message + "\n \n"
+	previous_messages_label.text = message_string
+	previous_messages_popup.visible = true
+
+func _on_close_popup_button_pressed():
+	previous_messages_popup.visible = false

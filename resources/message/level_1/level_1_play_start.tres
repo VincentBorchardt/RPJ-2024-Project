@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_f6236")
 speaker = ExtResource("2_hhg3e")
-message = "Remember to judicious with your spending, but quick with your preparation. Those orders are coming fast!"
+message = "Remember to be judicious with your spending, but quick with your preparation. Those orders are coming fast!"
 image_location = 0
