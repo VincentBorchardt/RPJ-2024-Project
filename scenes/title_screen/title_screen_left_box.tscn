@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq3n6xqgr4hx6"]
+[gd_scene load_steps=15 format=3 uid="uid://dq3n6xqgr4hx6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
 [ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dihejex33ea3s" path="res://scenes/cutscenes/level_2_start_cutscene.tscn" id="10_unegt"]
 [ext_resource type="PackedScene" uid="uid://doj55xyasplty" path="res://scenes/levels/level_2_play.tscn" id="11_35p21"]
 [ext_resource type="PackedScene" uid="uid://boddss027qtvs" path="res://scenes/cutscenes/level_2_end_cutscene.tscn" id="12_tbr2o"]
+[ext_resource type="PackedScene" uid="uid://bjwq63jg7jfxx" path="res://scenes/cutscenes/level_3_start_cutscene.tscn" id="13_vhvur"]
+[ext_resource type="PackedScene" uid="uid://cjsmleabo36ap" path="res://scenes/levels/level_3_play.tscn" id="14_b4jie"]
 
 [node name="TitleScreenLeftBox" type="VBoxContainer"]
 anchors_preset = 15
@@ -133,6 +135,35 @@ text = "End"
 script = ExtResource("2_ttbhf")
 attached_scene = ExtResource("12_tbr2o")
 
+[node name="Level3Label" type="Label" parent="DebugBox"]
+layout_mode = 2
+text = "Level 3"
+
+[node name="Level3Box" type="HBoxContainer" parent="DebugBox"]
+layout_mode = 2
+
+[node name="Level3Start" type="Button" parent="DebugBox/Level3Box"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("13_vhvur")
+
+[node name="Level3Play" type="Button" parent="DebugBox/Level3Box"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("14_b4jie")
+
+[node name="Level3End" type="Button" parent="DebugBox/Level3Box"]
+layout_mode = 2
+text = "End"
+script = ExtResource("2_ttbhf")
+
+[node name="Epilogue" type="Button" parent="DebugBox/Level3Box"]
+layout_mode = 2
+text = "Epilogue"
+script = ExtResource("2_ttbhf")
+
 [connection signal="pressed_with_scene" from="StoryModeButton" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
@@ -145,3 +176,5 @@ attached_scene = ExtResource("12_tbr2o")
 [connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2Start" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2Play" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level2Box/Level2End" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level3Box/Level3Start" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="DebugBox/Level3Box/Level3Play" to="." method="_on_scene_button_pressed"]

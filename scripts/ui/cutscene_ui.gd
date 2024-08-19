@@ -9,15 +9,6 @@ signal get_new_message()
 @onready var previous_messages_popup = $PreviousMessagesPopup
 @onready var previous_messages_label = $PreviousMessagesPopup/PreviousMessagesLabel
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_cutscene_message_area_get_new_message():
 	get_new_message.emit()
@@ -33,7 +24,6 @@ func display_new_message(message):
 	elif message.image_location == Message.Location.RIGHT:
 		right_image.texture = picture
 	cutscene_message_area.display_new_message(message)
-
 
 func _on_cutscene_message_area_show_previous_messages(messages):
 	var message_string = "Previous Messages: \n \n"

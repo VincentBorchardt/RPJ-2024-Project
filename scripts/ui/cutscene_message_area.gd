@@ -15,10 +15,6 @@ func _ready():
 	get_new_message.emit()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func display_new_message(message):
 	if current_message != null:
 		previous_messages.append(current_message)

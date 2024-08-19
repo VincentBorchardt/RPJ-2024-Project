@@ -31,9 +31,6 @@ func _ready():
 	BuildingList.block_tile.connect(_block_tile)
 	WorkerList.update_worker_path.connect(_update_worker_path)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _initialize_tiles():
 	half_tile_size = tile_size / 2
@@ -63,10 +60,10 @@ func _initialize_grid():
 	astar_grid.fill_solid_region(grid_rect, true)
 	astar_grid.update()
 
-func _block_grid_point(position, bool=true):
-	var grid_pos = Vector2i(position) / tile_size
+func _block_grid_point(point_position, blocking=true):
+	var grid_pos = Vector2i(point_position) / tile_size
 	if astar_grid.is_in_boundsv(grid_pos):
-		astar_grid.set_point_solid(grid_pos, bool)
+		astar_grid.set_point_solid(grid_pos, blocking)
 
 func _open_tile(tile):
 	print("tile opened")

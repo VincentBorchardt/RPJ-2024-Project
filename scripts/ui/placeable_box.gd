@@ -10,15 +10,10 @@ extends VBoxContainer
 		remove_buttons_children()
 		update_placeable_buttons()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BuildMode.turn_build_mode_off.connect(_on_build_mode_turn_build_mode_off)
 	BuildMode.turn_build_mode_on.connect(_on_build_mode_turn_build_mode_on)
 	BuildMode.selection_updated.connect(_on_build_mode_selection_updated)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func update_placeable_buttons():
 	for placeable in available_placeables:

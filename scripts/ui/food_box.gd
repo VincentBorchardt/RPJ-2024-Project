@@ -6,12 +6,6 @@ extends VBoxContainer
 		remove_children()
 		update_food_buttons()
 
-func _ready():
-	pass
-
-
-func _process(delta):
-	pass
 
 func update_food_buttons():
 	for food in available_food:

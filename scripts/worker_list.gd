@@ -15,11 +15,6 @@ var current_worker : Worker = null
 func _ready():
 	BuildingList.set_grid_point.connect(_on_building_list_set_grid_point)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func create_worker():
 	var new_worker = Worker.new()
 	new_worker.id = current_id

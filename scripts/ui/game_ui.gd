@@ -16,11 +16,6 @@ func _ready():
 	food_box.available_food = available_food
 	placeable_box.available_placeables = available_placeables
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func display_message(message):
 	message_area.display_new_message(message)
 
@@ -33,11 +28,6 @@ func _on_order_box_submit_order():
 
 func _on_message_queue_send_special_message(message):
 	display_message(message)
-
-
-func _on_order_queue_order_submitted(food):
-	pass # Replace with function body.
-
 
 func _on_tile_popup_close_tiles():
 	close_tiles.emit()
