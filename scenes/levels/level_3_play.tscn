@@ -1,13 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjsmleabo36ap"]
+[gd_scene load_steps=28 format=3 uid="uid://cjsmleabo36ap"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_yj5nu"]
-[ext_resource type="PackedScene" uid="uid://boddss027qtvs" path="res://scenes/cutscenes/level_2_end_cutscene.tscn" id="2_hqevb"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="3_o5p81"]
 [ext_resource type="Resource" uid="uid://cxnp65trodt0k" path="res://resources/message/level_3/level_3_play_start.tres" id="4_7ujtu"]
+[ext_resource type="Resource" uid="uid://b8xsj4nte10mo" path="res://resources/food/bbq_chicken_sandwich.tres" id="6_ccub2"]
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="6_fvckm"]
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="7_fjxxt"]
 [ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="8_a6sri"]
+[ext_resource type="Resource" uid="uid://ctw1qtmbyxulx" path="res://resources/food/ice_cream.tres" id="8_bg5h4"]
 [ext_resource type="Resource" uid="uid://8i5nghkya6dv" path="res://resources/food/chick.tres" id="9_6jd33"]
+[ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="9_17tr7"]
+[ext_resource type="Resource" uid="uid://dhw108lfd3n2h" path="res://resources/food/smokey_pig_sticks.tres" id="9_f3u77"]
+[ext_resource type="Resource" uid="uid://bwj8uym0405wt" path="res://resources/food/pulled_pork_taco.tres" id="10_j7hca"]
+[ext_resource type="Resource" uid="uid://chgd23wovgh7q" path="res://resources/food/chicken_dessert.tres" id="12_dokv1"]
 [ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="12_g5e6v"]
 [ext_resource type="Resource" uid="uid://4yd0q52se8ar" path="res://resources/food/milk.tres" id="12_kvrwd"]
 [ext_resource type="Resource" uid="uid://dnnib4e1387vy" path="res://resources/food/pig.tres" id="13_mqyyc"]
@@ -25,13 +30,12 @@
 
 [node name="Level3Play" type="Node2D"]
 script = ExtResource("1_yj5nu")
-next_scene = ExtResource("2_hqevb")
 
 [node name="MessageQueue" parent="." instance=ExtResource("3_o5p81")]
 starting_message = ExtResource("4_7ujtu")
 
 [node name="OrderQueue" parent="." instance=ExtResource("6_fvckm")]
-upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("8_a6sri")])
+upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("10_j7hca"), ExtResource("6_ccub2"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("8_bg5h4"), ExtResource("10_j7hca"), ExtResource("12_dokv1"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("6_ccub2")])
 time_between_orders = 15
 
 [node name="GameUI" parent="." instance=ExtResource("12_g5e6v")]

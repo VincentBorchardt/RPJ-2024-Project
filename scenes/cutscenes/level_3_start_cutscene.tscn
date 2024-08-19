@@ -1,0 +1,24 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjwq63jg7jfxx"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_qe56o"]
+[ext_resource type="PackedScene" uid="uid://cjsmleabo36ap" path="res://scenes/levels/level_3_play.tscn" id="2_k7aps"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="3_g8ker"]
+[ext_resource type="Resource" uid="uid://bj5drp6t2edfn" path="res://resources/message/level_3/level_3_start_1.tres" id="4_mel5u"]
+[ext_resource type="Resource" uid="uid://qaceynqnu7cq" path="res://resources/message/level_3/level_3_start_2.tres" id="5_3gumr"]
+[ext_resource type="Resource" uid="uid://cliiceyov05jn" path="res://resources/message/level_3/level_3_start_3.tres" id="6_2fxow"]
+[ext_resource type="Resource" uid="uid://b5rvy7y5ckf7q" path="res://resources/message/level_3/level_3_start_4.tres" id="7_aii40"]
+[ext_resource type="Resource" uid="uid://npixhsrwqx6e" path="res://resources/message/level_3/level_3_start_5.tres" id="8_5clkb"]
+[ext_resource type="Resource" uid="uid://b48dfxdqw80s" path="res://resources/message/level_3/level_3_start_6.tres" id="9_v45vj"]
+[ext_resource type="Resource" uid="uid://dmunwawy21acf" path="res://resources/message/level_3/level_3_start_7.tres" id="10_vwmpy"]
+[ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="14_ij1jq"]
+
+[node name="Level3StartCutscene" type="Node2D"]
+script = ExtResource("1_qe56o")
+next_scene = ExtResource("2_k7aps")
+
+[node name="MessageQueue" parent="." instance=ExtResource("3_g8ker")]
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("4_mel5u"), ExtResource("5_3gumr"), ExtResource("6_2fxow"), ExtResource("7_aii40"), ExtResource("8_5clkb"), ExtResource("9_v45vj"), ExtResource("10_vwmpy")])
+
+[node name="CutsceneUI" parent="." instance=ExtResource("14_ij1jq")]
+
+[connection signal="get_new_message" from="CutsceneUI" to="." method="_on_cutscene_ui_get_new_message"]

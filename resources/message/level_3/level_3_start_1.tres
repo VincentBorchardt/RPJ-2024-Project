@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bj5drp6t2edfn"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_d6yku"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_rc25r"]
+
+[resource]
+script = ExtResource("1_d6yku")
+speaker = ExtResource("2_rc25r")
+message = "Are you sure you want to take on the dinner shift on only your third day? We’re also introducing a whole new category of meal to the menu."
+image_location = 1

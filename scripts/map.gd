@@ -59,6 +59,7 @@ func _initialize_grid():
 	astar_grid.offset = half_tile_size
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	var grid_rect = Rect2i(grid_origin, grid_size)
+	astar_grid.update()
 	astar_grid.fill_solid_region(grid_rect, true)
 	astar_grid.update()
 

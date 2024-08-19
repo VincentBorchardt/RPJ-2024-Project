@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://b5rvy7y5ckf7q"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_ag47i"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_5nn50"]
+
+[resource]
+script = ExtResource("1_ag47i")
+speaker = ExtResource("2_5nn50")
+message = "Are you sure one person can do this? That's a half-dozen possible dishes tonight!"
+image_location = 0

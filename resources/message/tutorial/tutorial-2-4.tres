@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Message" load_steps=4 format=3 uid="uid://c1msy0f35ymua"]
 
-[ext_resource type="Texture2D" uid="uid://br3g5wvsu4wg2" path="res://assets/sprites/test/SolarPanel.png" id="1_153xq"]
+[ext_resource type="Texture2D" uid="uid://dfullxcse8b5j" path="res://assets/characters/taxxie_down_full.png" id="1_1h5t1"]
 [ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_u5cgb"]
 [ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="3_l8s55"]
 
@@ -8,5 +8,5 @@
 script = ExtResource("1_u5cgb")
 speaker = ExtResource("3_l8s55")
 message = "Meet the Tireless Ancillary Xeric Xenial Independent Employee, your helpers who can move food for you."
-alt_picture = ExtResource("1_153xq")
+alt_picture = ExtResource("1_1h5t1")
 image_location = 0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cliiceyov05jn"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_phd4t"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_uc24h"]
+
+[resource]
+script = ExtResource("1_phd4t")
+speaker = ExtResource("2_uc24h")
+message = "For starters, we have a slate of chicken dishes on the menu today, along with both pork and beef. We also have dessert dishes, including our special ice cream you make by just putting milk in the freezer."
+image_location = 1

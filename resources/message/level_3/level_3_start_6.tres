@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://b48dfxdqw80s"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_imphs"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_ak1mx"]
+
+[resource]
+script = ExtResource("1_imphs")
+speaker = ExtResource("2_ak1mx")
+message = "(I know, that’s the problem. I just have to survive until the “Chicken Dessert” comes up, serve it, then my friends will do the rest.)"
+image_location = 0

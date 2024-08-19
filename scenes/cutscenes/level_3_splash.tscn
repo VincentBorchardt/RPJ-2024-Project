@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc08pwc8vhylb"]
+[gd_scene load_steps=3 format=3 uid="uid://bc08pwc8vhylb"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/splash_manager.gd" id="1_x62mw"]
+[ext_resource type="PackedScene" uid="uid://bjwq63jg7jfxx" path="res://scenes/cutscenes/level_3_start_cutscene.tscn" id="2_2736n"]
 
 [node name="Level3Splash" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x62mw")
+next_scene = ExtResource("2_2736n")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
