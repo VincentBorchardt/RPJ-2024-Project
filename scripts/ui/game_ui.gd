@@ -7,7 +7,7 @@ signal close_tiles
 @export var available_placeables: Array[Placeable]
 
 @onready var order_box = $OrderBox
-@onready var food_box = $FoodBox
+@onready var food_box = $FoodScroll/FoodBox
 @onready var placeable_box = $PlaceableBox
 @onready var message_area = $MessageArea
 

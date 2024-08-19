@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="PrepBuilding" load_steps=4 format=3 uid="uid://dtoqbon7ly541"]
+[gd_resource type="Resource" script_class="PrepBuilding" load_steps=5 format=3 uid="uid://dtoqbon7ly541"]
 
 [ext_resource type="Script" path="res://scripts/prep_building.gd" id="1_v1vfu"]
 [ext_resource type="Texture2D" uid="uid://bescltmfvfw2m" path="res://assets/resource_icons/slow_cooker.png" id="1_y2wni"]
 [ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="2_r6gko"]
+[ext_resource type="Resource" uid="uid://dl0cagygks4qe" path="res://resources/food/mystery_ketchup.tres" id="3_k4pm7"]
 
 [resource]
 script = ExtResource("1_v1vfu")
-food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_r6gko")])
+food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_r6gko"), ExtResource("3_k4pm7")])
 placeable_name = "Slow Cooker"
 price = 6
 base_texture = ExtResource("1_y2wni")

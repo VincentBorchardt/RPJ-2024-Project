@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_aou5x")
 speaker = ExtResource("2_5wwal")
-message = "If we let the secrets out, we’d risk letting Mr. Pitmaster know our scheme, so you should just give us the bag and focus on running the restaurant like usual. It’s going to be the toughest challenge yet though, and we’ll need some time before we can start the plan, so you’ll need to be on your game and watch for the special order."
+message = "If we let the secrets out, we’d risk letting Mr. Pitmaster know our scheme, so you should just give us the bag and focus on running the restaurant like usual. It’s going to be the toughest challenge yet though, and we’ll need some time before we can start the plan, so you’ll need to be on your game and watch for a “Chicken Dessert” on the order ticker."
 image_location = 1

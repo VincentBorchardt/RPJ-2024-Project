@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PrepBuilding" load_steps=5 format=3 uid="uid://dgsakknle1576"]
+
+[ext_resource type="Texture2D" uid="uid://inpgq1t0l1a4" path="res://assets/resource_icons/freezer.png" id="1_pcral"]
+[ext_resource type="Script" path="res://scripts/prep_building.gd" id="1_r6rio"]
+[ext_resource type="Resource" uid="uid://chgd23wovgh7q" path="res://resources/food/chicken_dessert.tres" id="2_laqg7"]
+[ext_resource type="Resource" uid="uid://ctw1qtmbyxulx" path="res://resources/food/ice_cream.tres" id="3_b5bcm"]
+
+[resource]
+script = ExtResource("1_r6rio")
+food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_laqg7"), ExtResource("3_b5bcm")])
+placeable_name = "Freezer"
+price = 9
+base_texture = ExtResource("1_pcral")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Food" load_steps=6 format=3 uid="uid://b8xsj4nte10mo"]
+
+[ext_resource type="Texture2D" uid="uid://dr4gu0t8aofs2" path="res://assets/resource_icons/bbq_chicken_sandwich.png" id="1_jmtqh"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_rlo8x"]
+[ext_resource type="Resource" uid="uid://6l4oqjt2jwnm" path="res://resources/food/chicken.tres" id="2_jhwxe"]
+[ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="3_7hdqr"]
+[ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="4_glr7o"]
+
+[resource]
+script = ExtResource("1_rlo8x")
+name = "BBQ Chicken SW"
+price = 15
+time_to_complete = 7
+base_texture = ExtResource("1_jmtqh")
+components = Array[ExtResource("1_rlo8x")]([ExtResource("2_jhwxe"), ExtResource("3_7hdqr"), ExtResource("4_glr7o")])

@@ -1,0 +1,51 @@
+[gd_scene load_steps=23 format=3 uid="uid://cjsmleabo36ap"]
+
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_yj5nu"]
+[ext_resource type="PackedScene" uid="uid://boddss027qtvs" path="res://scenes/cutscenes/level_2_end_cutscene.tscn" id="2_hqevb"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="3_o5p81"]
+[ext_resource type="Resource" uid="uid://cxnp65trodt0k" path="res://resources/message/level_3/level_3_play_start.tres" id="4_7ujtu"]
+[ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="6_fvckm"]
+[ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="7_fjxxt"]
+[ext_resource type="Resource" uid="uid://cslgsh4in2g5p" path="res://resources/food/bbq_pork.tres" id="8_a6sri"]
+[ext_resource type="Resource" uid="uid://8i5nghkya6dv" path="res://resources/food/chick.tres" id="9_6jd33"]
+[ext_resource type="PackedScene" uid="uid://bsblupcpeqoqf" path="res://scenes/ui/game_ui.tscn" id="12_g5e6v"]
+[ext_resource type="Resource" uid="uid://4yd0q52se8ar" path="res://resources/food/milk.tres" id="12_kvrwd"]
+[ext_resource type="Resource" uid="uid://dnnib4e1387vy" path="res://resources/food/pig.tres" id="13_mqyyc"]
+[ext_resource type="Resource" uid="uid://c2yh441anafl8" path="res://resources/food/ketchup.tres" id="13_vmfit"]
+[ext_resource type="Resource" uid="uid://cigrvr3xtavu7" path="res://resources/food/censored.tres" id="14_ma8nq"]
+[ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="14_pg146"]
+[ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="16_85see"]
+[ext_resource type="Resource" uid="uid://b2el2uuc1yufc" path="res://resources/food/liquid_smoke.tres" id="16_g21hh"]
+[ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="17_5t1wm"]
+[ext_resource type="Resource" uid="uid://3js5rqtl8gne" path="res://resources/placeable/assembler.tres" id="18_u1yic"]
+[ext_resource type="Resource" uid="uid://dgsakknle1576" path="res://resources/placeable/freezer.tres" id="20_bif8o"]
+[ext_resource type="Resource" uid="uid://dtoqbon7ly541" path="res://resources/placeable/slow_cooker.tres" id="20_ibjv4"]
+[ext_resource type="Resource" uid="uid://b454mufhl5lin" path="res://resources/placeable/dehydrator.tres" id="21_3hm2a"]
+[ext_resource type="PackedScene" uid="uid://bk88ik7wglil4" path="res://scenes/grid.tscn" id="22_0k1r8"]
+
+[node name="Level3Play" type="Node2D"]
+script = ExtResource("1_yj5nu")
+next_scene = ExtResource("2_hqevb")
+
+[node name="MessageQueue" parent="." instance=ExtResource("3_o5p81")]
+starting_message = ExtResource("4_7ujtu")
+
+[node name="OrderQueue" parent="." instance=ExtResource("6_fvckm")]
+upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("8_a6sri")])
+time_between_orders = 15
+
+[node name="GameUI" parent="." instance=ExtResource("12_g5e6v")]
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("7_fjxxt"), ExtResource("13_mqyyc"), ExtResource("9_6jd33"), ExtResource("14_pg146"), ExtResource("16_g21hh"), ExtResource("12_kvrwd"), ExtResource("13_vmfit"), ExtResource("14_ma8nq")])
+available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("17_5t1wm"), ExtResource("16_85see"), ExtResource("18_u1yic"), ExtResource("20_ibjv4"), ExtResource("21_3hm2a"), ExtResource("20_bif8o")])
+
+[node name="Grid" parent="." instance=ExtResource("22_0k1r8")]
+position = Vector2(256, 300)
+
+[connection signal="send_special_message" from="MessageQueue" to="GameUI" method="_on_message_queue_send_special_message"]
+[connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
+[connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="order_submitted" from="OrderQueue" to="MessageQueue" method="_on_order_queue_order_submitted"]
+[connection signal="order_submitted" from="OrderQueue" to="GameUI" method="_on_order_queue_order_submitted"]
+[connection signal="start_ending_level" from="OrderQueue" to="." method="_on_order_queue_start_ending_level"]
+[connection signal="close_tiles" from="GameUI" to="Grid" method="_on_game_ui_close_tiles"]
+[connection signal="submit_order" from="GameUI" to="." method="_on_game_ui_submit_order"]

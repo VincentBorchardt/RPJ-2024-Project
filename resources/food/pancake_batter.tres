@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bccwc")
-name = "Pancake Batter"
+name = "Pancake Mix"
 price = 7
 time_to_complete = 0
 base_texture = ExtResource("1_iwfh2")

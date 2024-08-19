@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Food" load_steps=6 format=3 uid="uid://dl0cagygks4qe"]
+
+[ext_resource type="Texture2D" uid="uid://lksu45d4o8kh" path="res://assets/resource_icons/mystery_ketchup.png" id="1_owwbu"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_wg1ib"]
+[ext_resource type="Resource" uid="uid://00y5qdsajm0i" path="res://resources/food/bbq_sauce.tres" id="2_ly64x"]
+[ext_resource type="Resource" uid="uid://c2yh441anafl8" path="res://resources/food/ketchup.tres" id="3_x30sf"]
+[ext_resource type="Resource" uid="uid://cigrvr3xtavu7" path="res://resources/food/censored.tres" id="4_esosf"]
+
+[resource]
+script = ExtResource("1_wg1ib")
+name = "Myst. Ketchup"
+price = 0
+time_to_complete = 10
+base_texture = ExtResource("1_owwbu")
+components = Array[ExtResource("1_wg1ib")]([ExtResource("2_ly64x"), ExtResource("3_x30sf"), ExtResource("4_esosf")])

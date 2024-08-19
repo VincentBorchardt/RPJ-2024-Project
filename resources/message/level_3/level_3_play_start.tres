@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cxnp65trodt0k"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_at8t5"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_ryo8w"]
+
+[resource]
+script = ExtResource("1_at8t5")
+speaker = ExtResource("2_ryo8w")
+message = "(I need to keep going until the Chicken Dessert order pops up--then we can end this!)"
+image_location = 0

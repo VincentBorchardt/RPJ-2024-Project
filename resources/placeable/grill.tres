@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="PrepBuilding" load_steps=5 format=3 uid="uid://fcp8hphhpdlr"]
+[gd_resource type="Resource" script_class="PrepBuilding" load_steps=6 format=3 uid="uid://fcp8hphhpdlr"]
 
 [ext_resource type="Script" path="res://scripts/prep_building.gd" id="1_h0g56"]
 [ext_resource type="Texture2D" uid="uid://fnjuqg8e7vc5" path="res://assets/resource_icons/grill.png" id="1_s3wv3"]
 [ext_resource type="Resource" uid="uid://3782s0ecxmy6" path="res://resources/food/hamburger.tres" id="2_iuyvk"]
 [ext_resource type="Resource" uid="uid://cioqj8gd7fyh7" path="res://resources/food/double_cheeseburger.tres" id="3_qqt6f"]
+[ext_resource type="Resource" uid="uid://b8xsj4nte10mo" path="res://resources/food/bbq_chicken_sandwich.tres" id="4_k5qni"]
 
 [resource]
 script = ExtResource("1_h0g56")
-food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_iuyvk"), ExtResource("3_qqt6f")])
+food_preparable = Array[Resource("res://scripts/food.gd")]([ExtResource("2_iuyvk"), ExtResource("3_qqt6f"), ExtResource("4_k5qni")])
 placeable_name = "Grill"
 price = 10
 base_texture = ExtResource("1_s3wv3")

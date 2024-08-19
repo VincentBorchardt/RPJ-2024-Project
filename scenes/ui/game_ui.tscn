@@ -41,12 +41,15 @@ offset_top = 25.0
 position = Vector2(128, 460)
 texture = ExtResource("4_3rjau")
 
-[node name="FoodBox" parent="." instance=ExtResource("3_c6i4w")]
+[node name="FoodScroll" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 320.0
-offset_right = 221.0
+offset_right = 235.0
 offset_bottom = 600.0
+
+[node name="FoodBox" parent="FoodScroll" instance=ExtResource("3_c6i4w")]
+layout_mode = 2
 
 [node name="InventoryBackground" type="Sprite2D" parent="."]
 position = Vector2(128, 760)
