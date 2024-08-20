@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://b0gqb0xlbdhiq"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_j3bws"]
+[ext_resource type="Resource" uid="uid://bpudy65ay1ran" path="res://resources/person/taxxie.tres" id="2_i6o07"]
+
+[resource]
+script = ExtResource("1_j3bws")
+speaker = ExtResource("2_i6o07")
+message = "Hello, savior!"
+image_location = 1

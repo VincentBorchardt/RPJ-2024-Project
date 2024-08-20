@@ -26,11 +26,12 @@ vertical_alignment = 1
 
 [node name="SubtitleLabel" type="Label" parent="."]
 layout_mode = 0
+offset_left = 100.0
 offset_top = 700.0
-offset_right = 1600.0
+offset_right = 1500.0
 offset_bottom = 800.0
 theme_override_font_sizes/font_size = 48
-text = "What's Going On Behind That Touchscreen?"
+text = "A One Person (and Many Creatures) Job"
 horizontal_alignment = 1
 vertical_alignment = 1
 

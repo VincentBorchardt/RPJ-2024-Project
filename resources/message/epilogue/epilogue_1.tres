@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cbqr48rohcqys"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_0u57h"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_k1ero"]
+
+[resource]
+script = ExtResource("1_0u57h")
+speaker = ExtResource("2_k1ero")
+message = "And now things are back to normal at The Smoke Box. That bird really managed to do a lot of damage in a short time."
+image_location = 1

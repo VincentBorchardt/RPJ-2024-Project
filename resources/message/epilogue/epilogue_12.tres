@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://6fpxm2vxdsvt"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_2qgoj"]
+[ext_resource type="Resource" uid="uid://bpudy65ay1ran" path="res://resources/person/taxxie.tres" id="2_38smx"]
+
+[resource]
+script = ExtResource("1_2qgoj")
+speaker = ExtResource("2_38smx")
+message = "Sure–just keep that non-tainted House Ketchup flowing!"
+image_location = 1

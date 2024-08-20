@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bte1otnumtyx4"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_t6qb6"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_f5cga"]
+
+[resource]
+script = ExtResource("1_t6qb6")
+speaker = ExtResource("2_f5cga")
+message = "Taxxie! Glad to see you and your friends are back to normal."
+image_location = 0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://csmyajhj6sscu"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_c1qdd"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_at2vx"]
+
+[resource]
+script = ExtResource("1_c1qdd")
+speaker = ExtResource("2_at2vx")
+message = "Of course, as long as it’s your choice."
+image_location = 0

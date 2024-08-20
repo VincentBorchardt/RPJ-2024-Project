@@ -30,11 +30,13 @@ text = "Empty"
 script = ExtResource("1_dmocv")
 
 [node name="InventorySlot3" type="Button" parent="."]
+visible = false
 layout_mode = 2
 text = "Empty"
 script = ExtResource("1_dmocv")
 
 [node name="InventorySlot4" type="Button" parent="."]
+visible = false
 layout_mode = 2
 text = "Empty"
 script = ExtResource("1_dmocv")
@@ -52,8 +54,24 @@ visible = false
 layout_mode = 2
 text = "Trash"
 
+[node name="PoweredUpLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "TAXXIEs Hypercharged!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PoweredUpProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="PoweredUpTimer" type="Timer" parent="."]
+wait_time = 15.0
+
 [connection signal="pressed" from="InventorySlot0" to="." method="_on_inventory_slot_0_pressed"]
 [connection signal="pressed" from="InventorySlot1" to="." method="_on_inventory_slot_1_pressed"]
 [connection signal="pressed" from="InventorySlot2" to="." method="_on_inventory_slot_2_pressed"]
 [connection signal="pressed" from="InventorySlot3" to="." method="_on_inventory_slot_3_pressed"]
 [connection signal="pressed" from="InventorySlot4" to="." method="_on_inventory_slot_4_pressed"]
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="timeout" from="PoweredUpTimer" to="." method="_on_powered_up_timer_timeout"]

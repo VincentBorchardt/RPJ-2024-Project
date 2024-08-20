@@ -9,10 +9,22 @@ extends VBoxContainer
 @onready var current_item_label = $CurrentItemLabel
 @onready var trash_button = $TrashButton
 
+@onready var powered_up_label = $PoweredUpLabel
+@onready var powered_up_progress_bar = $PoweredUpProgressBar
+@onready var powered_up_timer = $PoweredUpTimer
+
+var currently_powered_up = false
+
 func _ready():
 	Inventory.current_item_changed.connect(_on_inventory_current_item_changed)
 	Inventory.inventory_slot_changed.connect(_on_inventory_inventory_slot_changed)
 	Inventory.currency_changed.connect(_on_inventory_currency_changed)
+	Inventory.start_power_up.connect(_on_inventory_start_power_up)
+
+func _process(delta):
+	if currently_powered_up:
+		var percent = (powered_up_timer.time_left / powered_up_timer.wait_time) * 100
+		powered_up_progress_bar.value = percent
 
 func _on_inventory_slot_0_pressed():
 	Inventory.take_item_from_slot(0)
@@ -69,3 +81,15 @@ func _on_inventory_currency_changed(currency_count):
 
 func _on_trash_button_pressed():
 	Inventory.trash_current_item()
+
+func _on_inventory_start_power_up(time):
+	currently_powered_up = true
+	powered_up_label.visible = true
+	powered_up_progress_bar.visible = true
+	powered_up_timer.start(time)
+
+func _on_powered_up_timer_timeout():
+	currently_powered_up = false
+	powered_up_label.visible = false
+	powered_up_progress_bar.visible = false
+	Inventory.currently_powered_up = false

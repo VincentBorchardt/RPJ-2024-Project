@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dnq1rhfjykes"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_yppfy"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_tskph"]
+
+[resource]
+script = ExtResource("1_yppfy")
+speaker = ExtResource("2_tskph")
+message = "But who is running the restaurant now that “The Pitmaster” has gone missing?"
+image_location = 0

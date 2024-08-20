@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://3jnvqys02uym"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_rcic0"]
+[ext_resource type="Resource" uid="uid://bpudy65ay1ran" path="res://resources/person/taxxie.tres" id="2_lkr6w"]
+
+[resource]
+script = ExtResource("1_rcic0")
+speaker = ExtResource("2_lkr6w")
+message = "The Smoke Box has an opening–my friends are good enough at cooking, but we could use someone to communicate what to cook if you’re up for it."
+image_location = 1

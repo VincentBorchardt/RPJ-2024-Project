@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://gc5nviomts0v"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_7v5m7"]
+[ext_resource type="Resource" uid="uid://bpudy65ay1ran" path="res://resources/person/taxxie.tres" id="2_a1knm"]
+
+[resource]
+script = ExtResource("1_7v5m7")
+speaker = ExtResource("2_a1knm")
+message = "Of course! Once we replaced the tainted ketchup in our diet with some old-fashioned House Ketchup, the mind control subsided quickly. So what are you going to do now–save another restaurant?"
+image_location = 1

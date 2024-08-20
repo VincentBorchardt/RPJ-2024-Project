@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://bpudy65ay1ran"]
+
+[ext_resource type="Script" path="res://scripts/resources/person.gd" id="1_163tk"]
+[ext_resource type="Texture2D" uid="uid://dld3i3cdte84u" path="res://assets/characters/taxxie_lkb_full.png" id="1_q56gx"]
+
+[resource]
+script = ExtResource("1_163tk")
+person_name = "Taxxie"
+full_picture = ExtResource("1_q56gx")

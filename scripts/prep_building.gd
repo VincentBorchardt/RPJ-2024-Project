@@ -30,7 +30,10 @@ func prepare_food(food):
 	BuildingList.prepare_food.emit(food, self)
 	# TODO I really don't like this, but I don't see another way to call a timer here
 	# Not clear where I should put this timer, but the signal can be connected anywhere (Tile?)
-	BuildingList.start_building_timer.emit(food.time_to_complete, self)
+	var time = food.time_to_complete
+	if Inventory.currently_powered_up:
+		time = time / 2
+	BuildingList.start_building_timer.emit(time, self)
 
 func array_contains_array (big, small):
 	for element in small:

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cdi0vhrml15g3"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_brr68"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_7onqx"]
+
+[resource]
+script = ExtResource("1_brr68")
+speaker = ExtResource("2_7onqx")
+message = "Yeah, and once that story spread throughout the country and gave the “secret government research” theme enough plausibility, business is booming!"
+image_location = 1

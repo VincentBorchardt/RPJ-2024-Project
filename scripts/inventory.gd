@@ -6,7 +6,15 @@ signal current_item_changed(food)
 signal inventory_slot_changed(slot, food)
 signal currency_changed(currency_count)
 
-var starting_currency : int = 100
+signal start_power_up(time)
+
+# TODO putting this to 1000 temporarily until I get difficulty settings implemented,
+# put back to 100 once that happens
+var starting_currency : int = 1000
+var power_up_time : int = 15
+var currently_powered_up = false
+
+@onready var mystery_ketchup = preload("res://resources/food/mystery_ketchup.tres")
 
 var inventory : Dictionary = {}
 
@@ -81,6 +89,10 @@ func empty_inventory_slot(slot):
 
 func trash_current_item():
 	if is_currently_holding_item():
+		if current_hold_item == mystery_ketchup:
+			print("mystery ketchup trashed")
+			currently_powered_up = true
+			start_power_up.emit(power_up_time) 
 		current_hold_item = null
 
 func reset_currency():
