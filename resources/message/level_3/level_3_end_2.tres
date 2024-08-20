@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bx3wujx5srmvv"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_grtfr"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_4k0kh"]
+
+[resource]
+script = ExtResource("1_grtfr")
+speaker = ExtResource("2_4k0kh")
+message = "Well, an order came in for a cold chicken sandwich, and I haven’t memorized the menu, and"
+image_location = 0

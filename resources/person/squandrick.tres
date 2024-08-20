@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://cunjo2qjwblhj"]
+
+[ext_resource type="Script" path="res://scripts/resources/person.gd" id="1_20c4l"]
+[ext_resource type="Texture2D" uid="uid://c0cptd562ihiv" path="res://assets/characters/squandrick_lkb_full.png" id="1_gw804"]
+
+[resource]
+script = ExtResource("1_20c4l")
+person_name = "Squandrick"
+full_picture = ExtResource("1_gw804")

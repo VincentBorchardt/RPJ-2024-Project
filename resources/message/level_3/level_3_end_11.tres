@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dc0iufdpfoibs"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_cgnbq"]
+[ext_resource type="Resource" uid="uid://cunjo2qjwblhj" path="res://resources/person/squandrick.tres" id="2_1ule7"]
+
+[resource]
+script = ExtResource("1_cgnbq")
+speaker = ExtResource("2_1ule7")
+message = "Because no one would take a bird seriously as the boss of a BBQ restaurant of course! After my ad campaign failed to revitalize the restaurant, I staged a hostile takeover of the failing establishment, and a secretive force was perfect for that."
+image_location = 0

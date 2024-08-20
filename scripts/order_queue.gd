@@ -15,6 +15,8 @@ var ending_level: bool = false
 @onready var order_timer = $OrderTimer
 @onready var end_level_timer = $EndLevelTimer
 
+@onready var chicken_dessert = preload("res://resources/food/chicken_dessert.tres")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# randomize the array of upcoming orders?
@@ -28,11 +30,14 @@ func _process(delta):
 	if not ending_level:
 		if current_orders.is_empty():
 			if upcoming_orders.is_empty():
-				start_ending_level.emit()
-				ending_level = true
-				end_level_timer.start(3)
+				end_level_function()
 			else:
 				add_current_order()
+
+func end_level_function():
+	start_ending_level.emit()
+	ending_level = true
+	end_level_timer.start(3)
 
 func add_current_order():
 	assert (upcoming_orders.is_empty() != true)
@@ -51,6 +56,8 @@ func submit_order():
 			order_submitted.emit(food)
 			# TODO probably a signal here to do UI stuff like the customer coming up?
 			current_orders_changed.emit(current_orders)
+			if food == chicken_dessert:
+				end_level_function()
 
 func start_adding_orders():
 	order_timer.start()

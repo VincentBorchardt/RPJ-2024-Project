@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bkvgso1yfu6ms"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_08pfe"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_djmpd"]
+
+[resource]
+script = ExtResource("1_08pfe")
+speaker = ExtResource("2_djmpd")
+message = "What are you doing? That’s not on the menu!"
+image_location = 1

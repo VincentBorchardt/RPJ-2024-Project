@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Message" load_steps=4 format=3 uid="uid://bhxm82nsi8e8o"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_2dg2g"]
+[ext_resource type="Texture2D" uid="uid://42rp58armtcd" path="res://assets/characters/glerry_lkb_dust.png" id="1_e36jt"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="3_3tj4x"]
+
+[resource]
+script = ExtResource("1_2dg2g")
+speaker = ExtResource("3_3tj4x")
+message = "Toot!"
+alt_picture = ExtResource("1_e36jt")
+image_location = 1

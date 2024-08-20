@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://c3rv807nhnf5p"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_u505w"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_2bl6m"]
+
+[resource]
+script = ExtResource("1_u505w")
+speaker = ExtResource("2_2bl6m")
+message = "Now!"
+image_location = 1

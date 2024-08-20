@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Message" load_steps=4 format=3 uid="uid://dlonxespla14d"]
+
+[ext_resource type="Texture2D" uid="uid://cje6i6puymees" path="res://assets/characters/pitmaster-lkb-dust.png" id="1_ec8b4"]
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_lp1p7"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="3_nbtcc"]
+
+[resource]
+script = ExtResource("1_lp1p7")
+speaker = ExtResource("3_nbtcc")
+message = "What’s happening?!"
+alt_picture = ExtResource("1_ec8b4")
+image_location = 0

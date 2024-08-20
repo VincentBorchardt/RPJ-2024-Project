@@ -1,8 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cjsmleabo36ap"]
+[gd_scene load_steps=32 format=3 uid="uid://cjsmleabo36ap"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_yj5nu"]
+[ext_resource type="PackedScene" uid="uid://c5gvn0lae7sk0" path="res://scenes/cutscenes/level_3_end_cutscene.tscn" id="2_db0p0"]
 [ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="3_o5p81"]
 [ext_resource type="Resource" uid="uid://cxnp65trodt0k" path="res://resources/message/level_3/level_3_play_start.tres" id="4_7ujtu"]
+[ext_resource type="Resource" uid="uid://mqe0tqdybk6h" path="res://resources/message/level_3/level_3_play_end.tres" id="5_dunam"]
 [ext_resource type="Resource" uid="uid://b8xsj4nte10mo" path="res://resources/food/bbq_chicken_sandwich.tres" id="6_ccub2"]
 [ext_resource type="PackedScene" uid="uid://bcqslfu5prjqw" path="res://scenes/order_queue.tscn" id="6_fvckm"]
 [ext_resource type="Resource" uid="uid://bow735rfmv3ec" path="res://resources/food/cow.tres" id="7_fjxxt"]
@@ -22,7 +24,9 @@
 [ext_resource type="Resource" uid="uid://fcp8hphhpdlr" path="res://resources/placeable/grill.tres" id="16_85see"]
 [ext_resource type="Resource" uid="uid://b2el2uuc1yufc" path="res://resources/food/liquid_smoke.tres" id="16_g21hh"]
 [ext_resource type="Resource" uid="uid://ejv8gpwu7j5y" path="res://resources/placeable/field.tres" id="17_5t1wm"]
+[ext_resource type="Resource" uid="uid://tmxeklqyxoqm" path="res://resources/food/bun.tres" id="17_har63"]
 [ext_resource type="Resource" uid="uid://3js5rqtl8gne" path="res://resources/placeable/assembler.tres" id="18_u1yic"]
+[ext_resource type="Resource" uid="uid://bsqhlgmgsd6ba" path="res://resources/food/taco_shell.tres" id="19_pfe2y"]
 [ext_resource type="Resource" uid="uid://dgsakknle1576" path="res://resources/placeable/freezer.tres" id="20_bif8o"]
 [ext_resource type="Resource" uid="uid://dtoqbon7ly541" path="res://resources/placeable/slow_cooker.tres" id="20_ibjv4"]
 [ext_resource type="Resource" uid="uid://b454mufhl5lin" path="res://resources/placeable/dehydrator.tres" id="21_3hm2a"]
@@ -30,16 +34,18 @@
 
 [node name="Level3Play" type="Node2D"]
 script = ExtResource("1_yj5nu")
+next_scene = ExtResource("2_db0p0")
 
 [node name="MessageQueue" parent="." instance=ExtResource("3_o5p81")]
 starting_message = ExtResource("4_7ujtu")
+ending_message = ExtResource("5_dunam")
 
 [node name="OrderQueue" parent="." instance=ExtResource("6_fvckm")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("10_j7hca"), ExtResource("6_ccub2"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("8_bg5h4"), ExtResource("10_j7hca"), ExtResource("12_dokv1"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("6_ccub2")])
 time_between_orders = 15
 
 [node name="GameUI" parent="." instance=ExtResource("12_g5e6v")]
-available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("7_fjxxt"), ExtResource("13_mqyyc"), ExtResource("9_6jd33"), ExtResource("14_pg146"), ExtResource("16_g21hh"), ExtResource("12_kvrwd"), ExtResource("13_vmfit"), ExtResource("14_ma8nq")])
+available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("7_fjxxt"), ExtResource("13_mqyyc"), ExtResource("9_6jd33"), ExtResource("17_har63"), ExtResource("14_pg146"), ExtResource("19_pfe2y"), ExtResource("16_g21hh"), ExtResource("12_kvrwd"), ExtResource("13_vmfit"), ExtResource("14_ma8nq")])
 available_placeables = Array[Resource("res://scripts/placeable.gd")]([ExtResource("17_5t1wm"), ExtResource("16_85see"), ExtResource("18_u1yic"), ExtResource("20_ibjv4"), ExtResource("21_3hm2a"), ExtResource("20_bif8o")])
 
 [node name="Grid" parent="." instance=ExtResource("22_0k1r8")]

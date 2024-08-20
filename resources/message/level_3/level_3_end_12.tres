@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bmv5ifg7wolr0"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_00sop"]
+[ext_resource type="Resource" uid="uid://cgjw6kphms6t1" path="res://resources/person/glerry.tres" id="2_4m3tr"]
+
+[resource]
+script = ExtResource("1_00sop")
+speaker = ExtResource("2_4m3tr")
+message = "But how did you turn around a restaurant in such dire straits a bird could purchase it and keep it going for over a decade?"
+image_location = 1

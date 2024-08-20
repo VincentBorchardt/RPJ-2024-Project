@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bojca7uwni7p6"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_02jk4"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_vxatk"]
+
+[resource]
+script = ExtResource("1_02jk4")
+speaker = ExtResource("2_vxatk")
+message = "That is The Pitmaster, or at least the creature disguising themselves as The Pitmaster. But why disguise themselves in the first place?"
+image_location = 1

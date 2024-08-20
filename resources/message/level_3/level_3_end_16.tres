@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dk4nw73sgipga"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_ij7g0"]
+[ext_resource type="Resource" uid="uid://bv304uifo1ul0" path="res://resources/person/jambon.tres" id="2_2xf4u"]
+
+[resource]
+script = ExtResource("1_ij7g0")
+speaker = ExtResource("2_2xf4u")
+message = "But they clearly hate this arrangement, so why would they continue to work?"
+image_location = 1

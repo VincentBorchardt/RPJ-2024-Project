@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://dh8ylea4ebh3m"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_3ongn"]
+[ext_resource type="Resource" uid="uid://cunjo2qjwblhj" path="res://resources/person/squandrick.tres" id="2_b0iwg"]
+
+[resource]
+script = ExtResource("1_3ongn")
+speaker = ExtResource("2_b0iwg")
+message = "Nooooo!!!"
+image_location = 0

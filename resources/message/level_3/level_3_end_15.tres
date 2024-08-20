@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Message" load_steps=4 format=3 uid="uid://dx62ovq6k0li2"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_lafxp"]
+[ext_resource type="Texture2D" uid="uid://dfullxcse8b5j" path="res://assets/characters/taxxie_down_full.png" id="1_uxiy6"]
+[ext_resource type="Resource" uid="uid://cunjo2qjwblhj" path="res://resources/person/squandrick.tres" id="3_3sqh3"]
+
+[resource]
+script = ExtResource("1_lafxp")
+speaker = ExtResource("3_3sqh3")
+message = "They’re right here in my office, but they are loyal to me and will continue to serve mediocre BBQ until the end of time!"
+alt_picture = ExtResource("1_uxiy6")
+image_location = 0

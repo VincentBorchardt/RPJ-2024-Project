@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://b02y4js3x3mpq"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_cfxcc"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_redvi"]
+
+[resource]
+script = ExtResource("1_cfxcc")
+speaker = ExtResource("2_redvi")
+message = "The Mystery Ketchup! Quick, someone whip up some of the original House Ketchup, before this bird tainted it! And you, Squandrick, you aren’t going anywhere!"
+image_location = 1

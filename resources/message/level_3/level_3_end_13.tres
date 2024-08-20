@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cm47100f2ip4q"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_xj58y"]
+[ext_resource type="Resource" uid="uid://cunjo2qjwblhj" path="res://resources/person/squandrick.tres" id="2_cviii"]
+
+[resource]
+script = ExtResource("1_xj58y")
+speaker = ExtResource("2_cviii")
+message = "Since you’re so smart, I’m sure you can figure it out."
+image_location = 0

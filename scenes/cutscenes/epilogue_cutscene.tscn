@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmsfhltwvmep6"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_manager.gd" id="1_23enc"]
+[ext_resource type="PackedScene" uid="uid://c3rkg88ijdyi6" path="res://scenes/message_queue.tscn" id="2_ou1ag"]
+[ext_resource type="PackedScene" uid="uid://hgb21nwch34j" path="res://scenes/ui/cutscene_ui.tscn" id="21_bjyh6"]
+
+[node name="EpilogueCutscene" type="Node2D"]
+script = ExtResource("1_23enc")
+
+[node name="MessageQueue" parent="." instance=ExtResource("2_ou1ag")]
+
+[node name="CutsceneUI" parent="." instance=ExtResource("21_bjyh6")]
+
+[connection signal="get_new_message" from="CutsceneUI" to="." method="_on_cutscene_ui_get_new_message"]

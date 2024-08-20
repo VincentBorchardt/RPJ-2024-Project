@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bnswgoaas0n2v"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_b40t0"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_4ds2i"]
+
+[resource]
+script = ExtResource("1_b40t0")
+speaker = ExtResource("2_4ds2i")
+message = "Wait, now Squandrick’s here? What’s going on, and where’s The Pitmaster?"
+image_location = 1

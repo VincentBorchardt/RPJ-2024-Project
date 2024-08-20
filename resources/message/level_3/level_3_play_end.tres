@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://mqe0tqdybk6h"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_xfnls"]
+[ext_resource type="Resource" uid="uid://clrsvhkhsuwmj" path="res://resources/person/player.tres" id="2_l2308"]
+
+[resource]
+script = ExtResource("1_xfnls")
+speaker = ExtResource("2_l2308")
+message = "(That's the key order. Hopefully they know what they're doing...)"
+image_location = 0

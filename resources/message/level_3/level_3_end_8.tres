@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://bs3i5u4vwfdvb"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_wcued"]
+[ext_resource type="Resource" uid="uid://cunjo2qjwblhj" path="res://resources/person/squandrick.tres" id="2_gh5g3"]
+
+[resource]
+script = ExtResource("1_wcued")
+speaker = ExtResource("2_gh5g3")
+message = "No! What did you blow at me?"
+image_location = 0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://25tep2yxyqk6"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_rd7os"]
+[ext_resource type="Resource" uid="uid://cnjoyujvfqitc" path="res://resources/person/pitmaster.tres" id="2_3hjux"]
+
+[resource]
+script = ExtResource("1_rd7os")
+speaker = ExtResource("2_3hjux")
+message = "No one would order that here! That’s only for less upstanding establishments. For this transgression you must be punished."
+image_location = 1
