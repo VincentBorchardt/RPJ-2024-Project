@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://035l8y7rph61"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_popup.gd" id="1_ute57"]
-[ext_resource type="Texture2D" uid="uid://dir4dlv1w8dtl" path="res://assets/backgrounds/title_popup_background.png" id="2_1shrh"]
+[ext_resource type="Texture2D" uid="uid://csxeyfl2f3nv6" path="res://assets/backgrounds/title_popup_background_framed.png" id="2_hwa3h"]
 [ext_resource type="PackedScene" uid="uid://ddld1qiaul0bw" path="res://scenes/cookbook_generator.tscn" id="3_ogw7s"]
 
 [node name="TitleScreenPopup" type="CanvasLayer"]
@@ -9,14 +9,15 @@ script = ExtResource("1_ute57")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(700, 394)
-texture = ExtResource("2_1shrh")
+texture = ExtResource("2_hwa3h")
 
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 1375.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1350.0
 offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Credits and Sources:
 
 Kyle and Robot Party Chat: Setting and Character Ideas
@@ -35,10 +36,11 @@ Burning Pants, plemuzic: Various Panel Backgrounds
 
 [node name="LicensesLabel" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 1375.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1350.0
 offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "    This game uses Godot Engine, available under the following license:
 
     Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
@@ -73,10 +75,11 @@ Portions of this software are copyright © 2023 The FreeType Project (www.freety
 
 [node name="InstructionsLabel" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 1375.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1350.0
 offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Make food by building structures on the grid, then placing food on them.
 
 Turn on Build Mode, then click a building and click a place on the grid to build it.
@@ -91,37 +94,42 @@ Once you put an item in a tile, you can't get it back (unless you make something
 
 [node name="CookbookFoodLabel" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 25.0
-offset_top = 25.0
+offset_left = 50.0
+offset_top = 50.0
 offset_right = 675.0
 offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 
 [node name="CookbookBuildingLabel" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 700.0
-offset_top = 25.0
-offset_right = 1350.0
+offset_top = 50.0
+offset_right = 1325.0
 offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 
 [node name="OptionsBox" type="VBoxContainer" parent="."]
 offset_left = 500.0
-offset_top = 25.0
+offset_top = 50.0
 offset_right = 900.0
-offset_bottom = 675.0
+offset_bottom = 700.0
 
 [node name="MoneyButton" type="CheckButton" parent="OptionsBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 text = "Lots of Money"
 
 [node name="TimerButton" type="CheckButton" parent="OptionsBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Slow Order Timers"
 
 [node name="CloseButton" type="Button" parent="."]
 offset_left = 500.0
-offset_top = 732.0
+offset_top = 700.0
 offset_right = 900.0
-offset_bottom = 763.0
+offset_bottom = 731.0
 text = "Close"
 
 [node name="CookbookGenerator" parent="." instance=ExtResource("3_ogw7s")]

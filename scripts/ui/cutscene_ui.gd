@@ -2,6 +2,8 @@ extends Control
 
 signal get_new_message()
 
+@export var background_image : CompressedTexture2D
+
 @onready var cutscene_message_area = $CutsceneMessageArea
 @onready var left_image = $LeftImage
 @onready var right_image = $RightImage
@@ -9,6 +11,9 @@ signal get_new_message()
 @onready var previous_messages_popup = $PreviousMessagesPopup
 @onready var previous_messages_label = $PreviousMessagesPopup/PreviousMessagesLabel
 
+func  _ready():
+	if background_image != null:
+		pass
 
 func _on_cutscene_message_area_get_new_message():
 	get_new_message.emit()

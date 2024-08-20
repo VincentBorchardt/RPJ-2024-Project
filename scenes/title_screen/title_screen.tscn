@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmlqxxq0t7pv6"]
+[gd_scene load_steps=5 format=3 uid="uid://cmlqxxq0t7pv6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen.gd" id="1_e4opc"]
 [ext_resource type="PackedScene" uid="uid://dq3n6xqgr4hx6" path="res://scenes/title_screen/title_screen_left_box.tscn" id="1_skglq"]
+[ext_resource type="Texture2D" uid="uid://ccdx5xv1uixe1" path="res://assets/backgrounds/screen_background_500x700.png" id="2_u5hsj"]
 [ext_resource type="PackedScene" uid="uid://035l8y7rph61" path="res://scenes/title_screen/title_screen_popup.tscn" id="3_4ua11"]
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource("1_e4opc")
 
+[node name="LeftBoxBackground" type="Sprite2D" parent="."]
+position = Vector2(275, 525)
+texture = ExtResource("2_u5hsj")
+
 [node name="TitleScreenLeftBox" parent="." instance=ExtResource("1_skglq")]
 offset_left = 50.0
 offset_top = 200.0
-offset_right = -1000.0
 offset_bottom = 0.0
 
 [node name="TitleScreenPopup" parent="." instance=ExtResource("3_4ua11")]
