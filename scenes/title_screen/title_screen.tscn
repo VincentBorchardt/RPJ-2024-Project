@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmlqxxq0t7pv6"]
+[gd_scene load_steps=8 format=3 uid="uid://cmlqxxq0t7pv6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen.gd" id="1_e4opc"]
 [ext_resource type="PackedScene" uid="uid://dq3n6xqgr4hx6" path="res://scenes/title_screen/title_screen_left_box.tscn" id="1_skglq"]
+[ext_resource type="Texture2D" uid="uid://dd3ciiogbtjt1" path="res://assets/backgrounds/wood_background.png" id="2_si0b6"]
 [ext_resource type="Texture2D" uid="uid://ccdx5xv1uixe1" path="res://assets/backgrounds/screen_background_500x700.png" id="2_u5hsj"]
 [ext_resource type="PackedScene" uid="uid://035l8y7rph61" path="res://scenes/title_screen/title_screen_popup.tscn" id="3_4ua11"]
 [ext_resource type="Texture2D" uid="uid://c3ahbkfae87ai" path="res://assets/backgrounds/screen_background_1000x100.png" id="4_wh12j"]
+[ext_resource type="Texture2D" uid="uid://bahix35l1we7c" path="res://assets/backgrounds/screen_background_1000x300.png" id="5_p2qj7"]
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource("1_e4opc")
+
+[node name="FullBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+texture = ExtResource("2_si0b6")
 
 [node name="LeftBoxBackground" type="Sprite2D" parent="."]
 position = Vector2(275, 525)
@@ -44,12 +50,18 @@ text = "Instructions"
 layout_mode = 2
 text = "Cookbook"
 
+[node name="TitleBackground" type="Sprite2D" parent="."]
+position = Vector2(1075, 175)
+texture = ExtResource("5_p2qj7")
+
 [node name="TitleLabel" type="Label" parent="."]
-offset_left = 600.0
-offset_right = 1600.0
-offset_bottom = 300.0
+offset_left = 575.0
+offset_top = 25.0
+offset_right = 1575.0
+offset_bottom = 325.0
 theme_override_font_sizes/font_size = 48
-text = "The Smoke Box Employee Training Simulator"
+text = "The Smoke Box 
+Employee Training Simulator"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

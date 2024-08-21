@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq67xkgx2kg21"]
+[gd_scene load_steps=6 format=3 uid="uid://dq67xkgx2kg21"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/splash_manager.gd" id="1_15rc2"]
 [ext_resource type="PackedScene" uid="uid://dihejex33ea3s" path="res://scenes/cutscenes/level_2_start_cutscene.tscn" id="2_x58mp"]
+[ext_resource type="Texture2D" uid="uid://dd3ciiogbtjt1" path="res://assets/backgrounds/wood_background.png" id="3_jsa0q"]
+[ext_resource type="Texture2D" uid="uid://cix4koymcy3n8" path="res://assets/backgrounds/screen_background_800x200.png" id="4_f0poi"]
+[ext_resource type="Texture2D" uid="uid://c3ahbkfae87ai" path="res://assets/backgrounds/screen_background_1000x100.png" id="5_w4550"]
 
 [node name="Level2Splash" type="Control"]
 layout_mode = 3
@@ -13,6 +16,14 @@ grow_vertical = 2
 script = ExtResource("1_15rc2")
 next_scene = ExtResource("2_x58mp")
 
+[node name="FullBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+texture = ExtResource("3_jsa0q")
+
+[node name="TitleBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 200)
+texture = ExtResource("4_f0poi")
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 400.0
@@ -23,6 +34,10 @@ theme_override_font_sizes/font_size = 96
 text = "Day 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SubtitleBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 750)
+texture = ExtResource("5_w4550")
 
 [node name="SubtitleLabel" type="Label" parent="."]
 layout_mode = 0
