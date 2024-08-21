@@ -42,7 +42,7 @@ ending_message = ExtResource("5_dunam")
 
 [node name="OrderQueue" parent="." instance=ExtResource("6_fvckm")]
 upcoming_orders = Array[Resource("res://scripts/food.gd")]([ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("10_j7hca"), ExtResource("6_ccub2"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("8_bg5h4"), ExtResource("10_j7hca"), ExtResource("12_dokv1"), ExtResource("9_f3u77"), ExtResource("9_17tr7"), ExtResource("6_ccub2"), ExtResource("8_a6sri"), ExtResource("8_bg5h4"), ExtResource("9_17tr7"), ExtResource("6_ccub2")])
-time_between_orders = 15
+time_between_orders = 3
 
 [node name="GameUI" parent="." instance=ExtResource("12_g5e6v")]
 available_food = Array[Resource("res://scripts/food.gd")]([ExtResource("7_fjxxt"), ExtResource("13_mqyyc"), ExtResource("9_6jd33"), ExtResource("17_har63"), ExtResource("14_pg146"), ExtResource("19_pfe2y"), ExtResource("16_g21hh"), ExtResource("12_kvrwd"), ExtResource("13_vmfit"), ExtResource("14_ma8nq")])
@@ -54,6 +54,7 @@ position = Vector2(256, 300)
 [connection signal="send_special_message" from="MessageQueue" to="GameUI" method="_on_message_queue_send_special_message"]
 [connection signal="current_orders_changed" from="OrderQueue" to="GameUI" method="_on_order_queue_current_orders_changed"]
 [connection signal="end_level" from="OrderQueue" to="." method="_on_order_queue_end_level"]
+[connection signal="fail_level" from="OrderQueue" to="GameUI" method="_on_order_queue_fail_level"]
 [connection signal="order_submitted" from="OrderQueue" to="MessageQueue" method="_on_order_queue_order_submitted"]
 [connection signal="start_ending_level" from="OrderQueue" to="." method="_on_order_queue_start_ending_level"]
 [connection signal="close_tiles" from="GameUI" to="Grid" method="_on_game_ui_close_tiles"]

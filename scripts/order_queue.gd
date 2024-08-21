@@ -4,6 +4,7 @@ signal current_orders_changed(orders)
 signal order_submitted(food)
 signal start_ending_level()
 signal end_level()
+signal fail_level(num_orders, is_endless)
 
 @export var upcoming_orders: Array[Food] = []
 #@export var order_delay: int
@@ -11,6 +12,7 @@ signal end_level()
 @export var endless: bool = false
 
 var current_orders: Array[Food] = []
+var num_orders_completed = 0
 var ending_level: bool = false
 @onready var order_timer = $OrderTimer
 @onready var end_level_timer = $EndLevelTimer
@@ -41,9 +43,12 @@ func end_level_function():
 
 func add_current_order():
 	assert (upcoming_orders.is_empty() != true)
-	var new_order = upcoming_orders.pop_front()
-	current_orders.append(new_order)
-	current_orders_changed.emit(current_orders)
+	if current_orders.size() >= 8:
+		fail_level.emit(num_orders_completed, endless)
+	else:
+		var new_order = upcoming_orders.pop_front()
+		current_orders.append(new_order)
+		current_orders_changed.emit(current_orders)
 
 func submit_order():
 	if Inventory.is_currently_holding_item():
@@ -60,7 +65,7 @@ func submit_order():
 				end_level_function()
 
 func start_adding_orders():
-	order_timer.start()
+	order_timer.start(time_between_orders)
 
 func _on_end_level_timer_timeout():
 	print("end level timer timeout")
