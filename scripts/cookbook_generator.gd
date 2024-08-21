@@ -16,13 +16,16 @@ func generate_full_food_cookbook():
 	for entry in food_paths:
 		var food = load(entry)
 		food_array.append(food)
-	var cookbook = generate_food_cookbook(food_array)
+	var cookbook = generate_food_cookbook(food_array, null)
 	return cookbook
 
-func generate_food_cookbook(food_array):
+func generate_food_cookbook(food_array, extra_food):
 	var cookbook = "Food Items: \n \n"
 	for food in food_array:
 		cookbook += str(food)
+	if extra_food != null:
+		for food in extra_food:
+			cookbook += str(food)
 	return cookbook
 
 func generate_full_building_cookbook():

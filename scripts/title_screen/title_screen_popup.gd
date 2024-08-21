@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var options_box = $OptionsBox
 
 @onready var cookbook_generator = $CookbookGenerator
+var unique_orders
 
 
 # Called when the node enters the scene tree for the first time.

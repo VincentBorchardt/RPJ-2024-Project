@@ -1,5 +1,6 @@
 class_name OrderQueue extends Node
 
+signal share_unique_orders(unique_orders)
 signal current_orders_changed(orders)
 signal order_submitted(food)
 signal start_ending_level()
@@ -41,7 +42,7 @@ func _ready():
 		randomize()
 	elif GameManager.easy_timers:
 		time_between_orders = time_between_orders * 2
-	# randomize the array of upcoming orders?
+	share_unique_orders.emit(get_unique_orders())
 	order_timer.wait_time = time_between_orders
 	start_adding_orders()
 
@@ -60,6 +61,14 @@ func end_level_function():
 	start_ending_level.emit()
 	ending_level = true
 	end_level_timer.start(3)
+
+func get_unique_orders():
+	var unique_array = []
+	for entry in upcoming_orders:
+		if not unique_array.has(entry):
+			unique_array.append(entry)
+	print(unique_array)
+	return unique_array
 
 func add_current_order():
 	assert (upcoming_orders.is_empty() != true)

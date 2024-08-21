@@ -26,9 +26,9 @@ func close_popup():
 	fail_label.visible = false
 	self.visible = false
 
-func show_cookbook(food_array, building_array):
+func show_cookbook(food_array, building_array, extra_food=null):
 	close_popup()
-	cookbook_food_label.text = cookbook_generator.generate_food_cookbook(food_array)
+	cookbook_food_label.text = cookbook_generator.generate_food_cookbook(food_array, extra_food)
 	cookbook_building_label.text = cookbook_generator.generate_building_cookbook(building_array)
 	cookbook_food_label.visible = true
 	cookbook_building_label.visible = true

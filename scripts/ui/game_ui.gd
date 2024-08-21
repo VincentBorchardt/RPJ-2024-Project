@@ -5,6 +5,7 @@ signal close_tiles
 
 @export var available_food: Array[Food]
 @export var available_placeables: Array[Placeable]
+var unique_orders : Array
 
 @onready var order_box = $OrderBox
 @onready var food_box = $FoodScroll/FoodBox
@@ -36,8 +37,12 @@ func _on_tile_popup_close_tiles():
 
 
 func _on_cookbook_button_pressed():
-	play_scene_popup.show_cookbook(available_food, available_placeables)
+	play_scene_popup.show_cookbook(available_food, available_placeables, unique_orders)
 
 
 func _on_order_queue_fail_level(num_orders, is_endless):
 	play_scene_popup.show_fail_screen(num_orders, is_endless)
+
+
+func _on_order_queue_share_unique_orders(orders):
+	unique_orders = orders
