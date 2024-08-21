@@ -2,6 +2,7 @@ extends Control
 
 signal submit_order
 signal close_tiles
+signal pause_timers
 
 @export var available_food: Array[Food]
 @export var available_placeables: Array[Placeable]
@@ -10,6 +11,7 @@ signal close_tiles
 @onready var food_box = $FoodScroll/FoodBox
 @onready var placeable_box = $PlaceableBox
 @onready var message_area = $MessageArea
+@onready var play_scene_popup = $PlayScenePopup
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,3 +33,8 @@ func _on_message_queue_send_special_message(message):
 
 func _on_tile_popup_close_tiles():
 	close_tiles.emit()
+
+
+func _on_cookbook_button_pressed():
+	pause_timers.emit()
+	play_scene_popup.show_cookbook(available_food, available_placeables)

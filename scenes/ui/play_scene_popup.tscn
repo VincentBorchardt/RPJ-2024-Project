@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://de4hdnkhfh85l"]
+
+[ext_resource type="Script" path="res://scripts/ui/play_scene_popup.gd" id="1_uukaq"]
+[ext_resource type="Texture2D" uid="uid://csxeyfl2f3nv6" path="res://assets/backgrounds/title_popup_background_framed.png" id="2_m4bfq"]
+[ext_resource type="PackedScene" uid="uid://ddld1qiaul0bw" path="res://scenes/cookbook_generator.tscn" id="3_pybtn"]
+
+[node name="PlayScenePopup" type="CanvasLayer"]
+script = ExtResource("1_uukaq")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(700, 394)
+texture = ExtResource("2_m4bfq")
+
+[node name="CookbookFoodLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 675.0
+offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+
+[node name="CookbookBuildingLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 700.0
+offset_top = 50.0
+offset_right = 1325.0
+offset_bottom = 675.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 500.0
+offset_top = 700.0
+offset_right = 900.0
+offset_bottom = 731.0
+text = "Close"
+
+[node name="CookbookGenerator" parent="." instance=ExtResource("3_pybtn")]
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

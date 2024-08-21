@@ -11,18 +11,32 @@ func _process(delta):
 	pass
 
 func generate_full_food_cookbook():
-	var cookbook = "Food Items: \n \n"
-	var food_array = get_all_resource_paths("res://resources/food/", false)
-	for entry in food_array:
+	var food_paths = get_all_resource_paths("res://resources/food/", false)
+	var food_array = []
+	for entry in food_paths:
 		var food = load(entry)
+		food_array.append(food)
+	var cookbook = generate_food_cookbook(food_array)
+	return cookbook
+
+func generate_food_cookbook(food_array):
+	var cookbook = "Food Items: \n \n"
+	for food in food_array:
 		cookbook += str(food)
 	return cookbook
 
 func generate_full_building_cookbook():
-	var cookbook = "Prep Buildings: \n \n"
-	var building_array = get_all_resource_paths("res://resources/placeable/", false)
-	for entry in building_array:
+	var building_paths = get_all_resource_paths("res://resources/placeable/", false)
+	var building_array = []
+	for entry in building_paths:
 		var building = load(entry)
+		building_array.append(building)
+	var cookbook = generate_building_cookbook(building_array)
+	return cookbook
+
+func generate_building_cookbook(building_array):
+	var cookbook = "Prep Buildings: \n \n"
+	for building in building_array:
 		if building is PrepBuilding:
 			cookbook += str(building)
 	return cookbook

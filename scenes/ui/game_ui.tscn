@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bsblupcpeqoqf"]
+[gd_scene load_steps=16 format=3 uid="uid://bsblupcpeqoqf"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ix5wn"]
 [ext_resource type="Texture2D" uid="uid://dd3ciiogbtjt1" path="res://assets/backgrounds/wood_background.png" id="2_h7kag"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://camr5bv7cenix" path="res://assets/backgrounds/screen_background_256x280.png" id="7_xqqwr"]
 [ext_resource type="Texture2D" uid="uid://di0yx0kommuh1" path="res://assets/backgrounds/screen_background_288x320.png" id="9_2s1sn"]
 [ext_resource type="Texture2D" uid="uid://b7hiiy4ob8afb" path="res://assets/backgrounds/message_background_play.png" id="11_hjr7y"]
+[ext_resource type="PackedScene" uid="uid://de4hdnkhfh85l" path="res://scenes/ui/play_scene_popup.tscn" id="15_t17wn"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -91,5 +92,26 @@ offset_bottom = 925.0
 [node name="TilePopup" parent="." instance=ExtResource("6_75xix")]
 visible = false
 
+[node name="UtilityBackground" type="Sprite2D" parent="."]
+position = Vector2(1472, 760)
+texture = ExtResource("7_xqqwr")
+
+[node name="UtilityBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1369.0
+offset_top = 640.0
+offset_right = 1575.0
+offset_bottom = 885.0
+
+[node name="CookbookButton" type="Button" parent="UtilityBox"]
+layout_mode = 2
+text = "Cookbook"
+
+[node name="PlayScenePopup" parent="." instance=ExtResource("15_t17wn")]
+visible = false
+offset = Vector2(100, 56)
+transform = Transform2D(1, 0, 0, 1, 100, 56)
+
 [connection signal="submit_order" from="OrderBox" to="." method="_on_order_box_submit_order"]
 [connection signal="close_tiles" from="TilePopup" to="." method="_on_tile_popup_close_tiles"]
+[connection signal="pressed" from="UtilityBox/CookbookButton" to="." method="_on_cookbook_button_pressed"]
