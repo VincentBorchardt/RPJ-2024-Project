@@ -39,6 +39,8 @@ var ending_level: bool = false
 func _ready():
 	if endless:
 		randomize()
+	elif GameManager.easy_timers:
+		time_between_orders = time_between_orders * 2
 	# randomize the array of upcoming orders?
 	order_timer.wait_time = time_between_orders
 	start_adding_orders()

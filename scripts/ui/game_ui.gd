@@ -16,6 +16,7 @@ signal close_tiles
 func _ready():
 	food_box.available_food = available_food
 	placeable_box.available_placeables = available_placeables
+	Inventory.clear_inventory()
 
 func display_message(message):
 	message_area.display_new_message(message)

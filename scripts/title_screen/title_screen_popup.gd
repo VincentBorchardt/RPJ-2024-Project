@@ -57,12 +57,10 @@ func show_options():
 	self.visible = true
 
 func _on_money_button_toggled(toggled_on):
-	pass # Replace with function body.
-
+	GameManager.easy_money = toggled_on
 
 func _on_timer_button_toggled(toggled_on):
-	pass # Replace with function body.
-
+	GameManager.easy_timers = toggled_on
 
 func _on_close_button_pressed():
 	close_popup()

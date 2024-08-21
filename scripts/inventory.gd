@@ -10,7 +10,7 @@ signal start_power_up(time)
 
 # TODO putting this to 1000 temporarily until I get difficulty settings implemented,
 # put back to 100 once that happens
-var starting_currency : int = 1000
+var starting_currency : int = 100
 var power_up_time : int = 15
 var currently_powered_up = false
 
@@ -31,7 +31,6 @@ var current_currency : int = 0:
 
 func _ready():
 	clear_inventory()
-	print(current_currency)
 
 func is_currently_holding_item():
 	return (current_hold_item != null)
@@ -96,7 +95,10 @@ func trash_current_item():
 		current_hold_item = null
 
 func reset_currency():
-	current_currency = starting_currency
+	if GameManager.easy_money:
+		current_currency = starting_currency * 10
+	else:
+		current_currency = starting_currency
 
 func clear_inventory():
 	inventory.clear()

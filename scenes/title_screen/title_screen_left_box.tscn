@@ -42,7 +42,6 @@ script = ExtResource("2_ttbhf")
 attached_scene = ExtResource("4_crbuu")
 
 [node name="OptionsButton" type="Button" parent="."]
-visible = false
 layout_mode = 2
 text = "Options"
 
