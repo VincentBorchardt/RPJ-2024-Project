@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddld1qiaul0bw" path="res://scenes/cookbook_generator.tscn" id="3_pybtn"]
 
 [node name="PlayScenePopup" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_uukaq")
 
 [node name="Background" type="Sprite2D" parent="."]

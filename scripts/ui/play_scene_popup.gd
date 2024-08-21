@@ -13,7 +13,12 @@ func _ready():
 func _process(delta):
 	pass
 
+func show_popup():
+	self.visible = true
+	get_tree().paused = true
+
 func close_popup():
+	get_tree().paused = false
 	cookbook_food_label.visible = false
 	cookbook_building_label.visible = false
 	self.visible = false
@@ -24,7 +29,7 @@ func show_cookbook(food_array, building_array):
 	cookbook_building_label.text = cookbook_generator.generate_building_cookbook(building_array)
 	cookbook_food_label.visible = true
 	cookbook_building_label.visible = true
-	self.visible = true
+	show_popup()
 
 func _on_close_button_pressed():
 	close_popup()

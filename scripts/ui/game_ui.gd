@@ -2,7 +2,6 @@ extends Control
 
 signal submit_order
 signal close_tiles
-signal pause_timers
 
 @export var available_food: Array[Food]
 @export var available_placeables: Array[Placeable]
@@ -36,5 +35,4 @@ func _on_tile_popup_close_tiles():
 
 
 func _on_cookbook_button_pressed():
-	pause_timers.emit()
 	play_scene_popup.show_cookbook(available_food, available_placeables)
