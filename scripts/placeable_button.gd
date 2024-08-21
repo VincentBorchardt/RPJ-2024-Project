@@ -9,7 +9,7 @@ signal pressed_with_placeable(placeable)
 			if icon == null:
 				icon = value.base_texture
 			if text == "":
-				text = "Build " + value.placeable_name + ": Cost = " + str(value.price)
+				text = "Build " + value.placeable_name + ": Cost=" + str(value.price)
 
 func _pressed():
 	pressed_with_placeable.emit(attached_placeable)

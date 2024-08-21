@@ -3,6 +3,7 @@ extends VBoxContainer
 signal show_options()
 
 @onready var debug_box = $DebugBox
+@onready var endless_button = $EndlessModeButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	endless_button.disabled = not GameManager.endless_enabled
 
 func _on_debug_button_pressed():
 	if not debug_box.visible:
@@ -24,3 +25,7 @@ func _on_options_button_pressed():
 
 func _on_scene_button_pressed(scene):
 	get_tree().change_scene_to_packed(scene)
+
+
+func _on_enable_endless_toggled(toggled_on):
+	GameManager.endless_enabled = toggled_on

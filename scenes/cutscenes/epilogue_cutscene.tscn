@@ -20,7 +20,7 @@
 script = ExtResource("1_23enc")
 
 [node name="MessageQueue" parent="." instance=ExtResource("2_ou1ag")]
-messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_4hc6w"), ExtResource("4_fxw7x"), ExtResource("5_0cpvm"), ExtResource("6_i8ssc"), ExtResource("7_c4lgg"), ExtResource("8_mhe4o"), ExtResource("9_b82c0"), ExtResource("10_1u0st"), ExtResource("11_2b72f"), ExtResource("12_5vu74"), ExtResource("13_llcdv"), ExtResource("14_n21b7")])
+messages = Array[Resource("res://scripts/resources/message.gd")]([ExtResource("3_4hc6w"), ExtResource("4_fxw7x"), ExtResource("5_0cpvm"), ExtResource("6_i8ssc"), ExtResource("7_c4lgg"), ExtResource("8_mhe4o"), ExtResource("9_b82c0"), ExtResource("10_1u0st"), ExtResource("11_2b72f"), ExtResource("12_5vu74"), ExtResource("13_llcdv"), ExtResource("14_n21b7"), null])
 
 [node name="CutsceneUI" parent="." instance=ExtResource("21_bjyh6")]
 

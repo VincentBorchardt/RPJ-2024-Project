@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Message" load_steps=3 format=3 uid="uid://cnofa72i8gt4f"]
+
+[ext_resource type="Script" path="res://scripts/resources/message.gd" id="1_mirxk"]
+[ext_resource type="Resource" uid="uid://bpudy65ay1ran" path="res://resources/person/taxxie.tres" id="2_4247d"]
+
+[resource]
+script = ExtResource("1_mirxk")
+speaker = ExtResource("2_4247d")
+message = "It's time for the longest shift of your life! All orders are available, and we'll slowly ramp up both the difficulty of the orders and how fast they come in! Survive for as long as you can!"
+image_location = 0

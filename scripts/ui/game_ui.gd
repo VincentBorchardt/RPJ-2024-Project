@@ -8,7 +8,7 @@ signal close_tiles
 
 @onready var order_box = $OrderBox
 @onready var food_box = $FoodScroll/FoodBox
-@onready var placeable_box = $PlaceableBox
+@onready var placeable_box = $PlaceableScroll/PlaceableBox
 @onready var message_area = $MessageArea
 @onready var play_scene_popup = $PlayScenePopup
 

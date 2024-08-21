@@ -67,12 +67,15 @@ offset_bottom = 885.0
 position = Vector2(1456, 460)
 texture = ExtResource("9_2s1sn")
 
-[node name="PlaceableBox" parent="." instance=ExtResource("5_gym5i")]
+[node name="PlaceableScroll" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 1328.0
 offset_top = 310.0
-offset_right = 1559.0
+offset_right = 1585.0
 offset_bottom = 610.0
+
+[node name="PlaceableBox" parent="PlaceableScroll" instance=ExtResource("5_gym5i")]
+layout_mode = 2
 
 [node name="CustomerArea" parent="." instance=ExtResource("6_3kad1")]
 layout_mode = 1

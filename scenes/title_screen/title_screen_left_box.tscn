@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq3n6xqgr4hx6"]
+[gd_scene load_steps=18 format=3 uid="uid://dq3n6xqgr4hx6"]
 
 [ext_resource type="Script" path="res://scripts/title_screen/title_screen_left_box.gd" id="1_0bqmp"]
 [ext_resource type="Script" path="res://scripts/scene_button.gd" id="2_ttbhf"]
 [ext_resource type="PackedScene" uid="uid://47deydccadpl" path="res://scenes/cutscenes/tutorial_splash.tscn" id="3_nmfol"]
 [ext_resource type="PackedScene" uid="uid://ce8rqxnl32p72" path="res://scenes/cutscenes/tutorial_cutscene_1.tscn" id="3_px55q"]
 [ext_resource type="PackedScene" uid="uid://cv6hj8g6h35u5" path="res://scenes/levels/tutorial_play_1.tscn" id="4_3t870"]
+[ext_resource type="PackedScene" uid="uid://bn7v4p20rk3qv" path="res://scenes/levels/endless_play.tscn" id="4_crbuu"]
 [ext_resource type="PackedScene" uid="uid://chl26qamibgtf" path="res://scenes/cutscenes/tutorial_cutscene_2.tscn" id="5_dg8fc"]
 [ext_resource type="PackedScene" uid="uid://wgj3uboev5by" path="res://scenes/cutscenes/level_1_start_cutscene.tscn" id="6_kt2eu"]
 [ext_resource type="PackedScene" uid="uid://bengvxwd8hsom" path="res://scenes/levels/level_1_play.tscn" id="7_xhfyw"]
@@ -34,10 +35,11 @@ script = ExtResource("2_ttbhf")
 attached_scene = ExtResource("3_nmfol")
 
 [node name="EndlessModeButton" type="Button" parent="."]
-visible = false
 layout_mode = 2
+disabled = true
 text = "Start Endless Mode"
 script = ExtResource("2_ttbhf")
+attached_scene = ExtResource("4_crbuu")
 
 [node name="OptionsButton" type="Button" parent="."]
 visible = false
@@ -170,7 +172,12 @@ text = "Epilogue"
 script = ExtResource("2_ttbhf")
 attached_scene = ExtResource("16_pacd2")
 
+[node name="EnableEndless" type="CheckButton" parent="DebugBox"]
+layout_mode = 2
+text = "Enable Endless"
+
 [connection signal="pressed_with_scene" from="StoryModeButton" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed_with_scene" from="EndlessModeButton" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/TutorialBox/TutorialStart" to="." method="_on_scene_button_pressed"]
@@ -186,3 +193,4 @@ attached_scene = ExtResource("16_pacd2")
 [connection signal="pressed_with_scene" from="DebugBox/Level3Box/Level3Play" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level3Box/Level3End" to="." method="_on_scene_button_pressed"]
 [connection signal="pressed_with_scene" from="DebugBox/Level3Box/Epilogue" to="." method="_on_scene_button_pressed"]
+[connection signal="toggled" from="DebugBox/EnableEndless" to="." method="_on_enable_endless_toggled"]
