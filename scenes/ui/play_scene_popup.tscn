@@ -38,15 +38,15 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 
 [node name="CloseButton" type="Button" parent="."]
 offset_left = 500.0
-offset_top = 650.0
+offset_top = 700.0
 offset_right = 900.0
-offset_bottom = 681.0
+offset_bottom = 731.0
 text = "Close Popup"
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 500.0
+offset_left = 1175.0
 offset_top = 700.0
-offset_right = 900.0
+offset_right = 1350.0
 offset_bottom = 731.0
 text = "Exit to Main Menu"
 
